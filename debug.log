@@ -537,3 +537,9 @@ INFO 2025-12-06 17:12:35,458 basehttp 21764 18464 "GET /static/css/custom.css HT
 INFO 2025-12-06 17:12:54,042 basehttp 21764 18464 "GET /rooms/management/ HTTP/1.1" 200 13879
 INFO 2025-12-06 17:12:54,074 basehttp 21764 18464 "GET /static/css/custom.css HTTP/1.1" 304 0
 INFO 2025-12-06 17:12:54,186 basehttp 21764 18464 "GET /api/rooms/reception/ HTTP/1.1" 200 1077
+INFO 2025-12-06 17:19:17,982 autoreload 21584 26364 Watching for file changes with StatReloader
+INFO 2025-12-06 17:19:46,797 basehttp 21764 21896 "GET /rooms/management/ HTTP/1.1" 200 13915
+INFO 2025-12-06 17:19:46,829 basehttp 21764 21896 "GET /static/css/custom.css HTTP/1.1" 304 0
+INFO 2025-12-06 17:19:46,938 basehttp 21764 21896 "GET /api/rooms/reception/ HTTP/1.1" 200 1077
+INFO 2025-12-06 17:19:57,666 basehttp 21764 21896 "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-12-06 17:19:57,674 basehttp 21764 21896 "GET / HTTP/1.1" 200 8213
