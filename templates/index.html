@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Hotel Management System{% endblock %}
+
+{% block breadcrumbs %}
+    <!-- Breadcrumbs will be handled differently to avoid syntax errors -->
+{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+    {% if user.is_authenticated %}
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Welcome, {{ user.first_name }} {{ user.last_name }}!</h2>
+            <p class="text-gray-600 mb-6">
+                You are logged in as <span class="font-semibold">{{ user.role|title }}</span>.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {% if user.role == 'admin' %}
+                    <div class="bg-blue-50 rounded-lg p-4">
+                        <h3 class="font-semibold text-blue-800 mb-2">Admin Functions</h3>
+                        <ul class="text-sm text-blue-700 space-y-1">
+                            <li>• <a href="{% url 'admin-dashboard' %}" class="underline">Dashboard</a></li>
+                            <li>• <a href="/admin/" class="underline">Admin Panel</a></li>
+                            <li>• <a href="{% url 'audit-log' %}" class="underline">Audit Logs</a></li>
+                        </ul>
+                    </div>
+                {% elif user.role == 'reception' %}
+                    <div class="bg-green-50 rounded-lg p-4">
+                        <h3 class="font-semibold text-green-800 mb-2">Reception Functions</h3>
+                        <ul class="text-sm text-green-700 space-y-1">
+                            <li>• <a href="{% url 'reception-dashboard' %}" class="underline">Dashboard</a></li>
+                            <li>• <a href="{% url 'booking-management' %}" class="underline">Manage Bookings</a></li>
+                            <li>• <a href="{% url 'room-management' %}" class="underline">Room Management</a></li>
+                            <li>• <a href="/api/payments/reception/" class="underline">Process Payments</a></li>
+                        </ul>
+                    </div>
+                {% else %}
+                    <div class="bg-purple-50 rounded-lg p-4">
+                        <h3 class="font-semibold text-purple-800 mb-2">Guest Functions</h3>
+                        <ul class="text-sm text-purple-700 space-y-1">
+                            <li>• <a href="{% url 'guest-dashboard' %}" class="underline">My Dashboard</a></li>
+                            <li>• <a href="{% url 'guest-booking' %}" class="underline">Book a Room</a></li>
+                            <li>• <a href="/api/bookings/guest/list/" class="underline">My Bookings</a></li>
+                            <li>• <a href="/api/rooms/" class="underline">Available Rooms</a></li>
+                        </ul>
+                    </div>
+                {% endif %}
+                
+                <div class="bg-yellow-50 rounded-lg p-4">
+                    <h3 class="font-semibold text-yellow-800 mb-2">Quick Actions</h3>
+                    <ul class="text-sm text-yellow-700 space-y-1">
+                        <li>• <a href="/api/rooms/" class="underline">View available rooms</a></li>
+                        <li>• <a href="/swagger/" class="underline">API Documentation</a></li>
+                        <li>• <a href="{% url 'profile' %}" class="underline">My Profile</a></li>
+                    </ul>
+                </div>
+                
+                <div class="bg-indigo-50 rounded-lg p-4">
+                    <h3 class="font-semibold text-indigo-800 mb-2">Account</h3>
+                    <ul class="text-sm text-indigo-700 space-y-1">
+                        <li>• <a href="{% url 'profile' %}" class="underline">Profile Settings</a></li>
+                        <li>• <form method="post" action="{% url 'logout' %}" class="inline">
+                            {% csrf_token %}
+                            <button type="submit" class="text-indigo-600 underline">Logout</button>
+                        </form></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Welcome to Our Hotel Management System</h2>
+            <p class="text-gray-600 mb-6">
+                Please sign in to access the system based on your role.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-blue-50 rounded-lg p-6">
+                    <h3 class="font-semibold text-blue-800 mb-3">Sign In</h3>
+                    <form id="login-form" class="space-y-4" method="post">
+                        {% csrf_token %}
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                            <input type="password" id="password" name="password" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                Sign In
+                            </button>
+                        </div>
+                    </form>
+                    <div id="login-error" class="mt-2 text-red-600 hidden"></div>
+                </div>
+                
+                <div class="bg-green-50 rounded-lg p-6">
+                    <h3 class="font-semibold text-green-800 mb-3">Need an account?</h3>
+                    <p class="text-green-700 mb-4">Register as a guest to book rooms and manage your reservations.</p>
+                    <a href="{% url 'register' %}" class="inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Register as Guest</a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    
+    <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-bold text-gray-800 mb-4">About Our System</h3>
+        <p class="text-gray-600 mb-4">
+            Our hotel management system provides a comprehensive solution for managing all aspects of hotel operations, 
+            from room bookings to guest services and financial tracking.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="border-l-4 border-blue-500 pl-4">
+                <h4 class="font-semibold text-gray-800">Role-Based Access</h4>
+                <p class="text-sm text-gray-600">Different permissions for admins, reception staff, and guests.</p>
+            </div>
+            <div class="border-l-4 border-green-500 pl-4">
+                <h4 class="font-semibold text-gray-800">Real-Time Updates</h4>
+                <p class="text-sm text-gray-600">Instant room status and booking updates.</p>
+            </div>
+            <div class="border-l-4 border-purple-500 pl-4">
+                <h4 class="font-semibold text-gray-800">Secure & Reliable</h4>
+                <p class="text-sm text-gray-600">JWT authentication and audit logging.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('login-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const errorDiv = document.getElementById('login-error');
+    
+    console.log('Login form submitted with email:', email);
+    
+    // Hide any previous error message
+    errorDiv.classList.add('hidden');
+    
+    // Send login request
+    fetch('/accounts/login/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+        },
+        body: JSON.stringify({
+            email: email,
+            password: password
+        })
+    })
+    .then(response => {
+        console.log('Received response with status:', response.status);
+        return response.json();
+    })
+    .then(data => {
+        console.log('Response data:', data);
+        if (data.error) {
+            errorDiv.textContent = data.error;
+            errorDiv.classList.remove('hidden');
+        } else if (data.success) {
+            // Redirect based on user role
+            const userRole = data.user_role || 'guest';
+            console.log('Redirecting user with role:', userRole);
+            
+            switch(userRole) {
+                case 'admin':
+                    window.location.href = '/dashboards/admin/';
+                    break;
+                case 'reception':
+                    window.location.href = '/dashboards/reception/';
+                    break;
+                case 'guest':
+                    window.location.href = '/dashboards/guest/';
+                    break;
+                default:
+                    window.location.href = '/';
+            }
+        } else {
+            errorDiv.textContent = 'Login failed. Please try again.';
+            errorDiv.classList.remove('hidden');
+        }
+    })
+    .catch(error => {
+        console.error('Login error:', error);
+        errorDiv.textContent = 'An error occurred during login. Please try again.';
+        errorDiv.classList.remove('hidden');
+    });
+});
+</script>
+{% endblock %}

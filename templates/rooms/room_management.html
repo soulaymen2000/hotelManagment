@@ -1,0 +1,243 @@
+{% extends 'base.html' %}
+
+{% block title %}Room Management - Hotel Management System{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="md:flex md:items-center md:justify-between">
+        <div class="flex-1 min-w-0">
+            <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
+                Room Management
+            </h2>
+        </div>
+        <div class="mt-4 flex md:mt-0 md:ml-4">
+            <button type="button" class="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                Add Room
+            </button>
+        </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="mt-6 bg-white shadow rounded-lg p-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div>
+                <label for="status-filter" class="block text-sm font-medium text-gray-700">Status</label>
+                <select id="status-filter" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                    <option value="">All Statuses</option>
+                    <option value="dispo">Available</option>
+                    <option value="reserved">Reserved</option>
+                    <option value="booked">Booked</option>
+                    <option value="maintenance">Maintenance</option>
+                </select>
+            </div>
+            <div>
+                <label for="floor-filter" class="block text-sm font-medium text-gray-700">Floor</label>
+                <select id="floor-filter" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                    <option value="">All Floors</option>
+                    <option value="1">Floor 1</option>
+                    <option value="2">Floor 2</option>
+                    <option value="3">Floor 3</option>
+                </select>
+            </div>
+            <div>
+                <label for="capacity-filter" class="block text-sm font-medium text-gray-700">Capacity</label>
+                <select id="capacity-filter" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                    <option value="">All Capacities</option>
+                    <option value="1">1 Person</option>
+                    <option value="2">2 People</option>
+                    <option value="4">4 People</option>
+                    <option value="6">6 People</option>
+                </select>
+            </div>
+            <div class="flex items-end">
+                <button id="apply-filters" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    Apply Filters
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Room Status Legend -->
+    <div class="mt-6">
+        <h3 class="text-lg font-medium text-gray-900">Room Status Legend</h3>
+        <div class="mt-2 flex flex-wrap gap-4">
+            <div class="flex items-center">
+                <div class="w-4 h-4 bg-green-500 rounded-full"></div>
+                <span class="ml-2 text-sm text-gray-600">Available</span>
+            </div>
+            <div class="flex items-center">
+                <div class="w-4 h-4 bg-yellow-500 rounded-full"></div>
+                <span class="ml-2 text-sm text-gray-600">Reserved</span>
+            </div>
+            <div class="flex items-center">
+                <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
+                <span class="ml-2 text-sm text-gray-600">Booked</span>
+            </div>
+            <div class="flex items-center">
+                <div class="w-4 h-4 bg-red-500 rounded-full"></div>
+                <span class="ml-2 text-sm text-gray-600">Maintenance</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rooms Table -->
+    <div class="mt-6 bg-white shadow overflow-hidden sm:rounded-lg">
+        <div class="px-4 py-5 sm:px-6">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">Rooms</h3>
+            <p class="mt-1 max-w-2xl text-sm text-gray-500">List of all rooms in the hotel.</p>
+        </div>
+        <div class="border-t border-gray-200">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Room Number</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Floor</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Capacity</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price/Night</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200" id="rooms-table-body">
+                        <!-- Rows will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="mt-6 flex items-center justify-between">
+        <div class="text-sm text-gray-700">
+            Showing <span id="page-info">0</span> of <span id="total-rooms">0</span> rooms
+        </div>
+        <div class="flex space-x-2">
+            <button id="prev-page" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                Previous
+            </button>
+            <button id="next-page" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                Next
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+// Global variables for pagination
+let currentPage = 1;
+let totalPages = 1;
+let allRooms = [];
+
+// Fetch rooms data
+async function fetchRooms() {
+    try {
+        const response = await fetch('/api/rooms/reception/', {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+            }
+        });
+        
+        if (response.ok) {
+            const rooms = await response.json();
+            allRooms = rooms;
+            displayRooms(rooms);
+        } else {
+            console.error('Failed to fetch rooms');
+        }
+    } catch (error) {
+        console.error('Error fetching rooms:', error);
+    }
+}
+
+// Display rooms in the table
+function displayRooms(rooms) {
+    const tableBody = document.getElementById('rooms-table-body');
+    tableBody.innerHTML = '';
+    
+    // Update total rooms count
+    document.getElementById('total-rooms').textContent = rooms.length;
+    
+    // Display current page info
+    document.getElementById('page-info').textContent = `${Math.min(rooms.length, 10)} rooms`;
+    
+    // Display rooms (limit to 10 for now)
+    rooms.slice(0, 10).forEach(room => {
+        const row = document.createElement('tr');
+        
+        // Determine status color
+        let statusClass = '';
+        let statusText = '';
+        
+        switch(room.status) {
+            case 'dispo':
+                statusClass = 'bg-green-100 text-green-800';
+                statusText = 'Available';
+                break;
+            case 'reserved':
+                statusClass = 'bg-yellow-100 text-yellow-800';
+                statusText = 'Reserved';
+                break;
+            case 'booked':
+                statusClass = 'bg-blue-100 text-blue-800';
+                statusText = 'Booked';
+                break;
+            case 'maintenance':
+                statusClass = 'bg-red-100 text-red-800';
+                statusText = 'Maintenance';
+                break;
+            default:
+                statusClass = 'bg-gray-100 text-gray-800';
+                statusText = room.status;
+        }
+        
+        row.innerHTML = `
+            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${room.number}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${room.name}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${room.floor}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${room.capacity}</td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">$${parseFloat(room.price_per_night).toFixed(2)}</td>
+            <td class="px-6 py-4 whitespace-nowrap">
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${statusClass}">
+                    ${statusText}
+                </span>
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                <button class="text-blue-600 hover:text-blue-900 mr-3">Edit</button>
+                <button class="text-red-600 hover:text-red-900">Delete</button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+// Apply filters
+document.getElementById('apply-filters').addEventListener('click', function() {
+    const statusFilter = document.getElementById('status-filter').value;
+    const floorFilter = document.getElementById('floor-filter').value;
+    const capacityFilter = document.getElementById('capacity-filter').value;
+    
+    let filteredRooms = [...allRooms];
+    
+    if (statusFilter) {
+        filteredRooms = filteredRooms.filter(room => room.status === statusFilter);
+    }
+    
+    if (floorFilter) {
+        filteredRooms = filteredRooms.filter(room => room.floor.toString() === floorFilter);
+    }
+    
+    if (capacityFilter) {
+        filteredRooms = filteredRooms.filter(room => room.capacity.toString() === capacityFilter);
+    }
+    
+    displayRooms(filteredRooms);
+});
+
+// Initialize room management page
+document.addEventListener('DOMContentLoaded', function() {
+    fetchRooms();
+});
+</script>
+{% endblock %}

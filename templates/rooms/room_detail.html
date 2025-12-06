@@ -1,0 +1,226 @@
+{% extends 'base.html' %}
+
+{% block title %}Room Details - Hotel Management System{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="md:flex md:items-center md:justify-between">
+        <div class="flex-1 min-w-0">
+            <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
+                Room Details
+            </h2>
+        </div>
+        <div class="mt-4 flex md:mt-0 md:ml-4">
+            <button onclick="window.history.back()" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                Back
+            </button>
+        </div>
+    </div>
+
+    <div class="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <!-- Room Information -->
+        <div class="lg:col-span-2">
+            <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+                <div class="px-4 py-5 sm:px-6">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900">
+                        Room Information
+                    </h3>
+                    <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                        Details about this room.
+                    </p>
+                </div>
+                <div class="border-t border-gray-200">
+                    <dl>
+                        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Room Number
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" id="room-number">
+                                <!-- Will be populated by JS -->
+                            </dd>
+                        </div>
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Room Name
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" id="room-name">
+                                <!-- Will be populated by JS -->
+                            </dd>
+                        </div>
+                        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Description
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" id="room-description">
+                                <!-- Will be populated by JS -->
+                            </dd>
+                        </div>
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Floor
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" id="room-floor">
+                                <!-- Will be populated by JS -->
+                            </dd>
+                        </div>
+                        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Capacity
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" id="room-capacity">
+                                <!-- Will be populated by JS -->
+                            </dd>
+                        </div>
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Price per Night
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" id="room-price">
+                                <!-- Will be populated by JS -->
+                            </dd>
+                        </div>
+                        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Current Status
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" id="room-status">
+                                <!-- Will be populated by JS -->
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="lg:col-span-1">
+            <div class="bg-white shadow sm:rounded-lg">
+                <div class="px-4 py-5 sm:px-6">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900">
+                        Actions
+                    </h3>
+                </div>
+                <div class="border-t border-gray-200">
+                    <div class="px-4 py-5 sm:p-6">
+                        <div class="space-y-4">
+                            <button id="change-status-btn" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                Change Status
+                            </button>
+                            <button id="maintenance-btn" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                Maintenance
+                            </button>
+                            <button id="edit-room-btn" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                Edit Room
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Bookings -->
+            <div class="mt-6 bg-white shadow sm:rounded-lg">
+                <div class="px-4 py-5 sm:px-6">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900">
+                        Current Bookings
+                    </h3>
+                </div>
+                <div class="border-t border-gray-200">
+                    <div class="px-4 py-5 sm:p-6">
+                        <div class="space-y-4" id="bookings-list">
+                            <!-- Bookings will be populated by JS -->
+                            <p class="text-sm text-gray-500">No current bookings for this room.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// This would typically fetch room data from the API
+// For demonstration purposes, we'll simulate the data
+
+// Simulate room data
+const roomData = {
+    id: 1,
+    number: "201",
+    name: "Deluxe Room",
+    description: "Spacious deluxe room with premium amenities and city view.",
+    floor: 2,
+    capacity: 2,
+    pricePerNight: 200.00,
+    status: "dispo",
+    bookings: [
+        {
+            id: 12345,
+            guest: "John Doe",
+            checkInDate: "2025-12-10",
+            checkOutDate: "2025-12-15",
+            status: "confirmed"
+        }
+    ]
+};
+
+// Populate room details
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('room-number').textContent = roomData.number;
+    document.getElementById('room-name').textContent = roomData.name;
+    document.getElementById('room-description').textContent = roomData.description;
+    document.getElementById('room-floor').textContent = roomData.floor;
+    document.getElementById('room-capacity').textContent = roomData.capacity;
+    document.getElementById('room-price').textContent = `$${roomData.pricePerNight.toFixed(2)}`;
+    
+    // Set status with appropriate styling
+    const statusElement = document.getElementById('room-status');
+    let statusText = '';
+    let statusClass = '';
+    
+    switch(roomData.status) {
+        case 'dispo':
+            statusText = 'Available';
+            statusClass = 'bg-green-100 text-green-800';
+            break;
+        case 'reserved':
+            statusText = 'Reserved';
+            statusClass = 'bg-yellow-100 text-yellow-800';
+            break;
+        case 'booked':
+            statusText = 'Booked';
+            statusClass = 'bg-blue-100 text-blue-800';
+            break;
+        case 'maintenance':
+            statusText = 'Maintenance';
+            statusClass = 'bg-red-100 text-red-800';
+            break;
+        default:
+            statusText = roomData.status;
+            statusClass = 'bg-gray-100 text-gray-800';
+    }
+    
+    statusElement.textContent = statusText;
+    statusElement.className = `px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${statusClass}`;
+    
+    // Populate bookings list
+    const bookingsList = document.getElementById('bookings-list');
+    if (roomData.bookings.length > 0) {
+        bookingsList.innerHTML = '';
+        roomData.bookings.forEach(booking => {
+            const bookingElement = document.createElement('div');
+            bookingElement.className = 'border border-gray-200 rounded-md p-3';
+            bookingElement.innerHTML = `
+                <div class="flex justify-between">
+                    <span class="text-sm font-medium text-gray-900">Booking #${booking.id}</span>
+                    <span class="text-sm text-gray-500">${booking.guest}</span>
+                </div>
+                <div class="mt-1 flex justify-between">
+                    <span class="text-sm text-gray-500">${new Date(booking.checkInDate).toLocaleDateString()} - ${new Date(booking.checkOutDate).toLocaleDateString()}</span>
+                    <span class="text-sm font-medium text-gray-900">${booking.status}</span>
+                </div>
+            `;
+            bookingsList.appendChild(bookingElement);
+        });
+    }
+});
+</script>
+{% endblock %}

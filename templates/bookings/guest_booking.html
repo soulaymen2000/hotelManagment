@@ -1,0 +1,303 @@
+{% extends 'base.html' %}
+
+{% block title %}Book a Room - Hotel Management System{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="md:flex md:items-center md:justify-between">
+        <div class="flex-1 min-w-0">
+            <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
+                Book a Room
+            </h2>
+        </div>
+    </div>
+
+    <!-- Booking Form -->
+    <div class="mt-6 bg-white shadow sm:rounded-lg">
+        <div class="px-4 py-5 sm:px-6">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">
+                Booking Details
+            </h3>
+            <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                Select your preferred dates and room type.
+            </p>
+        </div>
+        <div class="border-t border-gray-200">
+            <form class="px-4 py-5 sm:p-6" id="booking-form">
+                <div class="grid grid-cols-6 gap-6">
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="check-in-date" class="block text-sm font-medium text-gray-700">Check-in Date</label>
+                        <input type="date" name="check-in-date" id="check-in-date" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="check-out-date" class="block text-sm font-medium text-gray-700">Check-out Date</label>
+                        <input type="date" name="check-out-date" id="check-out-date" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="num-guests" class="block text-sm font-medium text-gray-700">Number of Guests</label>
+                        <select id="num-guests" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                        </select>
+                    </div>
+
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="room-type" class="block text-sm font-medium text-gray-700">Room Type</label>
+                        <select id="room-type" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                            <option value="">Select a room type</option>
+                            <option value="single">Single Room</option>
+                            <option value="double">Double Room</option>
+                            <option value="deluxe">Deluxe Room</option>
+                            <option value="suite">Suite</option>
+                            <option value="presidential">Presidential Suite</option>
+                        </select>
+                    </div>
+
+                    <div class="col-span-6">
+                        <label for="special-requests" class="block text-sm font-medium text-gray-700">Special Requests</label>
+                        <textarea id="special-requests" name="special-requests" rows="3" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"></textarea>
+                    </div>
+                </div>
+                <div class="mt-5">
+                    <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Check Availability
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Available Rooms -->
+    <div class="mt-6 bg-white shadow sm:rounded-lg hidden" id="available-rooms-section">
+        <div class="px-4 py-5 sm:px-6">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">
+                Available Rooms
+            </h3>
+            <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                Select a room from the available options.
+            </p>
+        </div>
+        <div class="border-t border-gray-200">
+            <div class="px-4 py-5 sm:p-6">
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3" id="available-rooms-container">
+                    <!-- Rooms will be populated by JavaScript -->
+                </div>
+                <div class="mt-6">
+                    <button id="book-selected-room" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 hidden">
+                        Book Selected Room
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Summary -->
+    <div class="mt-6 bg-white shadow sm:rounded-lg hidden" id="booking-summary-section">
+        <div class="px-4 py-5 sm:px-6">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">
+                Booking Summary
+            </h3>
+        </div>
+        <div class="border-t border-gray-200">
+            <div class="px-4 py-5 sm:p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-md font-medium text-gray-900">Booking Details</h4>
+                        <dl class="mt-2 space-y-1">
+                            <div class="flex justify-between">
+                                <dt class="text-sm text-gray-500">Room:</dt>
+                                <dd class="text-sm font-medium text-gray-900" id="summary-room"></dd>
+                            </div>
+                            <div class="flex justify-between">
+                                <dt class="text-sm text-gray-500">Check-in:</dt>
+                                <dd class="text-sm font-medium text-gray-900" id="summary-check-in"></dd>
+                            </div>
+                            <div class="flex justify-between">
+                                <dt class="text-sm text-gray-500">Check-out:</dt>
+                                <dd class="text-sm font-medium text-gray-900" id="summary-check-out"></dd>
+                            </div>
+                            <div class="flex justify-between">
+                                <dt class="text-sm text-gray-500">Guests:</dt>
+                                <dd class="text-sm font-medium text-gray-900" id="summary-guests"></dd>
+                            </div>
+                            <div class="flex justify-between">
+                                <dt class="text-sm text-gray-500">Nights:</dt>
+                                <dd class="text-sm font-medium text-gray-900" id="summary-nights"></dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <div>
+                        <h4 class="text-md font-medium text-gray-900">Cost Breakdown</h4>
+                        <dl class="mt-2 space-y-1">
+                            <div class="flex justify-between">
+                                <dt class="text-sm text-gray-500">Room Rate:</dt>
+                                <dd class="text-sm font-medium text-gray-900" id="summary-rate"></dd>
+                            </div>
+                            <div class="flex justify-between">
+                                <dt class="text-sm text-gray-500">Total:</dt>
+                                <dd class="text-sm font-medium text-gray-900" id="summary-total"></dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+                <div class="mt-6 flex space-x-3">
+                    <button id="confirm-booking" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Confirm Booking
+                    </button>
+                    <button id="cancel-booking" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Set minimum check-in date to today
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('check-in-date').min = today;
+document.getElementById('check-out-date').min = today;
+
+// Handle form submission
+document.getElementById('booking-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const checkInDate = document.getElementById('check-in-date').value;
+    const checkOutDate = document.getElementById('check-out-date').value;
+    const numGuests = document.getElementById('num-guests').value;
+    const roomType = document.getElementById('room-type').value;
+    
+    // Validate dates
+    if (!checkInDate || !checkOutDate) {
+        alert('Please select both check-in and check-out dates.');
+        return;
+    }
+    
+    if (new Date(checkOutDate) <= new Date(checkInDate)) {
+        alert('Check-out date must be after check-in date.');
+        return;
+    }
+    
+    // In a real application, you would fetch available rooms from the API
+    // For this demo, we'll simulate available rooms
+    showAvailableRooms();
+});
+
+// Show available rooms
+function showAvailableRooms() {
+    // Show the available rooms section
+    document.getElementById('available-rooms-section').classList.remove('hidden');
+    
+    // Sample room data (in a real app, this would come from the API)
+    const rooms = [
+        { id: 1, number: '101', name: 'Single Room', price: 100, description: 'Cozy single room with garden view' },
+        { id: 2, number: '102', name: 'Double Room', price: 150, description: 'Spacious double room with city view' },
+        { id: 3, number: '201', name: 'Deluxe Room', price: 200, description: 'Luxurious room with premium amenities' },
+        { id: 4, number: '202', name: 'Suite', price: 300, description: 'Spacious suite with separate living area' },
+        { id: 5, number: '301', name: 'Presidential Suite', price: 500, description: 'Ultimate luxury with panoramic views' }
+    ];
+    
+    const container = document.getElementById('available-rooms-container');
+    container.innerHTML = '';
+    
+    rooms.forEach(room => {
+        const roomCard = document.createElement('div');
+        roomCard.className = 'border border-gray-200 rounded-lg p-4 hover:border-blue-500 cursor-pointer room-card';
+        roomCard.dataset.roomId = room.id;
+        roomCard.innerHTML = `
+            <div class="flex justify-between">
+                <h4 class="text-lg font-medium text-gray-900">${room.name}</h4>
+                <span class="text-lg font-bold text-blue-600">$${room.price}/night</span>
+            </div>
+            <p class="mt-2 text-sm text-gray-500">${room.description}</p>
+            <p class="mt-2 text-sm text-gray-500">Room Number: ${room.number}</p>
+            <div class="mt-4 flex items-center">
+                <input type="radio" name="selected-room" value="${room.id}" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                <label class="ml-2 block text-sm text-gray-700">Select this room</label>
+            </div>
+        `;
+        container.appendChild(roomCard);
+    });
+    
+    // Add event listeners to room cards
+    document.querySelectorAll('.room-card').forEach(card => {
+        card.addEventListener('click', function() {
+            const radio = this.querySelector('input[type="radio"]');
+            radio.checked = true;
+            document.getElementById('book-selected-room').classList.remove('hidden');
+        });
+    });
+}
+
+// Book selected room
+document.getElementById('book-selected-room').addEventListener('click', function() {
+    const selectedRoom = document.querySelector('input[name="selected-room"]:checked');
+    
+    if (!selectedRoom) {
+        alert('Please select a room.');
+        return;
+    }
+    
+    // Show booking summary
+    showBookingSummary(selectedRoom.value);
+});
+
+// Show booking summary
+function showBookingSummary(roomId) {
+    // Hide available rooms section and show booking summary
+    document.getElementById('available-rooms-section').classList.add('hidden');
+    document.getElementById('booking-summary-section').classList.remove('hidden');
+    
+    // Get form values
+    const checkInDate = document.getElementById('check-in-date').value;
+    const checkOutDate = document.getElementById('check-out-date').value;
+    const numGuests = document.getElementById('num-guests').value;
+    
+    // Calculate nights
+    const checkIn = new Date(checkInDate);
+    const checkOut = new Date(checkOutDate);
+    const nights = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
+    
+    // Sample room data (in a real app, this would come from the API)
+    const room = {
+        id: roomId,
+        number: '201',
+        name: 'Deluxe Room',
+        price: 200
+    };
+    
+    // Update summary
+    document.getElementById('summary-room').textContent = `${room.name} (${room.number})`;
+    document.getElementById('summary-check-in').textContent = new Date(checkInDate).toLocaleDateString();
+    document.getElementById('summary-check-out').textContent = new Date(checkOutDate).toLocaleDateString();
+    document.getElementById('summary-guests').textContent = numGuests;
+    document.getElementById('summary-nights').textContent = nights;
+    document.getElementById('summary-rate').textContent = `$${room.price}/night`;
+    document.getElementById('summary-total').textContent = `$${(room.price * nights).toFixed(2)}`;
+}
+
+// Cancel booking
+document.getElementById('cancel-booking').addEventListener('click', function() {
+    document.getElementById('booking-summary-section').classList.add('hidden');
+    document.getElementById('available-rooms-section').classList.remove('hidden');
+});
+
+// Confirm booking
+document.getElementById('confirm-booking').addEventListener('click', function() {
+    alert('Booking confirmed! In a real application, this would submit the booking to the server.');
+    
+    // Reset form and hide sections
+    document.getElementById('booking-form').reset();
+    document.getElementById('available-rooms-section').classList.add('hidden');
+    document.getElementById('booking-summary-section').classList.add('hidden');
+});
+</script>
+{% endblock %}

@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+
+{% block title %}Process Payment - Hotel Management System{% endblock %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="md:flex md:items-center md:justify-between">
+        <div class="flex-1 min-w-0">
+            <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
+                Process Payment
+            </h2>
+        </div>
+    </div>
+
+    <div class="mt-6 bg-white shadow sm:rounded-lg">
+        <div class="px-4 py-5 sm:px-6">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">
+                Booking Details
+            </h3>
+        </div>
+        <div class="border-t border-gray-200">
+            <div class="px-4 py-5 sm:p-6">
+                <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
+                    <div class="sm:col-span-1">
+                        <dt class="text-sm font-medium text-gray-500">
+                            Booking ID
+                        </dt>
+                        <dd class="mt-1 text-sm text-gray-900" id="booking-id">
+                            <!-- Will be populated by JS -->
+                        </dd>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <dt class="text-sm font-medium text-gray-500">
+                            Guest
+                        </dt>
+                        <dd class="mt-1 text-sm text-gray-900" id="guest-name">
+                            <!-- Will be populated by JS -->
+                        </dd>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <dt class="text-sm font-medium text-gray-500">
+                            Room
+                        </dt>
+                        <dd class="mt-1 text-sm text-gray-900" id="room-details">
+                            <!-- Will be populated by JS -->
+                        </dd>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <dt class="text-sm font-medium text-gray-500">
+                            Stay Duration
+                        </dt>
+                        <dd class="mt-1 text-sm text-gray-900" id="stay-duration">
+                            <!-- Will be populated by JS -->
+                        </dd>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <dt class="text-sm font-medium text-gray-500">
+                            Number of Guests
+                        </dt>
+                        <dd class="mt-1 text-sm text-gray-900" id="num-guests">
+                            <!-- Will be populated by JS -->
+                        </dd>
+                    </div>
+                    <div class="sm:col-span-1">
+                        <dt class="text-sm font-medium text-gray-500">
+                            Total Amount
+                        </dt>
+                        <dd class="mt-1 text-sm text-gray-900" id="total-amount">
+                            <!-- Will be populated by JS -->
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-6 bg-white shadow sm:rounded-lg">
+        <div class="px-4 py-5 sm:px-6">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">
+                Payment Information
+            </h3>
+        </div>
+        <div class="border-t border-gray-200">
+            <form class="px-4 py-5 sm:p-6" id="payment-form">
+                <div class="grid grid-cols-6 gap-6">
+                    <div class="col-span-6">
+                        <label for="payment-method" class="block text-sm font-medium text-gray-700">Payment Method</label>
+                        <select id="payment-method" name="payment-method" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                            <option value="credit_card">Credit Card</option>
+                            <option value="debit_card">Debit Card</option>
+                            <option value="cash">Cash</option>
+                            <option value="bank_transfer">Bank Transfer</option>
+                        </select>
+                    </div>
+
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="card-number" class="block text-sm font-medium text-gray-700">Card Number</label>
+                        <input type="text" name="card-number" id="card-number" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="card-holder" class="block text-sm font-medium text-gray-700">Card Holder Name</label>
+                        <input type="text" name="card-holder" id="card-holder" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="expiry-date" class="block text-sm font-medium text-gray-700">Expiry Date</label>
+                        <input type="text" name="expiry-date" id="expiry-date" placeholder="MM/YY" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="cvv" class="block text-sm font-medium text-gray-700">CVV</label>
+                        <input type="text" name="cvv" id="cvv" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+
+                    <div class="col-span-6">
+                        <label for="amount" class="block text-sm font-medium text-gray-700">Amount</label>
+                        <input type="text" name="amount" id="amount" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" readonly>
+                    </div>
+                </div>
+                <div class="mt-5">
+                    <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Process Payment
+                    </button>
+                    <button type="button" onclick="window.history.back()" class="ml-3 inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+// This would typically fetch booking data from the API
+// For demonstration purposes, we'll simulate the data
+
+// Simulate booking data
+const bookingData = {
+    id: 12345,
+    guest: {
+        name: "John Doe"
+    },
+    room: {
+        number: "201",
+        name: "Deluxe Room"
+    },
+    checkInDate: "2025-12-10",
+    checkOutDate: "2025-12-15",
+    numGuests: 2,
+    totalPrice: 1000.00
+};
+
+// Populate booking details
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('booking-id').textContent = bookingData.id;
+    document.getElementById('guest-name').textContent = bookingData.guest.name;
+    document.getElementById('room-details').textContent = `${bookingData.room.name} (Room ${bookingData.room.number})`;
+    document.getElementById('stay-duration').textContent = `${new Date(bookingData.checkInDate).toLocaleDateString()} - ${new Date(bookingData.checkOutDate).toLocaleDateString()}`;
+    document.getElementById('num-guests').textContent = bookingData.numGuests;
+    document.getElementById('total-amount').textContent = `$${bookingData.totalPrice.toFixed(2)}`;
+    document.getElementById('amount').value = `$${bookingData.totalPrice.toFixed(2)}`;
+});
+
+// Handle form submission
+document.getElementById('payment-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // In a real application, you would process the payment here
+    alert('Payment processed successfully!');
+    
+    // Redirect back to booking details or dashboard
+    window.location.href = '/bookings/management/';
+});
+</script>
+{% endblock %}

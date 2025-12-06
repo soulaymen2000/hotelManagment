@@ -1,0 +1,256 @@
+{% extends 'base.html' %}
+
+{% block title %}Booking Details - Hotel Management System{% endblock %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="md:flex md:items-center md:justify-between">
+        <div class="flex-1 min-w-0">
+            <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
+                Booking Details
+            </h2>
+        </div>
+        <div class="mt-4 flex md:mt-0 md:ml-4">
+            <button onclick="window.history.back()" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                Back
+            </button>
+        </div>
+    </div>
+
+    <div class="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <!-- Booking Information -->
+        <div class="lg:col-span-2">
+            <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+                <div class="px-4 py-5 sm:px-6">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900">
+                        Booking Information
+                    </h3>
+                    <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                        Details about this booking.
+                    </p>
+                </div>
+                <div class="border-t border-gray-200">
+                    <dl>
+                        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Booking ID
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" id="booking-id">
+                                <!-- Will be populated by JS -->
+                            </dd>
+                        </div>
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Guest
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" id="guest-name">
+                                <!-- Will be populated by JS -->
+                            </dd>
+                        </div>
+                        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Room
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" id="room-details">
+                                <!-- Will be populated by JS -->
+                            </dd>
+                        </div>
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Check-in Date
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" id="check-in-date">
+                                <!-- Will be populated by JS -->
+                            </dd>
+                        </div>
+                        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Check-out Date
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" id="check-out-date">
+                                <!-- Will be populated by JS -->
+                            </dd>
+                        </div>
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Number of Guests
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" id="num-guests">
+                                <!-- Will be populated by JS -->
+                            </dd>
+                        </div>
+                        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Total Price
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" id="total-price">
+                                <!-- Will be populated by JS -->
+                            </dd>
+                        </div>
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Status
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" id="booking-status">
+                                <!-- Will be populated by JS -->
+                            </dd>
+                        </div>
+                        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                                Created At
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2" id="created-at">
+                                <!-- Will be populated by JS -->
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="lg:col-span-1">
+            <div class="bg-white shadow sm:rounded-lg">
+                <div class="px-4 py-5 sm:px-6">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900">
+                        Actions
+                    </h3>
+                </div>
+                <div class="border-t border-gray-200">
+                    <div class="px-4 py-5 sm:p-6">
+                        <div class="space-y-4">
+                            <button id="check-in-btn" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 hidden">
+                                Check In Guest
+                            </button>
+                            <button id="check-out-btn" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 hidden">
+                                Check Out Guest
+                            </button>
+                            <button id="cancel-booking-btn" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 hidden">
+                                Cancel Booking
+                            </button>
+                            <button id="edit-booking-btn" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 hidden">
+                                Edit Booking
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Information -->
+            <div class="mt-6 bg-white shadow sm:rounded-lg">
+                <div class="px-4 py-5 sm:px-6">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900">
+                        Payment Information
+                    </h3>
+                </div>
+                <div class="border-t border-gray-200">
+                    <div class="px-4 py-5 sm:p-6">
+                        <div class="space-y-4">
+                            <div class="flex justify-between">
+                                <span class="text-sm text-gray-500">Payment Status</span>
+                                <span class="text-sm font-medium text-gray-900" id="payment-status">Not Paid</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-sm text-gray-500">Amount Paid</span>
+                                <span class="text-sm font-medium text-gray-900" id="amount-paid">$0.00</span>
+                            </div>
+                            <button id="process-payment-btn" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                Process Payment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// This would typically fetch booking data from the API
+// For demonstration purposes, we'll simulate the data
+
+// Simulate booking data
+const bookingData = {
+    id: 12345,
+    guest: {
+        name: "John Doe",
+        email: "john.doe@example.com"
+    },
+    room: {
+        number: "201",
+        name: "Deluxe Room",
+        floor: 2
+    },
+    checkInDate: "2025-12-10",
+    checkOutDate: "2025-12-15",
+    numGuests: 2,
+    totalPrice: 1000.00,
+    status: "confirmed",
+    createdAt: "2025-12-01T14:30:00Z",
+    payment: {
+        status: "pending",
+        amountPaid: 0.00
+    }
+};
+
+// Populate booking details
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('booking-id').textContent = bookingData.id;
+    document.getElementById('guest-name').textContent = `${bookingData.guest.name} (${bookingData.guest.email})`;
+    document.getElementById('room-details').textContent = `${bookingData.room.name} (Room ${bookingData.room.number}, Floor ${bookingData.room.floor})`;
+    document.getElementById('check-in-date').textContent = new Date(bookingData.checkInDate).toLocaleDateString();
+    document.getElementById('check-out-date').textContent = new Date(bookingData.checkOutDate).toLocaleDateString();
+    document.getElementById('num-guests').textContent = bookingData.numGuests;
+    document.getElementById('total-price').textContent = `$${bookingData.totalPrice.toFixed(2)}`;
+    document.getElementById('created-at').textContent = new Date(bookingData.createdAt).toLocaleString();
+    
+    // Set status with appropriate styling
+    const statusElement = document.getElementById('booking-status');
+    statusElement.textContent = bookingData.status.charAt(0).toUpperCase() + bookingData.status.slice(1);
+    
+    // Add status-specific styling
+    let statusClass = '';
+    switch(bookingData.status) {
+        case 'pending':
+            statusClass = 'bg-yellow-100 text-yellow-800';
+            break;
+        case 'confirmed':
+            statusClass = 'bg-blue-100 text-blue-800';
+            break;
+        case 'checked_in':
+            statusClass = 'bg-green-100 text-green-800';
+            break;
+        case 'checked_out':
+            statusClass = 'bg-gray-100 text-gray-800';
+            break;
+        case 'cancelled':
+            statusClass = 'bg-red-100 text-red-800';
+            break;
+        default:
+            statusClass = 'bg-gray-100 text-gray-800';
+    }
+    statusElement.className = `px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${statusClass}`;
+    
+    // Populate payment information
+    document.getElementById('payment-status').textContent = bookingData.payment.status.charAt(0).toUpperCase() + bookingData.payment.status.slice(1);
+    document.getElementById('amount-paid').textContent = `$${bookingData.payment.amountPaid.toFixed(2)}`;
+    
+    // Show appropriate action buttons based on status
+    if (bookingData.status === 'confirmed') {
+        document.getElementById('check-in-btn').classList.remove('hidden');
+    } else if (bookingData.status === 'checked_in') {
+        document.getElementById('check-out-btn').classList.remove('hidden');
+    }
+    
+    // Show cancel button for pending or confirmed bookings
+    if (['pending', 'confirmed'].includes(bookingData.status)) {
+        document.getElementById('cancel-booking-btn').classList.remove('hidden');
+    }
+    
+    // Show edit button for pending or confirmed bookings
+    if (['pending', 'confirmed'].includes(bookingData.status)) {
+        document.getElementById('edit-booking-btn').classList.remove('hidden');
+    }
+});
+</script>
+{% endblock %}
