@@ -19137,3 +19137,408 @@ INFO 2025-12-07 19:56:12,703 autoreload 7792 22668 C:\Users\Soulayman\django\acc
 INFO 2025-12-07 19:56:13,151 autoreload 18636 23156 Watching for file changes with StatReloader
 INFO 2025-12-07 19:56:22,973 autoreload 18636 23156 C:\Users\Soulayman\django\accounts\views.py changed, reloading.
 INFO 2025-12-07 19:56:23,400 autoreload 13972 21160 Watching for file changes with StatReloader
+INFO 2025-12-07 19:57:06,104 basehttp 13972 4704 "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:57:06,113 basehttp 13972 4704 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 19:57:06,119 views 13972 4704 Template login view accessed
+INFO 2025-12-07 19:57:06,119 views 13972 4704 Request method: GET
+INFO 2025-12-07 19:57:06,119 views 13972 4704 User authenticated: False
+INFO 2025-12-07 19:57:06,119 views 13972 4704 Rendering login template
+INFO 2025-12-07 19:57:06,127 basehttp 13972 4704 "GET /accounts/login/ HTTP/1.1" 200 18692
+INFO 2025-12-07 19:57:22,920 views 13972 4704 Template login view accessed
+INFO 2025-12-07 19:57:22,921 views 13972 4704 Request method: POST
+INFO 2025-12-07 19:57:22,921 views 13972 4704 User authenticated: False
+INFO 2025-12-07 19:57:22,921 views 13972 4704 Processing POST login request
+INFO 2025-12-07 19:57:22,921 views 13972 4704 Request content type: multipart/form-data
+INFO 2025-12-07 19:57:22,922 views 13972 4704 Request body: b'------WebKitFormBoundary8IIkVJTi1W15rLNb\r\nContent-Disposition: form-data; name="email"\r\n\r\naziz@gmail.com\r\n------WebKitFormBoundary8IIkVJTi1W15rLNb\r\nContent-Disposition: form-data; name="password"\r\n\r\nazerty123456\r\n------WebKitFormBoundary8IIkVJTi1W15rLNb\r\nContent-Disposition: form-data; name="csrfmiddlewaretoken"\r\n\r\n4U10H5XiC9LEHuX9PXBDoTa4WXQ1Kf97psoYB5r7Rncku2JzBLZTW6A3Er24tlq4\r\n------WebKitFormBoundary8IIkVJTi1W15rLNb--\r\n'
+INFO 2025-12-07 19:57:22,923 views 13972 4704 Request POST data: <QueryDict: {'email': ['aziz@gmail.com'], 'password': ['azerty123456'], 'csrfmiddlewaretoken': ['4U10H5XiC9LEHuX9PXBDoTa4WXQ1Kf97psoYB5r7Rncku2JzBLZTW6A3Er24tlq4']}>
+INFO 2025-12-07 19:57:22,924 views 13972 4704 Not JSON data, using form data
+INFO 2025-12-07 19:57:22,924 views 13972 4704 Form data - Email: aziz@gmail.com
+INFO 2025-12-07 19:57:22,924 views 13972 4704 Attempting authentication for email: aziz@gmail.com
+INFO 2025-12-07 19:57:23,397 views 13972 4704 Authentication result: Success
+INFO 2025-12-07 19:57:23,408 views 13972 4704 User aziz@gmail.com logged in successfully
+INFO 2025-12-07 19:57:23,408 views 13972 4704 Returning redirect response for form submission
+INFO 2025-12-07 19:57:23,412 basehttp 13972 4704 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:57:23,422 basehttp 13972 4704 "GET /bookings/guest/create/ HTTP/1.1" 200 25239
+INFO 2025-12-07 19:57:23,432 views 13972 4704 Template login view accessed
+INFO 2025-12-07 19:57:23,432 views 13972 4704 Request method: GET
+INFO 2025-12-07 19:57:23,435 views 13972 4704 User authenticated: True
+INFO 2025-12-07 19:57:23,435 views 13972 4704 User already authenticated: aziz@gmail.com with role guest
+INFO 2025-12-07 19:57:23,436 basehttp 13972 4704 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:57:23,444 basehttp 13972 4704 "GET /bookings/guest/create/ HTTP/1.1" 200 25067
+INFO 2025-12-07 19:57:29,178 basehttp 13972 4704 "GET /bookings/guest/list/ HTTP/1.1" 200 18933
+INFO 2025-12-07 19:57:29,349 basehttp 13972 4704 "GET /api/bookings/guest/list/ HTTP/1.1" 200 569
+INFO 2025-12-07 19:57:37,048 basehttp 13972 4704 "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:57:37,053 basehttp 13972 4704 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 19:57:37,056 views 13972 4704 Template login view accessed
+INFO 2025-12-07 19:57:37,056 views 13972 4704 Request method: GET
+INFO 2025-12-07 19:57:37,056 views 13972 4704 User authenticated: False
+INFO 2025-12-07 19:57:37,057 views 13972 4704 Rendering login template
+INFO 2025-12-07 19:57:37,058 basehttp 13972 4704 "GET /accounts/login/ HTTP/1.1" 200 18692
+INFO 2025-12-07 19:57:47,703 views 13972 4704 Template login view accessed
+INFO 2025-12-07 19:57:47,703 views 13972 4704 Request method: POST
+INFO 2025-12-07 19:57:47,703 views 13972 4704 User authenticated: False
+INFO 2025-12-07 19:57:47,704 views 13972 4704 Processing POST login request
+INFO 2025-12-07 19:57:47,704 views 13972 4704 Request content type: multipart/form-data
+INFO 2025-12-07 19:57:47,704 views 13972 4704 Request body: b'------WebKitFormBoundarycnvn55Mrx1DAALz9\r\nContent-Disposition: form-data; name="email"\r\n\r\nadmin@hotel.com\r\n------WebKitFormBoundarycnvn55Mrx1DAALz9\r\nContent-Disposition: form-data; name="password"\r\n\r\nadmin123\r\n------WebKitFormBoundarycnvn55Mrx1DAALz9\r\nContent-Disposition: form-data; name="csrfmiddlewaretoken"\r\n\r\nTAqUBnWS5H3I815gVBuiC0TbB7P9sbS5PckEFE56IvAYlTNpMHveSt6m5ebd6zJV\r\n------WebKitFormBoundarycnvn55Mrx1DAALz9--\r\n'
+INFO 2025-12-07 19:57:47,705 views 13972 4704 Request POST data: <QueryDict: {'email': ['admin@hotel.com'], 'password': ['admin123'], 'csrfmiddlewaretoken': ['TAqUBnWS5H3I815gVBuiC0TbB7P9sbS5PckEFE56IvAYlTNpMHveSt6m5ebd6zJV']}>
+INFO 2025-12-07 19:57:47,705 views 13972 4704 Not JSON data, using form data
+INFO 2025-12-07 19:57:47,705 views 13972 4704 Form data - Email: admin@hotel.com
+INFO 2025-12-07 19:57:47,706 views 13972 4704 Attempting authentication for email: admin@hotel.com
+INFO 2025-12-07 19:57:48,174 views 13972 4704 Authentication result: Success
+INFO 2025-12-07 19:57:48,183 views 13972 4704 User admin@hotel.com logged in successfully
+INFO 2025-12-07 19:57:48,183 views 13972 4704 Returning redirect response for form submission
+INFO 2025-12-07 19:57:48,189 basehttp 13972 4704 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:57:48,196 basehttp 13972 4704 "GET /dashboards/admin/ HTTP/1.1" 200 27619
+INFO 2025-12-07 19:57:48,205 views 13972 4704 Template login view accessed
+INFO 2025-12-07 19:57:48,205 views 13972 4704 Request method: GET
+INFO 2025-12-07 19:57:48,208 views 13972 4704 User authenticated: True
+INFO 2025-12-07 19:57:48,209 views 13972 4704 User already authenticated: admin@hotel.com with role admin
+INFO 2025-12-07 19:57:48,209 basehttp 13972 4704 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:57:48,218 basehttp 13972 4704 "GET /dashboards/admin/ HTTP/1.1" 200 27447
+WARNING 2025-12-07 19:57:48,393 log 13972 16988 Not Found: /api/auth/admin/users/
+WARNING 2025-12-07 19:57:48,395 basehttp 13972 16988 "GET /api/auth/admin/users/ HTTP/1.1" 404 4278
+INFO 2025-12-07 19:57:48,400 basehttp 13972 4704 "GET /api/dashboard/stats/ HTTP/1.1" 200 262
+INFO 2025-12-07 19:59:57,443 basehttp 13972 4704 "GET /dashboards/admin/ HTTP/1.1" 200 27459
+INFO 2025-12-07 19:59:57,590 basehttp 13972 16988 "GET /api/accounts/admin/users/ HTTP/1.1" 200 531
+INFO 2025-12-07 19:59:57,614 basehttp 13972 4704 "GET /api/dashboard/stats/ HTTP/1.1" 200 262
+INFO 2025-12-07 20:00:09,629 basehttp 13972 4704 "DELETE /api/accounts/admin/users/4/ HTTP/1.1" 204 0
+INFO 2025-12-07 20:00:09,638 basehttp 13972 4704 "GET /api/accounts/admin/users/ HTTP/1.1" 200 396
+INFO 2025-12-07 20:00:09,646 basehttp 13972 16988 "GET /api/dashboard/stats/ HTTP/1.1" 200 262
+INFO 2025-12-07 20:00:14,753 basehttp 13972 16988 "PATCH /api/accounts/admin/users/5/ HTTP/1.1" 200 138
+INFO 2025-12-07 20:00:14,761 basehttp 13972 16988 "GET /api/accounts/admin/users/ HTTP/1.1" 200 400
+INFO 2025-12-07 20:00:14,768 basehttp 13972 4704 "GET /api/dashboard/stats/ HTTP/1.1" 200 262
+INFO 2025-12-07 20:00:45,710 basehttp 13972 4704 "PATCH /api/accounts/admin/users/5/ HTTP/1.1" 200 134
+INFO 2025-12-07 20:00:45,720 basehttp 13972 4704 "GET /api/accounts/admin/users/ HTTP/1.1" 200 396
+INFO 2025-12-07 20:00:45,727 basehttp 13972 16988 "GET /api/dashboard/stats/ HTTP/1.1" 200 262
+INFO 2025-12-07 20:01:29,222 basehttp 13972 16988 "GET /audit/ HTTP/1.1" 200 20818
+INFO 2025-12-07 20:16:09,752 basehttp 13972 4792 "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-12-07 20:16:09,756 basehttp 13972 4792 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 20:16:09,758 views 13972 4792 Template login view accessed
+INFO 2025-12-07 20:16:09,758 views 13972 4792 Request method: GET
+INFO 2025-12-07 20:16:09,759 views 13972 4792 User authenticated: False
+INFO 2025-12-07 20:16:09,759 views 13972 4792 Rendering login template
+INFO 2025-12-07 20:16:09,760 basehttp 13972 4792 "GET /accounts/login/ HTTP/1.1" 200 18692
+INFO 2025-12-07 20:16:14,387 views 13972 4792 Template login view accessed
+INFO 2025-12-07 20:16:14,387 views 13972 4792 Request method: POST
+INFO 2025-12-07 20:16:14,388 views 13972 4792 User authenticated: False
+INFO 2025-12-07 20:16:14,388 views 13972 4792 Processing POST login request
+INFO 2025-12-07 20:16:14,388 views 13972 4792 Request content type: multipart/form-data
+INFO 2025-12-07 20:16:14,388 views 13972 4792 Request body: b'------WebKitFormBoundaryjuwXNPOE3dUVbCct\r\nContent-Disposition: form-data; name="email"\r\n\r\nsou@gmail.com\r\n------WebKitFormBoundaryjuwXNPOE3dUVbCct\r\nContent-Disposition: form-data; name="password"\r\n\r\nazerty123456\r\n------WebKitFormBoundaryjuwXNPOE3dUVbCct\r\nContent-Disposition: form-data; name="csrfmiddlewaretoken"\r\n\r\nMN7Fcg61zGMNRkFUJfZjAziFhClLiitcUgcoW7aUbfWkQ7rvY2XY9xJcR2nAPMmi\r\n------WebKitFormBoundaryjuwXNPOE3dUVbCct--\r\n'
+INFO 2025-12-07 20:16:14,389 views 13972 4792 Request POST data: <QueryDict: {'email': ['sou@gmail.com'], 'password': ['azerty123456'], 'csrfmiddlewaretoken': ['MN7Fcg61zGMNRkFUJfZjAziFhClLiitcUgcoW7aUbfWkQ7rvY2XY9xJcR2nAPMmi']}>
+INFO 2025-12-07 20:16:14,389 views 13972 4792 Not JSON data, using form data
+INFO 2025-12-07 20:16:14,389 views 13972 4792 Form data - Email: sou@gmail.com
+INFO 2025-12-07 20:16:14,389 views 13972 4792 Attempting authentication for email: sou@gmail.com
+INFO 2025-12-07 20:16:14,853 views 13972 4792 Authentication result: Success
+INFO 2025-12-07 20:16:14,864 views 13972 4792 User sou@gmail.com logged in successfully
+INFO 2025-12-07 20:16:14,864 views 13972 4792 Returning redirect response for form submission
+INFO 2025-12-07 20:16:14,869 basehttp 13972 4792 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 20:16:14,877 basehttp 13972 4792 "GET /dashboards/reception/ HTTP/1.1" 200 26750
+INFO 2025-12-07 20:16:14,887 views 13972 4792 Template login view accessed
+INFO 2025-12-07 20:16:14,887 views 13972 4792 Request method: GET
+INFO 2025-12-07 20:16:14,890 views 13972 4792 User authenticated: True
+INFO 2025-12-07 20:16:14,890 views 13972 4792 User already authenticated: sou@gmail.com with role reception
+INFO 2025-12-07 20:16:14,891 basehttp 13972 4792 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 20:16:14,901 basehttp 13972 4792 "GET /dashboards/reception/ HTTP/1.1" 200 26578
+INFO 2025-12-07 20:16:15,068 basehttp 13972 25252 "GET /api/dashboard/charts/room-status/ HTTP/1.1" 200 99
+INFO 2025-12-07 20:16:15,071 basehttp 13972 23216 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 20:16:15,078 basehttp 13972 4792 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 20:16:45,177 basehttp 13972 23216 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 20:16:45,184 basehttp 13972 4792 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 20:17:15,077 basehttp 13972 23216 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 20:17:15,087 basehttp 13972 4792 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 20:17:28,762 basehttp 13972 4792 "GET /bookings/management/ HTTP/1.1" 200 25217
+INFO 2025-12-07 20:17:28,980 basehttp 13972 4792 "GET /api/bookings/reception/ HTTP/1.1" 200 569
+INFO 2025-12-07 20:17:47,075 basehttp 13972 4792 "GET /bookings/create/ HTTP/1.1" 200 22502
+INFO 2025-12-07 20:17:47,238 basehttp 13972 4792 "GET /api/rooms/ HTTP/1.1" 200 1312
+INFO 2025-12-07 20:17:55,899 basehttp 13972 4792 "GET /accounts/profile/ HTTP/1.1" 200 28910
+INFO 2025-12-07 20:17:56,036 basehttp 13972 4792 "GET /api/accounts/profile/ HTTP/1.1" 200 130
+INFO 2025-12-07 20:18:02,799 basehttp 13972 4792 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 20:18:02,803 views 13972 4792 Template login view accessed
+INFO 2025-12-07 20:18:02,803 views 13972 4792 Request method: GET
+INFO 2025-12-07 20:18:02,806 views 13972 4792 User authenticated: True
+INFO 2025-12-07 20:18:02,806 views 13972 4792 User already authenticated: sou@gmail.com with role reception
+INFO 2025-12-07 20:18:02,807 basehttp 13972 4792 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 20:18:02,819 basehttp 13972 4792 "GET /dashboards/reception/ HTTP/1.1" 200 26578
+INFO 2025-12-07 20:18:02,979 basehttp 13972 23216 "GET /api/dashboard/charts/room-status/ HTTP/1.1" 200 99
+INFO 2025-12-07 20:18:02,980 basehttp 13972 25252 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 20:18:02,998 basehttp 13972 4792 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 20:18:05,362 basehttp 13972 4792 "GET /bookings/management/ HTTP/1.1" 200 25217
+INFO 2025-12-07 20:18:05,524 basehttp 13972 4792 "GET /api/bookings/reception/ HTTP/1.1" 200 569
+INFO 2025-12-07 20:18:06,775 basehttp 13972 4792 "GET /bookings/create/ HTTP/1.1" 200 22502
+INFO 2025-12-07 20:18:06,892 basehttp 13972 4792 "GET /api/rooms/ HTTP/1.1" 200 1312
+INFO 2025-12-07 20:18:08,976 basehttp 13972 4792 "GET /bookings/management/ HTTP/1.1" 200 25217
+INFO 2025-12-07 20:18:09,126 basehttp 13972 4792 "GET /api/bookings/reception/ HTTP/1.1" 200 569
+INFO 2025-12-07 20:18:54,174 basehttp 13972 4792 "GET /rooms/management/ HTTP/1.1" 200 24909
+INFO 2025-12-07 20:18:54,340 basehttp 13972 4792 "GET /api/rooms/reception/ HTTP/1.1" 200 1312
+INFO 2025-12-07 20:19:07,808 basehttp 13972 4792 "GET /rooms/create/ HTTP/1.1" 200 20660
+INFO 2025-12-07 20:19:14,173 basehttp 13972 4792 "GET /rooms/management/ HTTP/1.1" 200 24909
+INFO 2025-12-07 20:19:14,324 basehttp 13972 4792 "GET /api/rooms/reception/ HTTP/1.1" 200 1312
+INFO 2025-12-07 20:19:16,919 basehttp 13972 4792 "GET /bookings/management/ HTTP/1.1" 200 25217
+INFO 2025-12-07 20:19:17,066 basehttp 13972 4792 "GET /api/bookings/reception/ HTTP/1.1" 200 569
+INFO 2025-12-07 20:19:29,362 basehttp 13972 4792 "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-12-07 20:19:29,367 basehttp 13972 4792 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 20:19:29,370 views 13972 4792 Template login view accessed
+INFO 2025-12-07 20:19:29,371 views 13972 4792 Request method: GET
+INFO 2025-12-07 20:19:29,371 views 13972 4792 User authenticated: False
+INFO 2025-12-07 20:19:29,371 views 13972 4792 Rendering login template
+INFO 2025-12-07 20:19:29,372 basehttp 13972 4792 "GET /accounts/login/ HTTP/1.1" 200 18692
+INFO 2025-12-07 20:19:33,833 views 13972 4792 Template login view accessed
+INFO 2025-12-07 20:19:33,833 views 13972 4792 Request method: POST
+INFO 2025-12-07 20:19:33,834 views 13972 4792 User authenticated: False
+INFO 2025-12-07 20:19:33,834 views 13972 4792 Processing POST login request
+INFO 2025-12-07 20:19:33,834 views 13972 4792 Request content type: multipart/form-data
+INFO 2025-12-07 20:19:33,834 views 13972 4792 Request body: b'------WebKitFormBoundaryYFANc2hz1nHEg4wf\r\nContent-Disposition: form-data; name="email"\r\n\r\nadmin@hotel.com\r\n------WebKitFormBoundaryYFANc2hz1nHEg4wf\r\nContent-Disposition: form-data; name="password"\r\n\r\nadmin123\r\n------WebKitFormBoundaryYFANc2hz1nHEg4wf\r\nContent-Disposition: form-data; name="csrfmiddlewaretoken"\r\n\r\nR6IKJWUJk4Op3Aao4MJtbeMbmzyI7S0yCx4RmBliWRNVsWmDnOUxKDmqi5qCDNmW\r\n------WebKitFormBoundaryYFANc2hz1nHEg4wf--\r\n'
+INFO 2025-12-07 20:19:33,835 views 13972 4792 Request POST data: <QueryDict: {'email': ['admin@hotel.com'], 'password': ['admin123'], 'csrfmiddlewaretoken': ['R6IKJWUJk4Op3Aao4MJtbeMbmzyI7S0yCx4RmBliWRNVsWmDnOUxKDmqi5qCDNmW']}>
+INFO 2025-12-07 20:19:33,835 views 13972 4792 Not JSON data, using form data
+INFO 2025-12-07 20:19:33,835 views 13972 4792 Form data - Email: admin@hotel.com
+INFO 2025-12-07 20:19:33,835 views 13972 4792 Attempting authentication for email: admin@hotel.com
+INFO 2025-12-07 20:19:34,280 views 13972 4792 Authentication result: Success
+INFO 2025-12-07 20:19:34,293 views 13972 4792 User admin@hotel.com logged in successfully
+INFO 2025-12-07 20:19:34,293 views 13972 4792 Returning redirect response for form submission
+INFO 2025-12-07 20:19:34,299 basehttp 13972 4792 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 20:19:34,306 basehttp 13972 4792 "GET /dashboards/admin/ HTTP/1.1" 200 30344
+INFO 2025-12-07 20:19:34,316 views 13972 4792 Template login view accessed
+INFO 2025-12-07 20:19:34,316 views 13972 4792 Request method: GET
+INFO 2025-12-07 20:19:34,318 views 13972 4792 User authenticated: True
+INFO 2025-12-07 20:19:34,319 views 13972 4792 User already authenticated: admin@hotel.com with role admin
+INFO 2025-12-07 20:19:34,319 basehttp 13972 4792 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 20:19:34,326 basehttp 13972 4792 "GET /dashboards/admin/ HTTP/1.1" 200 30172
+INFO 2025-12-07 20:19:34,418 basehttp 13972 25252 "GET /api/accounts/admin/users/ HTTP/1.1" 200 396
+INFO 2025-12-07 20:19:34,426 basehttp 13972 4792 "GET /api/dashboard/stats/ HTTP/1.1" 200 262
+INFO 2025-12-07 20:19:55,184 basehttp 13972 4792 "GET /audit/ HTTP/1.1" 200 23519
+INFO 2025-12-07 20:21:20,296 basehttp 13972 4792 "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-12-07 20:21:20,306 basehttp 13972 4792 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 20:21:20,312 views 13972 4792 Template login view accessed
+INFO 2025-12-07 20:21:20,313 views 13972 4792 Request method: GET
+INFO 2025-12-07 20:21:20,313 views 13972 4792 User authenticated: False
+INFO 2025-12-07 20:21:20,313 views 13972 4792 Rendering login template
+INFO 2025-12-07 20:21:20,315 basehttp 13972 4792 "GET /accounts/login/ HTTP/1.1" 200 18692
+INFO 2025-12-07 20:21:31,454 views 13972 4792 Template login view accessed
+INFO 2025-12-07 20:21:31,454 views 13972 4792 Request method: POST
+INFO 2025-12-07 20:21:31,454 views 13972 4792 User authenticated: False
+INFO 2025-12-07 20:21:31,455 views 13972 4792 Processing POST login request
+INFO 2025-12-07 20:21:31,455 views 13972 4792 Request content type: multipart/form-data
+INFO 2025-12-07 20:21:31,455 views 13972 4792 Request body: b'------WebKitFormBoundaryfNwGoJaYVAUdAsOU\r\nContent-Disposition: form-data; name="email"\r\n\r\naziz@gmail.com\r\n------WebKitFormBoundaryfNwGoJaYVAUdAsOU\r\nContent-Disposition: form-data; name="password"\r\n\r\nazerty123456\r\n------WebKitFormBoundaryfNwGoJaYVAUdAsOU\r\nContent-Disposition: form-data; name="csrfmiddlewaretoken"\r\n\r\n5ao8RYRgvgFu5QbeWgT4EIKDoMSqd5sPyIPv5Swjzijj7kWkWL5TYP9T0DqaiDdF\r\n------WebKitFormBoundaryfNwGoJaYVAUdAsOU--\r\n'
+INFO 2025-12-07 20:21:31,455 views 13972 4792 Request POST data: <QueryDict: {'email': ['aziz@gmail.com'], 'password': ['azerty123456'], 'csrfmiddlewaretoken': ['5ao8RYRgvgFu5QbeWgT4EIKDoMSqd5sPyIPv5Swjzijj7kWkWL5TYP9T0DqaiDdF']}>
+INFO 2025-12-07 20:21:31,456 views 13972 4792 Not JSON data, using form data
+INFO 2025-12-07 20:21:31,456 views 13972 4792 Form data - Email: aziz@gmail.com
+INFO 2025-12-07 20:21:31,456 views 13972 4792 Attempting authentication for email: aziz@gmail.com
+INFO 2025-12-07 20:21:31,899 views 13972 4792 Authentication result: Success
+INFO 2025-12-07 20:21:31,910 views 13972 4792 User aziz@gmail.com logged in successfully
+INFO 2025-12-07 20:21:31,910 views 13972 4792 Returning redirect response for form submission
+INFO 2025-12-07 20:21:31,916 basehttp 13972 4792 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 20:21:31,925 basehttp 13972 4792 "GET /bookings/guest/create/ HTTP/1.1" 200 27940
+INFO 2025-12-07 20:21:31,935 views 13972 4792 Template login view accessed
+INFO 2025-12-07 20:21:31,935 views 13972 4792 Request method: GET
+INFO 2025-12-07 20:21:31,939 views 13972 4792 User authenticated: True
+INFO 2025-12-07 20:21:31,939 views 13972 4792 User already authenticated: aziz@gmail.com with role guest
+INFO 2025-12-07 20:21:31,940 basehttp 13972 4792 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 20:21:31,949 basehttp 13972 4792 "GET /bookings/guest/create/ HTTP/1.1" 200 27768
+INFO 2025-12-07 20:21:37,987 basehttp 13972 4792 "GET /bookings/guest/list/ HTTP/1.1" 200 21660
+INFO 2025-12-07 20:21:38,154 basehttp 13972 4792 "GET /api/bookings/guest/list/ HTTP/1.1" 200 569
+INFO 2025-12-07 20:21:45,590 basehttp 13972 4792 "GET /bookings/guest/create/ HTTP/1.1" 200 27768
+INFO 2025-12-07 20:22:24,836 basehttp 13972 4792 "GET /bookings/guest/list/ HTTP/1.1" 200 21660
+INFO 2025-12-07 20:22:25,023 basehttp 13972 4792 "GET /api/bookings/guest/list/ HTTP/1.1" 200 569
+INFO 2025-12-07 20:22:28,005 basehttp 13972 4792 "GET /bookings/guest/create/ HTTP/1.1" 200 27768
+INFO 2025-12-07 20:22:32,010 basehttp 13972 4792 "GET /bookings/guest/list/ HTTP/1.1" 200 21660
+INFO 2025-12-07 20:22:32,158 basehttp 13972 4792 "GET /api/bookings/guest/list/ HTTP/1.1" 200 569
+INFO 2025-12-07 20:22:33,645 basehttp 13972 4792 "GET /bookings/guest/create/ HTTP/1.1" 200 27768
+INFO 2025-12-07 20:25:44,529 autoreload 13972 21160 C:\Users\Soulayman\django\rooms\api_views.py changed, reloading.
+INFO 2025-12-07 20:25:45,028 autoreload 25068 3064 Watching for file changes with StatReloader
+INFO 2025-12-07 20:28:47,744 autoreload 25068 3064 C:\Users\Soulayman\django\hotel_management\urls.py changed, reloading.
+INFO 2025-12-07 20:28:48,209 autoreload 23200 19888 Watching for file changes with StatReloader
+INFO 2025-12-07 20:32:13,277 basehttp 23200 13264 "GET /bookings/guest/create/ HTTP/1.1" 200 29886
+INFO 2025-12-07 20:32:32,519 basehttp 23200 13264 "GET /api/rooms/?check_in_date=2025-12-10&check_out_date=2025-12-17 HTTP/1.1" 200 1312
+INFO 2025-12-07 20:32:46,790 basehttp 23200 13264 "GET /bookings/guest/create/ HTTP/1.1" 200 29886
+INFO 2025-12-07 20:33:02,871 basehttp 23200 13264 "GET /api/rooms/?check_in_date=2025-12-10&check_out_date=2025-12-17 HTTP/1.1" 200 1312
+INFO 2025-12-07 20:33:12,369 basehttp 23200 13264 "POST /api/bookings/guest/create/ HTTP/1.1" 201 84
+INFO 2025-12-07 20:33:17,655 basehttp 23200 13264 "GET /bookings/guest/list/ HTTP/1.1" 200 21820
+INFO 2025-12-07 20:33:17,871 basehttp 23200 13264 "GET /api/bookings/guest/list/ HTTP/1.1" 200 850
+INFO 2025-12-07 20:33:29,144 basehttp 23200 13264 "GET /bookings/guest/list/ HTTP/1.1" 200 21820
+INFO 2025-12-07 20:33:29,321 basehttp 23200 13264 "GET /api/bookings/guest/list/ HTTP/1.1" 200 850
+INFO 2025-12-07 20:33:30,922 basehttp 23200 13264 "GET /bookings/guest/create/ HTTP/1.1" 200 29886
+INFO 2025-12-07 20:33:32,199 basehttp 23200 13264 "GET /bookings/guest/list/ HTTP/1.1" 200 21820
+INFO 2025-12-07 20:33:32,305 basehttp 23200 13264 "GET /api/bookings/guest/list/ HTTP/1.1" 200 850
+INFO 2025-12-07 20:33:33,953 basehttp 23200 13264 "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-12-07 20:33:33,957 basehttp 23200 13264 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 20:33:33,960 views 23200 13264 Template login view accessed
+INFO 2025-12-07 20:33:33,961 views 23200 13264 Request method: GET
+INFO 2025-12-07 20:33:33,961 views 23200 13264 User authenticated: False
+INFO 2025-12-07 20:33:33,961 views 23200 13264 Rendering login template
+INFO 2025-12-07 20:33:33,963 basehttp 23200 13264 "GET /accounts/login/ HTTP/1.1" 200 18692
+INFO 2025-12-07 20:33:38,143 views 23200 13264 Template login view accessed
+INFO 2025-12-07 20:33:38,144 views 23200 13264 Request method: POST
+INFO 2025-12-07 20:33:38,144 views 23200 13264 User authenticated: False
+INFO 2025-12-07 20:33:38,144 views 23200 13264 Processing POST login request
+INFO 2025-12-07 20:33:38,144 views 23200 13264 Request content type: multipart/form-data
+INFO 2025-12-07 20:33:38,145 views 23200 13264 Request body: b'------WebKitFormBoundaryXLZeYacSnYOu3kzj\r\nContent-Disposition: form-data; name="email"\r\n\r\nsou@gmail.com\r\n------WebKitFormBoundaryXLZeYacSnYOu3kzj\r\nContent-Disposition: form-data; name="password"\r\n\r\nazerty123456\r\n------WebKitFormBoundaryXLZeYacSnYOu3kzj\r\nContent-Disposition: form-data; name="csrfmiddlewaretoken"\r\n\r\n4UlDtYelt1DfPtLU35kNJZ5CrZFFnnpTBOe0dd7e8DznJRcurzNwyweo6Y3j1N2z\r\n------WebKitFormBoundaryXLZeYacSnYOu3kzj--\r\n'
+INFO 2025-12-07 20:33:38,145 views 23200 13264 Request POST data: <QueryDict: {'email': ['sou@gmail.com'], 'password': ['azerty123456'], 'csrfmiddlewaretoken': ['4UlDtYelt1DfPtLU35kNJZ5CrZFFnnpTBOe0dd7e8DznJRcurzNwyweo6Y3j1N2z']}>
+INFO 2025-12-07 20:33:38,146 views 23200 13264 Not JSON data, using form data
+INFO 2025-12-07 20:33:38,146 views 23200 13264 Form data - Email: sou@gmail.com
+INFO 2025-12-07 20:33:38,146 views 23200 13264 Attempting authentication for email: sou@gmail.com
+INFO 2025-12-07 20:33:38,651 views 23200 13264 Authentication result: Success
+INFO 2025-12-07 20:33:38,660 views 23200 13264 User sou@gmail.com logged in successfully
+INFO 2025-12-07 20:33:38,660 views 23200 13264 Returning redirect response for form submission
+INFO 2025-12-07 20:33:38,665 basehttp 23200 13264 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 20:33:38,673 basehttp 23200 13264 "GET /dashboards/reception/ HTTP/1.1" 200 26910
+INFO 2025-12-07 20:33:38,683 views 23200 13264 Template login view accessed
+INFO 2025-12-07 20:33:38,684 views 23200 13264 Request method: GET
+INFO 2025-12-07 20:33:38,687 views 23200 13264 User authenticated: True
+INFO 2025-12-07 20:33:38,687 views 23200 13264 User already authenticated: sou@gmail.com with role reception
+INFO 2025-12-07 20:33:38,688 basehttp 23200 13264 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 20:33:38,696 basehttp 23200 13264 "GET /dashboards/reception/ HTTP/1.1" 200 26738
+INFO 2025-12-07 20:33:38,799 basehttp 23200 9680 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 443
+INFO 2025-12-07 20:33:38,803 basehttp 23200 25596 "GET /api/dashboard/charts/room-status/ HTTP/1.1" 200 101
+INFO 2025-12-07 20:33:38,830 basehttp 23200 13264 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 20:33:50,011 basehttp 23200 13264 "GET /bookings/management/ HTTP/1.1" 200 28939
+INFO 2025-12-07 20:33:50,148 basehttp 23200 13264 "GET /api/bookings/reception/ HTTP/1.1" 200 850
+INFO 2025-12-07 20:33:53,716 basehttp 23200 13264 "GET /bookings/3/ HTTP/1.1" 200 25882
+INFO 2025-12-07 20:34:04,323 basehttp 23200 13264 "GET /bookings/3/ HTTP/1.1" 200 25882
+INFO 2025-12-07 20:34:23,948 basehttp 23200 13264 "GET /bookings/3/ HTTP/1.1" 200 25882
+INFO 2025-12-07 20:34:35,179 basehttp 23200 13264 "GET /bookings/3/ HTTP/1.1" 200 25882
+INFO 2025-12-07 20:35:33,148 basehttp 23200 13264 "GET /bookings/management/ HTTP/1.1" 200 28939
+INFO 2025-12-07 20:35:33,368 basehttp 23200 13264 "GET /api/bookings/reception/ HTTP/1.1" 200 850
+INFO 2025-12-07 20:35:37,176 basehttp 23200 13264 "GET /bookings/3/ HTTP/1.1" 200 25882
+INFO 2025-12-07 20:35:43,726 basehttp 23200 13264 "GET /accounts/profile/ HTTP/1.1" 200 29070
+INFO 2025-12-07 20:35:43,883 basehttp 23200 13264 "GET /api/accounts/profile/ HTTP/1.1" 200 130
+INFO 2025-12-07 20:35:46,013 basehttp 23200 13264 "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-12-07 20:35:46,017 basehttp 23200 13264 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 20:35:46,020 views 23200 13264 Template login view accessed
+INFO 2025-12-07 20:35:46,020 views 23200 13264 Request method: GET
+INFO 2025-12-07 20:35:46,021 views 23200 13264 User authenticated: False
+INFO 2025-12-07 20:35:46,021 views 23200 13264 Rendering login template
+INFO 2025-12-07 20:35:46,022 basehttp 23200 13264 "GET /accounts/login/ HTTP/1.1" 200 18692
+INFO 2025-12-07 20:35:50,305 views 23200 13264 Template login view accessed
+INFO 2025-12-07 20:35:50,305 views 23200 13264 Request method: POST
+INFO 2025-12-07 20:35:50,306 views 23200 13264 User authenticated: False
+INFO 2025-12-07 20:35:50,306 views 23200 13264 Processing POST login request
+INFO 2025-12-07 20:35:50,306 views 23200 13264 Request content type: multipart/form-data
+INFO 2025-12-07 20:35:50,306 views 23200 13264 Request body: b'------WebKitFormBoundaryhun1mHKddAcRmdrp\r\nContent-Disposition: form-data; name="email"\r\n\r\nadmin@hotel.com\r\n------WebKitFormBoundaryhun1mHKddAcRmdrp\r\nContent-Disposition: form-data; name="password"\r\n\r\nadmin123\r\n------WebKitFormBoundaryhun1mHKddAcRmdrp\r\nContent-Disposition: form-data; name="csrfmiddlewaretoken"\r\n\r\nhhd88nthLyZyq9EY3GgjE4F8SDGPJwkGp1oniSlsLDpf4CsR1D4dcORkd2HbWdAe\r\n------WebKitFormBoundaryhun1mHKddAcRmdrp--\r\n'
+INFO 2025-12-07 20:35:50,307 views 23200 13264 Request POST data: <QueryDict: {'email': ['admin@hotel.com'], 'password': ['admin123'], 'csrfmiddlewaretoken': ['hhd88nthLyZyq9EY3GgjE4F8SDGPJwkGp1oniSlsLDpf4CsR1D4dcORkd2HbWdAe']}>
+INFO 2025-12-07 20:35:50,307 views 23200 13264 Not JSON data, using form data
+INFO 2025-12-07 20:35:50,307 views 23200 13264 Form data - Email: admin@hotel.com
+INFO 2025-12-07 20:35:50,307 views 23200 13264 Attempting authentication for email: admin@hotel.com
+INFO 2025-12-07 20:35:50,813 views 23200 13264 Authentication result: Success
+INFO 2025-12-07 20:35:50,825 views 23200 13264 User admin@hotel.com logged in successfully
+INFO 2025-12-07 20:35:50,825 views 23200 13264 Returning redirect response for form submission
+INFO 2025-12-07 20:35:50,832 basehttp 23200 13264 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 20:35:50,840 basehttp 23200 13264 "GET /dashboards/admin/ HTTP/1.1" 200 30504
+INFO 2025-12-07 20:35:50,850 views 23200 13264 Template login view accessed
+INFO 2025-12-07 20:35:50,850 views 23200 13264 Request method: GET
+INFO 2025-12-07 20:35:50,853 views 23200 13264 User authenticated: True
+INFO 2025-12-07 20:35:50,853 views 23200 13264 User already authenticated: admin@hotel.com with role admin
+INFO 2025-12-07 20:35:50,854 basehttp 23200 13264 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 20:35:50,863 basehttp 23200 13264 "GET /dashboards/admin/ HTTP/1.1" 200 30332
+INFO 2025-12-07 20:35:50,987 basehttp 23200 25596 "GET /api/accounts/admin/users/ HTTP/1.1" 200 396
+INFO 2025-12-07 20:35:50,992 basehttp 23200 13264 "GET /api/dashboard/stats/ HTTP/1.1" 200 262
+INFO 2025-12-07 20:35:54,217 basehttp 23200 13264 "GET /audit/ HTTP/1.1" 200 25176
+INFO 2025-12-07 20:36:10,221 basehttp 23200 13264 "GET /audit/ HTTP/1.1" 200 25176
+INFO 2025-12-07 20:36:57,202 basehttp 23200 13264 "GET /audit/ HTTP/1.1" 200 25176
+INFO 2025-12-07 20:37:27,607 autoreload 23200 19888 C:\Users\Soulayman\django\bookings\serializers.py changed, reloading.
+INFO 2025-12-07 20:37:28,277 autoreload 6540 10128 Watching for file changes with StatReloader
+INFO 2025-12-07 20:38:15,171 basehttp 6540 16480 "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-12-07 20:38:15,181 basehttp 6540 16480 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 20:38:15,186 views 6540 16480 Template login view accessed
+INFO 2025-12-07 20:38:15,186 views 6540 16480 Request method: GET
+INFO 2025-12-07 20:38:15,187 views 6540 16480 User authenticated: False
+INFO 2025-12-07 20:38:15,187 views 6540 16480 Rendering login template
+INFO 2025-12-07 20:38:15,193 basehttp 6540 16480 "GET /accounts/login/ HTTP/1.1" 200 18692
+INFO 2025-12-07 20:38:18,989 views 6540 16480 Template login view accessed
+INFO 2025-12-07 20:38:18,989 views 6540 16480 Request method: POST
+INFO 2025-12-07 20:38:18,989 views 6540 16480 User authenticated: False
+INFO 2025-12-07 20:38:18,990 views 6540 16480 Processing POST login request
+INFO 2025-12-07 20:38:18,990 views 6540 16480 Request content type: multipart/form-data
+INFO 2025-12-07 20:38:18,991 views 6540 16480 Request body: b'------WebKitFormBoundaryyIZTlN7FPd4fDkmF\r\nContent-Disposition: form-data; name="email"\r\n\r\nsou@gmail.com\r\n------WebKitFormBoundaryyIZTlN7FPd4fDkmF\r\nContent-Disposition: form-data; name="password"\r\n\r\nazerty123456\r\n------WebKitFormBoundaryyIZTlN7FPd4fDkmF\r\nContent-Disposition: form-data; name="csrfmiddlewaretoken"\r\n\r\nbTGzceIOZuTE0WGIBSQcnV24dsz12mV10M41ITIftm7NS6QoJ1z4hUtju5sneMWF\r\n------WebKitFormBoundaryyIZTlN7FPd4fDkmF--\r\n'
+INFO 2025-12-07 20:38:18,991 views 6540 16480 Request POST data: <QueryDict: {'email': ['sou@gmail.com'], 'password': ['azerty123456'], 'csrfmiddlewaretoken': ['bTGzceIOZuTE0WGIBSQcnV24dsz12mV10M41ITIftm7NS6QoJ1z4hUtju5sneMWF']}>
+INFO 2025-12-07 20:38:18,992 views 6540 16480 Not JSON data, using form data
+INFO 2025-12-07 20:38:18,992 views 6540 16480 Form data - Email: sou@gmail.com
+INFO 2025-12-07 20:38:18,992 views 6540 16480 Attempting authentication for email: sou@gmail.com
+INFO 2025-12-07 20:38:19,466 views 6540 16480 Authentication result: Success
+INFO 2025-12-07 20:38:19,476 views 6540 16480 User sou@gmail.com logged in successfully
+INFO 2025-12-07 20:38:19,476 views 6540 16480 Returning redirect response for form submission
+INFO 2025-12-07 20:38:19,482 basehttp 6540 16480 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 20:38:19,492 basehttp 6540 16480 "GET /dashboards/reception/ HTTP/1.1" 200 26910
+INFO 2025-12-07 20:38:19,502 views 6540 16480 Template login view accessed
+INFO 2025-12-07 20:38:19,502 views 6540 16480 Request method: GET
+INFO 2025-12-07 20:38:19,505 views 6540 16480 User authenticated: True
+INFO 2025-12-07 20:38:19,505 views 6540 16480 User already authenticated: sou@gmail.com with role reception
+INFO 2025-12-07 20:38:19,506 basehttp 6540 16480 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 20:38:19,515 basehttp 6540 16480 "GET /dashboards/reception/ HTTP/1.1" 200 26738
+INFO 2025-12-07 20:38:19,689 basehttp 6540 19372 "GET /api/dashboard/charts/room-status/ HTTP/1.1" 200 101
+INFO 2025-12-07 20:38:19,697 basehttp 6540 19644 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 448
+INFO 2025-12-07 20:38:19,706 basehttp 6540 16480 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 20:38:21,955 basehttp 6540 16480 "GET /bookings/management/ HTTP/1.1" 200 28939
+INFO 2025-12-07 20:38:22,143 basehttp 6540 16480 "GET /api/bookings/reception/ HTTP/1.1" 200 961
+INFO 2025-12-07 20:38:25,509 basehttp 6540 16480 "GET /bookings/3/ HTTP/1.1" 200 29441
+INFO 2025-12-07 20:38:25,671 basehttp 6540 16480 "GET /api/bookings/reception/3/ HTTP/1.1" 200 317
+INFO 2025-12-07 20:39:08,499 basehttp 6540 16480 "GET /bookings/3/ HTTP/1.1" 200 29441
+INFO 2025-12-07 20:39:08,660 basehttp 6540 16480 "GET /api/bookings/reception/3/ HTTP/1.1" 200 317
+INFO 2025-12-07 20:39:13,743 basehttp 6540 16480 "GET /bookings/3/ HTTP/1.1" 200 29441
+INFO 2025-12-07 20:39:13,907 basehttp 6540 16480 "GET /api/bookings/reception/3/ HTTP/1.1" 200 317
+ERROR 2025-12-07 20:47:14,680 log 6540 15736 Internal Server Error: /bookings/3/
+Traceback (most recent call last):
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Soulayman\django\bookings\views.py", line 27, in booking_detail
+    return render(request, 'bookings/booking_detail.html')
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Soulayman\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 228, in do_block
+    raise TemplateSyntaxError(
+        "'%s' tag with name '%s' appears more than once" % (bits[0], block_name)
+    )
+django.template.exceptions.TemplateSyntaxError: 'block' tag with name 'title' appears more than once
+ERROR 2025-12-07 20:47:14,686 basehttp 6540 15736 "GET /bookings/3/ HTTP/1.1" 500 206479
+INFO 2025-12-07 20:49:17,619 autoreload 20788 1372 Watching for file changes with StatReloader

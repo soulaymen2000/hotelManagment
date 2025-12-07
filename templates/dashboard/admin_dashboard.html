@@ -72,33 +72,33 @@
         </div>
 
         <!-- User Management Table -->
-        <div class="bg-white shadow-soft rounded-xl overflow-hidden card">
-            <div class="px-6 py-5 border-b border-gray-200 table-header card-header">
+        <div class="rounded-xl overflow-hidden card">
+            <div class="px-6 py-5 border-b border-gray-200/30 table-header card-header">
                 <h3 class="text-lg font-medium text-gray-900">All Users</h3>
-                <p class="mt-1 text-sm text-gray-500">Manage user roles and permissions</p>
+                <p class="mt-1 text-sm text-gray-600">Manage user roles and permissions</p>
             </div>
             <div class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-gray-200 table">
-                    <thead class="bg-gray-50">
+                <table class="min-w-full divide-y divide-gray-200/30 table">
+                    <thead class="bg-white/10">
                         <tr>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
                                 User</th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
                                 Email</th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
                                 Role</th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
                                 Phone</th>
                             <th scope="col"
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
                                 Actions</th>
                         </tr>
                     </thead>
-                    <tbody class="bg-white divide-y divide-gray-200" id="users-table-body">
+                    <tbody class="divide-y divide-gray-200/30" id="users-table-body">
                         <!-- User rows will be populated by JavaScript -->
                     </tbody>
                 </table>
@@ -221,7 +221,7 @@
 
         users.forEach(user => {
             const row = document.createElement('tr');
-            row.className = 'table-row hover:bg-gray-50';
+            row.className = 'table-row hover:bg-white/20 transition-colors duration-150';
 
             // Determine role badge color
             let roleBadgeClass = '';

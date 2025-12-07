@@ -27,17 +27,21 @@
                 <div class="grid grid-cols-6 gap-6">
                     <div class="col-span-6 sm:col-span-3">
                         <label for="check-in-date" class="block text-sm font-medium text-gray-700">Check-in Date</label>
-                        <input type="date" name="check-in-date" id="check-in-date" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        <input type="date" name="check-in-date" id="check-in-date"
+                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
 
                     <div class="col-span-6 sm:col-span-3">
-                        <label for="check-out-date" class="block text-sm font-medium text-gray-700">Check-out Date</label>
-                        <input type="date" name="check-out-date" id="check-out-date" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        <label for="check-out-date" class="block text-sm font-medium text-gray-700">Check-out
+                            Date</label>
+                        <input type="date" name="check-out-date" id="check-out-date"
+                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
 
                     <div class="col-span-6 sm:col-span-3">
                         <label for="num-guests" class="block text-sm font-medium text-gray-700">Number of Guests</label>
-                        <select id="num-guests" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                        <select id="num-guests"
+                            class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
                             <option value="1">1 Guest</option>
                             <option value="2">2 Guests</option>
                             <option value="3">3 Guests</option>
@@ -49,7 +53,8 @@
 
                     <div class="col-span-6 sm:col-span-3">
                         <label for="room-type" class="block text-sm font-medium text-gray-700">Room Type</label>
-                        <select id="room-type" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                        <select id="room-type"
+                            class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
                             <option value="">Select a room type</option>
                             <option value="single">Single Room</option>
                             <option value="double">Double Room</option>
@@ -60,12 +65,15 @@
                     </div>
 
                     <div class="col-span-6">
-                        <label for="special-requests" class="block text-sm font-medium text-gray-700">Special Requests</label>
-                        <textarea id="special-requests" name="special-requests" rows="3" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"></textarea>
+                        <label for="special-requests" class="block text-sm font-medium text-gray-700">Special
+                            Requests</label>
+                        <textarea id="special-requests" name="special-requests" rows="3"
+                            class="shadow-sm focus:ring-blue-500 focus:border-blue-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"></textarea>
                     </div>
                 </div>
                 <div class="mt-5">
-                    <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    <button type="submit"
+                        class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                         Check Availability
                     </button>
                 </div>
@@ -89,7 +97,8 @@
                     <!-- Rooms will be populated by JavaScript -->
                 </div>
                 <div class="mt-6">
-                    <button id="book-selected-room" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 hidden">
+                    <button id="book-selected-room"
+                        class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 hidden">
                         Book Selected Room
                     </button>
                 </div>
@@ -147,10 +156,12 @@
                     </div>
                 </div>
                 <div class="mt-6 flex space-x-3">
-                    <button id="confirm-booking" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    <button id="confirm-booking"
+                        class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                         Confirm Booking
                     </button>
-                    <button id="cancel-booking" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    <button id="cancel-booking"
+                        class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                         Cancel
                     </button>
                 </div>
@@ -160,144 +171,185 @@
 </div>
 
 <script>
-// Set minimum check-in date to today
-const today = new Date().toISOString().split('T')[0];
-document.getElementById('check-in-date').min = today;
-document.getElementById('check-out-date').min = today;
+    // Set minimum check-in date to today
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('check-in-date').min = today;
+    document.getElementById('check-out-date').min = today;
 
-// Handle form submission
-document.getElementById('booking-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form values
-    const checkInDate = document.getElementById('check-in-date').value;
-    const checkOutDate = document.getElementById('check-out-date').value;
-    const numGuests = document.getElementById('num-guests').value;
-    const roomType = document.getElementById('room-type').value;
-    
-    // Validate dates
-    if (!checkInDate || !checkOutDate) {
-        alert('Please select both check-in and check-out dates.');
-        return;
-    }
-    
-    if (new Date(checkOutDate) <= new Date(checkInDate)) {
-        alert('Check-out date must be after check-in date.');
-        return;
-    }
-    
-    // In a real application, you would fetch available rooms from the API
-    // For this demo, we'll simulate available rooms
-    showAvailableRooms();
-});
+    let selectedRoomData = null;
 
-// Show available rooms
-function showAvailableRooms() {
-    // Show the available rooms section
-    document.getElementById('available-rooms-section').classList.remove('hidden');
-    
-    // Sample room data (in a real app, this would come from the API)
-    const rooms = [
-        { id: 1, number: '101', name: 'Single Room', price: 100, description: 'Cozy single room with garden view' },
-        { id: 2, number: '102', name: 'Double Room', price: 150, description: 'Spacious double room with city view' },
-        { id: 3, number: '201', name: 'Deluxe Room', price: 200, description: 'Luxurious room with premium amenities' },
-        { id: 4, number: '202', name: 'Suite', price: 300, description: 'Spacious suite with separate living area' },
-        { id: 5, number: '301', name: 'Presidential Suite', price: 500, description: 'Ultimate luxury with panoramic views' }
-    ];
-    
-    const container = document.getElementById('available-rooms-container');
-    container.innerHTML = '';
-    
-    rooms.forEach(room => {
-        const roomCard = document.createElement('div');
-        roomCard.className = 'border border-gray-200 rounded-lg p-4 hover:border-blue-500 cursor-pointer room-card';
-        roomCard.dataset.roomId = room.id;
-        roomCard.innerHTML = `
-            <div class="flex justify-between">
+    // Handle form submission (Check Availability)
+    document.getElementById('booking-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const checkInDate = document.getElementById('check-in-date').value;
+        const checkOutDate = document.getElementById('check-out-date').value;
+        const numGuests = document.getElementById('num-guests').value;
+
+        if (!checkInDate || !checkOutDate) {
+            alert('Please select both check-in and check-out dates.');
+            return;
+        }
+
+        if (new Date(checkOutDate) <= new Date(checkInDate)) {
+            alert('Check-out date must be after check-in date.');
+            return;
+        }
+
+        try {
+            const response = await fetch(`/api/rooms/?check_in_date=${checkInDate}&check_out_date=${checkOutDate}`, {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+                }
+            });
+
+            if (!response.ok) throw new Error('Failed to fetch rooms');
+
+            const rooms = await response.json();
+            showAvailableRooms(rooms);
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error checking availability. Please try again.');
+        }
+    });
+
+    // Show available rooms
+    function showAvailableRooms(rooms) {
+        const container = document.getElementById('available-rooms-container');
+        container.innerHTML = '';
+
+        document.getElementById('available-rooms-section').classList.remove('hidden');
+
+        if (rooms.length === 0) {
+            container.innerHTML = '<p class="text-gray-500 col-span-3 text-center">No rooms available for selected dates.</p>';
+            return;
+        }
+
+        rooms.forEach(room => {
+            const roomCard = document.createElement('div');
+            roomCard.className = 'border border-gray-200/30 rounded-lg p-4 bg-white/5 hover:bg-white/10 cursor-pointer room-card transition';
+            roomCard.dataset.roomId = room.id;
+            // Store room data for summary
+            roomCard.dataset.roomJson = JSON.stringify(room);
+
+            roomCard.innerHTML = `
+            <div class="flex justify-between items-start">
                 <h4 class="text-lg font-medium text-gray-900">${room.name}</h4>
-                <span class="text-lg font-bold text-blue-600">$${room.price}/night</span>
+                <span class="text-lg font-bold text-blue-600">$${room.price_per_night}/night</span>
             </div>
-            <p class="mt-2 text-sm text-gray-500">${room.description}</p>
-            <p class="mt-2 text-sm text-gray-500">Room Number: ${room.number}</p>
+            <p class="mt-2 text-sm text-gray-600">${room.description || 'No description available.'}</p>
+            <p class="mt-2 text-sm text-gray-500">Room: ${room.number} • Cap: ${room.capacity} Guests</p>
             <div class="mt-4 flex items-center">
                 <input type="radio" name="selected-room" value="${room.id}" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
                 <label class="ml-2 block text-sm text-gray-700">Select this room</label>
             </div>
         `;
-        container.appendChild(roomCard);
-    });
-    
-    // Add event listeners to room cards
-    document.querySelectorAll('.room-card').forEach(card => {
-        card.addEventListener('click', function() {
-            const radio = this.querySelector('input[type="radio"]');
-            radio.checked = true;
-            document.getElementById('book-selected-room').classList.remove('hidden');
+            container.appendChild(roomCard);
         });
-    });
-}
 
-// Book selected room
-document.getElementById('book-selected-room').addEventListener('click', function() {
-    const selectedRoom = document.querySelector('input[name="selected-room"]:checked');
-    
-    if (!selectedRoom) {
-        alert('Please select a room.');
-        return;
+        // Add event listeners to room cards
+        document.querySelectorAll('.room-card').forEach(card => {
+            card.addEventListener('click', function () {
+                const radio = this.querySelector('input[type="radio"]');
+                radio.checked = true;
+                selectedRoomData = JSON.parse(this.dataset.roomJson);
+                document.getElementById('book-selected-room').classList.remove('hidden');
+            });
+        });
     }
-    
+
+    // Book selected room button click
+    document.getElementById('book-selected-room').addEventListener('click', function () {
+        if (!selectedRoomData) {
+            alert('Please select a room.');
+            return;
+        }
+        showBookingSummary();
+    });
+
     // Show booking summary
-    showBookingSummary(selectedRoom.value);
-});
+    function showBookingSummary() {
+        document.getElementById('available-rooms-section').classList.add('hidden');
+        document.getElementById('booking-summary-section').classList.remove('hidden');
 
-// Show booking summary
-function showBookingSummary(roomId) {
-    // Hide available rooms section and show booking summary
-    document.getElementById('available-rooms-section').classList.add('hidden');
-    document.getElementById('booking-summary-section').classList.remove('hidden');
-    
-    // Get form values
-    const checkInDate = document.getElementById('check-in-date').value;
-    const checkOutDate = document.getElementById('check-out-date').value;
-    const numGuests = document.getElementById('num-guests').value;
-    
-    // Calculate nights
-    const checkIn = new Date(checkInDate);
-    const checkOut = new Date(checkOutDate);
-    const nights = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
-    
-    // Sample room data (in a real app, this would come from the API)
-    const room = {
-        id: roomId,
-        number: '201',
-        name: 'Deluxe Room',
-        price: 200
-    };
-    
-    // Update summary
-    document.getElementById('summary-room').textContent = `${room.name} (${room.number})`;
-    document.getElementById('summary-check-in').textContent = new Date(checkInDate).toLocaleDateString();
-    document.getElementById('summary-check-out').textContent = new Date(checkOutDate).toLocaleDateString();
-    document.getElementById('summary-guests').textContent = numGuests;
-    document.getElementById('summary-nights').textContent = nights;
-    document.getElementById('summary-rate').textContent = `$${room.price}/night`;
-    document.getElementById('summary-total').textContent = `$${(room.price * nights).toFixed(2)}`;
-}
+        // Get form values
+        const checkInDate = document.getElementById('check-in-date').value;
+        const checkOutDate = document.getElementById('check-out-date').value;
+        const numGuests = document.getElementById('num-guests').value;
 
-// Cancel booking
-document.getElementById('cancel-booking').addEventListener('click', function() {
-    document.getElementById('booking-summary-section').classList.add('hidden');
-    document.getElementById('available-rooms-section').classList.remove('hidden');
-});
+        // Calculate nights
+        const checkIn = new Date(checkInDate);
+        const checkOut = new Date(checkOutDate);
+        const nights = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
 
-// Confirm booking
-document.getElementById('confirm-booking').addEventListener('click', function() {
-    alert('Booking confirmed! In a real application, this would submit the booking to the server.');
-    
-    // Reset form and hide sections
-    document.getElementById('booking-form').reset();
-    document.getElementById('available-rooms-section').classList.add('hidden');
-    document.getElementById('booking-summary-section').classList.add('hidden');
-});
+        const total = selectedRoomData.price_per_night * nights;
+
+        // Update summary
+        document.getElementById('summary-room').textContent = `${selectedRoomData.name} (${selectedRoomData.number})`;
+        document.getElementById('summary-check-in').textContent = new Date(checkInDate).toLocaleDateString();
+        document.getElementById('summary-check-out').textContent = new Date(checkOutDate).toLocaleDateString();
+        document.getElementById('summary-guests').textContent = numGuests;
+        document.getElementById('summary-nights').textContent = nights;
+        document.getElementById('summary-rate').textContent = `$${selectedRoomData.price_per_night}/night`;
+        document.getElementById('summary-total').textContent = `$${total.toFixed(2)}`;
+    }
+
+    // Cancel booking
+    document.getElementById('cancel-booking').addEventListener('click', function () {
+        document.getElementById('booking-summary-section').classList.add('hidden');
+        document.getElementById('available-rooms-section').classList.remove('hidden');
+    });
+
+    // Confirm booking
+    document.getElementById('confirm-booking').addEventListener('click', async function () {
+        const checkInDate = document.getElementById('check-in-date').value;
+        const checkOutDate = document.getElementById('check-out-date').value;
+        const numGuests = document.getElementById('num-guests').value;
+
+        const bookingData = {
+            room: selectedRoomData.id,
+            check_in_date: checkInDate,
+            check_out_date: checkOutDate,
+            num_guests: parseInt(numGuests)
+        };
+
+        try {
+            const response = await fetch('/api/bookings/guest/create/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                body: JSON.stringify(bookingData)
+            });
+
+            if (response.ok) {
+                alert('Booking confirmed successfully!');
+                window.location.href = "{% url 'bookings:guest-booking-list' %}";
+            } else {
+                const errorData = await response.json();
+                alert('Failed to create booking: ' + (errorData.detail || JSON.stringify(errorData)));
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while creating the booking.');
+        }
+    });
+
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
 </script>
 {% endblock %}

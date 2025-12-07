@@ -6,12 +6,23 @@ from accounts.models import User
 
 class BookingSerializer(serializers.ModelSerializer):
     guest_email = serializers.EmailField(source='guest.email', read_only=True)
+    guest_name = serializers.CharField(source='guest.username', read_only=True)
     room_number = serializers.CharField(source='room.number', read_only=True)
+    payment = serializers.SerializerMethodField()
     
     class Meta:
         model = Booking
         fields = '__all__'
         read_only_fields = ('guest', 'total_price')
+
+    def get_payment(self, obj):
+        payment = obj.payments.last()
+        if payment:
+            return {
+                'status': payment.status,
+                'amount': payment.amount
+            }
+        return None
         
         
 class BookingCreateSerializer(serializers.ModelSerializer):

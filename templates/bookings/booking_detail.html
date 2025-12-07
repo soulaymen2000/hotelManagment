@@ -11,7 +11,8 @@
             </h2>
         </div>
         <div class="mt-4 flex md:mt-0 md:ml-4">
-            <button onclick="window.history.back()" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            <button onclick="window.history.back()"
+                class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                 Back
             </button>
         </div>
@@ -119,16 +120,20 @@
                 <div class="border-t border-gray-200">
                     <div class="px-4 py-5 sm:p-6">
                         <div class="space-y-4">
-                            <button id="check-in-btn" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 hidden">
+                            <button id="check-in-btn"
+                                class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 hidden">
                                 Check In Guest
                             </button>
-                            <button id="check-out-btn" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 hidden">
+                            <button id="check-out-btn"
+                                class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 hidden">
                                 Check Out Guest
                             </button>
-                            <button id="cancel-booking-btn" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 hidden">
+                            <button id="cancel-booking-btn"
+                                class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 hidden">
                                 Cancel Booking
                             </button>
-                            <button id="edit-booking-btn" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 hidden">
+                            <button id="edit-booking-btn"
+                                class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 hidden">
                                 Edit Booking
                             </button>
                         </div>
@@ -154,7 +159,8 @@
                                 <span class="text-sm text-gray-500">Amount Paid</span>
                                 <span class="text-sm font-medium text-gray-900" id="amount-paid">$0.00</span>
                             </div>
-                            <button id="process-payment-btn" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <button id="process-payment-btn"
+                                class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                 Process Payment
                             </button>
                         </div>
@@ -165,92 +171,227 @@
     </div>
 </div>
 
+<!-- Edit Booking Modal -->
+<div id="edit-booking-modal" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity hidden"
+    aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div
+                class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left w-full">
+                            <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">Edit Booking
+                                Status</h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-gray-500 mb-4">Update the status of this booking.</p>
+                                <form id="edit-booking-form">
+                                    <div class="mb-4">
+                                        <label for="edit-status"
+                                            class="block text-sm font-medium text-gray-700">Status</label>
+                                        <select id="edit-status" name="status"
+                                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2 border">
+                                            <option value="pending">Pending</option>
+                                            <option value="confirmed">Confirmed</option>
+                                            <option value="checked_in">Checked In</option>
+                                            <option value="checked_out">Checked Out</option>
+                                            <option value="cancelled">Cancelled</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                    <button type="button" id="save-booking-btn"
+                        class="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto">Save
+                        Changes</button>
+                    <button type="button" id="close-modal-btn"
+                        class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
-// This would typically fetch booking data from the API
-// For demonstration purposes, we'll simulate the data
+    // Fetch booking details
+    async function fetchBookingDetails() {
+        // Get booking ID from URL
+        const pathParts = window.location.pathname.split('/');
+        const bookingId = pathParts[pathParts.length - 2]; // Assumes /bookings/<id>/ format
 
-// Simulate booking data
-const bookingData = {
-    id: 12345,
-    guest: {
-        name: "John Doe",
-        email: "john.doe@example.com"
-    },
-    room: {
-        number: "201",
-        name: "Deluxe Room",
-        floor: 2
-    },
-    checkInDate: "2025-12-10",
-    checkOutDate: "2025-12-15",
-    numGuests: 2,
-    totalPrice: 1000.00,
-    status: "confirmed",
-    createdAt: "2025-12-01T14:30:00Z",
-    payment: {
-        status: "pending",
-        amountPaid: 0.00
-    }
-};
+        try {
+            const response = await fetch(`/api/bookings/reception/${bookingId}/`, {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
+                    'Content-Type': 'application/json'
+                }
+            });
 
-// Populate booking details
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('booking-id').textContent = bookingData.id;
-    document.getElementById('guest-name').textContent = `${bookingData.guest.name} (${bookingData.guest.email})`;
-    document.getElementById('room-details').textContent = `${bookingData.room.name} (Room ${bookingData.room.number}, Floor ${bookingData.room.floor})`;
-    document.getElementById('check-in-date').textContent = new Date(bookingData.checkInDate).toLocaleDateString();
-    document.getElementById('check-out-date').textContent = new Date(bookingData.checkOutDate).toLocaleDateString();
-    document.getElementById('num-guests').textContent = bookingData.numGuests;
-    document.getElementById('total-price').textContent = `$${bookingData.totalPrice.toFixed(2)}`;
-    document.getElementById('created-at').textContent = new Date(bookingData.createdAt).toLocaleString();
-    
-    // Set status with appropriate styling
-    const statusElement = document.getElementById('booking-status');
-    statusElement.textContent = bookingData.status.charAt(0).toUpperCase() + bookingData.status.slice(1);
-    
-    // Add status-specific styling
-    let statusClass = '';
-    switch(bookingData.status) {
-        case 'pending':
-            statusClass = 'bg-yellow-100 text-yellow-800';
-            break;
-        case 'confirmed':
-            statusClass = 'bg-blue-100 text-blue-800';
-            break;
-        case 'checked_in':
-            statusClass = 'bg-green-100 text-green-800';
-            break;
-        case 'checked_out':
-            statusClass = 'bg-gray-100 text-gray-800';
-            break;
-        case 'cancelled':
-            statusClass = 'bg-red-100 text-red-800';
-            break;
-        default:
-            statusClass = 'bg-gray-100 text-gray-800';
+            if (!response.ok) {
+                throw new Error('Failed to fetch booking details');
+            }
+
+            const booking = await response.json();
+            populateBookingDetails(booking);
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Failed to load booking details: ' + error.message);
+        }
     }
-    statusElement.className = `px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${statusClass}`;
-    
-    // Populate payment information
-    document.getElementById('payment-status').textContent = bookingData.payment.status.charAt(0).toUpperCase() + bookingData.payment.status.slice(1);
-    document.getElementById('amount-paid').textContent = `$${bookingData.payment.amountPaid.toFixed(2)}`;
-    
-    // Show appropriate action buttons based on status
-    if (bookingData.status === 'confirmed') {
-        document.getElementById('check-in-btn').classList.remove('hidden');
-    } else if (bookingData.status === 'checked_in') {
-        document.getElementById('check-out-btn').classList.remove('hidden');
-    }
-    
-    // Show cancel button for pending or confirmed bookings
-    if (['pending', 'confirmed'].includes(bookingData.status)) {
-        document.getElementById('cancel-booking-btn').classList.remove('hidden');
-    }
-    
-    // Show edit button for pending or confirmed bookings
-    if (['pending', 'confirmed'].includes(bookingData.status)) {
+
+    // Populate booking details
+    function populateBookingDetails(booking) {
+        document.getElementById('booking-id').textContent = booking.id;
+        // Handle guest data which might be nested or flat depending on serializer
+        const guestName = booking.guest_name || (booking.guest ? booking.guest.username : 'Unknown');
+        const guestEmail = booking.guest_email || (booking.guest ? booking.guest.email : 'Unknown');
+        document.getElementById('guest-name').textContent = `${guestName} (${guestEmail})`;
+
+        document.getElementById('room-details').textContent = `Room ${booking.room_number}`; // Simplified as API might only return number
+
+        document.getElementById('check-in-date').textContent = new Date(booking.check_in_date).toLocaleDateString();
+        document.getElementById('check-out-date').textContent = new Date(booking.check_out_date).toLocaleDateString();
+        document.getElementById('num-guests').textContent = booking.num_guests;
+        document.getElementById('total-price').textContent = `$${parseFloat(booking.total_price).toFixed(2)}`;
+        document.getElementById('created-at').textContent = new Date(booking.created_at).toLocaleString();
+
+        // Set status with appropriate styling
+        const statusElement = document.getElementById('booking-status');
+        statusElement.textContent = booking.status.charAt(0).toUpperCase() + booking.status.slice(1);
+
+        // Set current status in modal
+        document.getElementById('edit-status').value = booking.status;
+
+        // Add status-specific styling
+        let statusClass = '';
+        switch (booking.status) {
+            case 'pending':
+                statusClass = 'bg-yellow-100 text-yellow-800';
+                break;
+            case 'confirmed':
+                statusClass = 'bg-blue-100 text-blue-800';
+                break;
+            case 'checked_in':
+                statusClass = 'bg-green-100 text-green-800';
+                break;
+            case 'checked_out':
+                statusClass = 'bg-gray-100 text-gray-800';
+                break;
+            case 'cancelled':
+                statusClass = 'bg-red-100 text-red-800';
+                break;
+            default:
+                statusClass = 'bg-gray-100 text-gray-800';
+        }
+        statusElement.className = `px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${statusClass}`;
+
+        // Payment info might not be in the lightweight list serializer, check if payment details are present
+        if (booking.payment) {
+            document.getElementById('payment-status').textContent = (booking.payment.status || 'pending').charAt(0).toUpperCase() + (booking.payment.status || 'pending').slice(1);
+            document.getElementById('amount-paid').textContent = `$${parseFloat(booking.payment.amount || 0).toFixed(2)}`;
+        } else {
+            document.getElementById('payment-status').textContent = 'Unknown';
+            document.getElementById('amount-paid').textContent = '$0.00';
+        }
+
+
+        // Show appropriate action buttons based on status
+        if (booking.status === 'confirmed') {
+            document.getElementById('check-in-btn').classList.remove('hidden');
+        } else if (booking.status === 'checked_in') {
+            document.getElementById('check-out-btn').classList.remove('hidden');
+        }
+
+        // Show cancel button for pending or confirmed bookings
+        if (['pending', 'confirmed'].includes(booking.status)) {
+            document.getElementById('cancel-booking-btn').classList.remove('hidden');
+        }
+
+        // Always show edit button for valid bookings (except sometimes users restrict it, but reception should be able to edit)
         document.getElementById('edit-booking-btn').classList.remove('hidden');
+
+        // Attach Action Listeners
+        setupActionButtons(booking.id);
     }
-});
+
+    function setupActionButtons(bookingId) {
+        document.getElementById('cancel-booking-btn').onclick = async () => {
+            if (confirm('Are you sure you want to cancel this booking?')) {
+                await updateBookingStatus(bookingId, 'cancelled');
+            }
+        };
+
+        document.getElementById('check-in-btn').onclick = async () => {
+            await updateBookingStatus(bookingId, 'checked_in');
+        };
+
+        document.getElementById('check-out-btn').onclick = async () => {
+            await updateBookingStatus(bookingId, 'checked_out');
+        };
+
+        // Modal Logic
+        const modal = document.getElementById('edit-booking-modal');
+
+        document.getElementById('edit-booking-btn').onclick = () => {
+            modal.classList.remove('hidden');
+        };
+
+        document.getElementById('close-modal-btn').onclick = () => {
+            modal.classList.add('hidden');
+        };
+
+        document.getElementById('save-booking-btn').onclick = async () => {
+            const newStatus = document.getElementById('edit-status').value;
+            await updateBookingStatus(bookingId, newStatus);
+            modal.classList.add('hidden');
+        };
+    }
+
+    async function updateBookingStatus(bookingId, status) {
+        try {
+            const response = await fetch(`/api/bookings/reception/${bookingId}/status/`, {
+                method: 'PATCH',
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                body: JSON.stringify({ status: status })
+            });
+
+            if (response.ok) {
+                alert(`Booking status updated to ${status}`);
+                location.reload();
+            } else {
+                const errorData = await response.json();
+                alert('Failed to update status: ' + (errorData.error || 'Unknown error'));
+            }
+        } catch (e) {
+            console.error(e);
+            alert('Error updating status');
+        }
+    }
+
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        fetchBookingDetails();
+    });
 </script>
 {% endblock %}

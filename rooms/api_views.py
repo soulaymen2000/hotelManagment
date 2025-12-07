@@ -13,8 +13,22 @@ class RoomListView(generics.ListAPIView):
     
     def get_queryset(self):
         user = self.request.user
-        # All authenticated users can view rooms
-        return Room.objects.all()
+        queryset = Room.objects.all()
+        
+        # Filter by availability if dates are provided
+        check_in = self.request.query_params.get('check_in_date')
+        check_out = self.request.query_params.get('check_out_date')
+        
+        if check_in and check_out:
+            # Exclude rooms that have overlapping confirmed/checked_in bookings
+            from django.db.models import Q
+            queryset = queryset.exclude(
+                bookings__status__in=['confirmed', 'checked_in'],
+                bookings__check_in_date__lt=check_out,
+                bookings__check_out_date__gt=check_in
+            )
+            
+        return queryset
 
 
 class RoomDetailView(generics.RetrieveAPIView):
