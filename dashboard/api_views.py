@@ -123,16 +123,17 @@ def reception_dashboard_stats():
         created_at__date__gte=week_ago
     ).count()
     
-    # Revenue statistics
-    total_revenue = Payment.objects.filter(
-        status='completed'
-    ).aggregate(total=Sum('amount'))['total'] or 0
+    # Revenue statistics - Calculate from confirmed bookings only
+    # Include confirmed and checked_in bookings, exclude canceled
+    total_revenue = Booking.objects.filter(
+        status__in=['confirmed', 'checked_in', 'checked_out']
+    ).aggregate(total=Sum('total_price'))['total'] or 0
     
-    # Recent payments (last 7 days)
-    recent_payments = Payment.objects.filter(
-        paid_at__date__gte=week_ago,
-        status='completed'
-    ).aggregate(total=Sum('amount'))['total'] or 0
+    # Recent revenue (last 7 days) from confirmed bookings
+    recent_revenue = Booking.objects.filter(
+        created_at__date__gte=week_ago,
+        status__in=['confirmed', 'checked_in', 'checked_out']
+    ).aggregate(total=Sum('total_price'))['total'] or 0
     
     data = {
         'rooms': {
@@ -155,7 +156,7 @@ def reception_dashboard_stats():
         },
         'payments': {
             'total_revenue': float(total_revenue),
-            'recent_revenue': float(recent_payments)
+            'recent_revenue': float(recent_revenue)
         }
     }
     
