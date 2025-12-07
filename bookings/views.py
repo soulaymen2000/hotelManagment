@@ -33,3 +33,11 @@ def reception_booking_create(request):
     if not request.user.is_reception() and not request.user.is_admin():
         return redirect('home')
     return render(request, 'bookings/reception_booking_create.html')
+
+
+@login_required
+def guest_booking_list(request):
+    """Guest booking list view"""
+    if not request.user.is_guest():
+        return redirect('home')
+    return render(request, 'bookings/guest_booking_list.html')

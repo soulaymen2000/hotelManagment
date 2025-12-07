@@ -27,7 +27,7 @@ def login_view(request):
         elif request.user.is_reception():
             return redirect('reception-dashboard')
         else:
-            return redirect('guest-dashboard')
+            return redirect('bookings:guest-booking')
     
     if request.method == 'POST':
         logger.info("Processing POST login request")
@@ -65,7 +65,7 @@ def login_view(request):
                     elif user.is_reception():
                         redirect_url = '/dashboards/reception/'
                     else:  # guest
-                        redirect_url = '/dashboards/guest/'
+                        redirect_url = '/bookings/guest/create/'
                         
                     return JsonResponse({
                         'success': True,
@@ -81,7 +81,7 @@ def login_view(request):
                     elif user.is_reception():
                         return redirect('reception-dashboard')
                     else:
-                        return redirect('guest-dashboard')
+                        return redirect('bookings:guest-booking')
             else:
                 logger.warning(f"Invalid credentials for email: {email}")
                 # Return JSON response for AJAX requests

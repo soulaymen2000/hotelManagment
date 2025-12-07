@@ -18463,3 +18463,677 @@ INFO 2025-12-07 18:18:51,958 autoreload 11352 10408 C:\Users\Soulayman\django\ho
 INFO 2025-12-07 18:18:52,451 autoreload 21596 24708 Watching for file changes with StatReloader
 INFO 2025-12-07 18:18:55,108 autoreload 21596 24708 C:\Users\Soulayman\django\hotel_management\urls.py changed, reloading.
 INFO 2025-12-07 18:18:55,544 autoreload 11684 22844 Watching for file changes with StatReloader
+INFO 2025-12-07 18:19:06,102 basehttp 11684 20604 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 18:19:06,108 views 11684 20604 Template login view accessed
+INFO 2025-12-07 18:19:06,108 views 11684 20604 Request method: GET
+INFO 2025-12-07 18:19:06,109 views 11684 20604 User authenticated: False
+INFO 2025-12-07 18:19:06,109 views 11684 20604 Rendering login template
+INFO 2025-12-07 18:19:06,122 basehttp 11684 20604 "GET /accounts/login/ HTTP/1.1" 200 18687
+WARNING 2025-12-07 18:19:06,230 log 11684 20604 Not Found: /favicon.ico
+WARNING 2025-12-07 18:19:06,231 basehttp 11684 20604 "GET /favicon.ico HTTP/1.1" 404 4248
+INFO 2025-12-07 18:19:15,549 basehttp 11684 20604 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 18:19:15,560 views 11684 20604 Template login view accessed
+INFO 2025-12-07 18:19:15,561 views 11684 20604 Request method: GET
+INFO 2025-12-07 18:19:15,562 views 11684 20604 User authenticated: False
+INFO 2025-12-07 18:19:15,562 views 11684 20604 Rendering login template
+INFO 2025-12-07 18:19:15,566 basehttp 11684 20604 "GET /accounts/login/ HTTP/1.1" 200 18687
+INFO 2025-12-07 18:19:35,652 basehttp 11684 19040 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 18:19:35,655 views 11684 19040 Template login view accessed
+INFO 2025-12-07 18:19:35,655 views 11684 19040 Request method: GET
+INFO 2025-12-07 18:19:35,655 views 11684 19040 User authenticated: False
+INFO 2025-12-07 18:19:35,655 views 11684 19040 Rendering login template
+INFO 2025-12-07 18:19:35,656 basehttp 11684 19040 "GET /accounts/login/ HTTP/1.1" 200 18687
+WARNING 2025-12-07 18:19:35,786 log 11684 19040 Not Found: /favicon.ico
+WARNING 2025-12-07 18:19:35,787 basehttp 11684 19040 "GET /favicon.ico HTTP/1.1" 404 4248
+INFO 2025-12-07 18:19:59,416 views 11684 15952 Template login view accessed
+INFO 2025-12-07 18:19:59,416 views 11684 15952 Request method: POST
+INFO 2025-12-07 18:19:59,416 views 11684 15952 User authenticated: False
+INFO 2025-12-07 18:19:59,416 views 11684 15952 Processing POST login request
+INFO 2025-12-07 18:19:59,416 views 11684 15952 Request content type: multipart/form-data
+INFO 2025-12-07 18:19:59,416 views 11684 15952 Request body: b'------WebKitFormBoundaryBMS1ARaVqArpwVCS\r\nContent-Disposition: form-data; name="email"\r\n\r\nsou@gmail.com\r\n------WebKitFormBoundaryBMS1ARaVqArpwVCS\r\nContent-Disposition: form-data; name="password"\r\n\r\nazerty123456\r\n------WebKitFormBoundaryBMS1ARaVqArpwVCS\r\nContent-Disposition: form-data; name="csrfmiddlewaretoken"\r\n\r\nG2G9W6HbVW8BAedzGCg1eoEAi0xTdIiZlpkBh20s4W9eO3ozlvAjpNkKk9M1HFOe\r\n------WebKitFormBoundaryBMS1ARaVqArpwVCS--\r\n'
+INFO 2025-12-07 18:19:59,417 views 11684 15952 Request POST data: <QueryDict: {'email': ['sou@gmail.com'], 'password': ['azerty123456'], 'csrfmiddlewaretoken': ['G2G9W6HbVW8BAedzGCg1eoEAi0xTdIiZlpkBh20s4W9eO3ozlvAjpNkKk9M1HFOe']}>
+INFO 2025-12-07 18:19:59,417 views 11684 15952 Not JSON data, using form data
+INFO 2025-12-07 18:19:59,418 views 11684 15952 Form data - Email: sou@gmail.com
+INFO 2025-12-07 18:19:59,418 views 11684 15952 Attempting authentication for email: sou@gmail.com
+INFO 2025-12-07 18:20:00,052 views 11684 15952 Authentication result: Success
+INFO 2025-12-07 18:20:00,062 views 11684 15952 User sou@gmail.com logged in successfully
+INFO 2025-12-07 18:20:00,062 views 11684 15952 Returning redirect response for form submission
+INFO 2025-12-07 18:20:00,067 basehttp 11684 15952 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 18:20:00,076 basehttp 11684 15952 "GET /dashboards/reception/ HTTP/1.1" 200 22500
+INFO 2025-12-07 18:20:00,087 views 11684 15952 Template login view accessed
+INFO 2025-12-07 18:20:00,088 views 11684 15952 Request method: GET
+INFO 2025-12-07 18:20:00,091 views 11684 15952 User authenticated: True
+INFO 2025-12-07 18:20:00,091 views 11684 15952 User already authenticated: sou@gmail.com with role reception
+INFO 2025-12-07 18:20:00,092 basehttp 11684 15952 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 18:20:00,100 basehttp 11684 15952 "GET /dashboards/reception/ HTTP/1.1" 200 22500
+INFO 2025-12-07 18:20:00,155 basehttp 11684 3212 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:20:00,155 basehttp 11684 20632 "GET /api/dashboard/charts/room-status/ HTTP/1.1" 200 99
+INFO 2025-12-07 18:20:00,166 basehttp 11684 15952 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:20:25,519 basehttp 11684 15952 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 18:20:25,525 views 11684 15952 Template login view accessed
+INFO 2025-12-07 18:20:25,525 views 11684 15952 Request method: GET
+INFO 2025-12-07 18:20:25,528 views 11684 15952 User authenticated: True
+INFO 2025-12-07 18:20:25,528 views 11684 15952 User already authenticated: sou@gmail.com with role reception
+INFO 2025-12-07 18:20:25,529 basehttp 11684 15952 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 18:20:25,536 basehttp 11684 15952 "GET /dashboards/reception/ HTTP/1.1" 200 22500
+INFO 2025-12-07 18:20:25,591 basehttp 11684 3212 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:20:25,596 basehttp 11684 15952 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:20:25,602 basehttp 11684 20632 "GET /api/dashboard/charts/room-status/ HTTP/1.1" 200 99
+INFO 2025-12-07 18:20:30,162 basehttp 11684 15952 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:20:30,170 basehttp 11684 20632 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:20:55,604 basehttp 11684 20632 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:20:55,609 basehttp 11684 15952 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:21:00,167 basehttp 11684 20632 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:21:00,174 basehttp 11684 15952 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:21:21,604 basehttp 11684 25520 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 18:21:21,608 views 11684 25520 Template login view accessed
+INFO 2025-12-07 18:21:21,608 views 11684 25520 Request method: GET
+INFO 2025-12-07 18:21:21,608 views 11684 25520 User authenticated: False
+INFO 2025-12-07 18:21:21,608 views 11684 25520 Rendering login template
+INFO 2025-12-07 18:21:21,609 basehttp 11684 25520 "GET /accounts/login/ HTTP/1.1" 200 18687
+INFO 2025-12-07 18:21:21,676 basehttp 11684 25520 "GET /static/css/tailwind.css HTTP/1.1" 200 26823
+INFO 2025-12-07 18:21:27,949 views 11684 25520 Template login view accessed
+INFO 2025-12-07 18:21:27,950 views 11684 25520 Request method: POST
+INFO 2025-12-07 18:21:27,950 views 11684 25520 User authenticated: False
+INFO 2025-12-07 18:21:27,950 views 11684 25520 Processing POST login request
+INFO 2025-12-07 18:21:27,950 views 11684 25520 Request content type: multipart/form-data
+INFO 2025-12-07 18:21:27,951 views 11684 25520 Request body: b'------WebKitFormBoundary9bneILFXNBkr7Dtj\r\nContent-Disposition: form-data; name="email"\r\n\r\nsou@gmail.com\r\n------WebKitFormBoundary9bneILFXNBkr7Dtj\r\nContent-Disposition: form-data; name="password"\r\n\r\nazerty123456\r\n------WebKitFormBoundary9bneILFXNBkr7Dtj\r\nContent-Disposition: form-data; name="csrfmiddlewaretoken"\r\n\r\nkIYrvBxQ4ei26hex7pse5G2RMxbY04bfsMMGRicfgVmGUpwEQQ13xAkrSaXLv2HE\r\n------WebKitFormBoundary9bneILFXNBkr7Dtj--\r\n'
+INFO 2025-12-07 18:21:27,951 views 11684 25520 Request POST data: <QueryDict: {'email': ['sou@gmail.com'], 'password': ['azerty123456'], 'csrfmiddlewaretoken': ['kIYrvBxQ4ei26hex7pse5G2RMxbY04bfsMMGRicfgVmGUpwEQQ13xAkrSaXLv2HE']}>
+INFO 2025-12-07 18:21:27,952 views 11684 25520 Not JSON data, using form data
+INFO 2025-12-07 18:21:27,952 views 11684 25520 Form data - Email: sou@gmail.com
+INFO 2025-12-07 18:21:27,952 views 11684 25520 Attempting authentication for email: sou@gmail.com
+INFO 2025-12-07 18:21:28,446 views 11684 25520 Authentication result: Success
+INFO 2025-12-07 18:21:28,455 views 11684 25520 User sou@gmail.com logged in successfully
+INFO 2025-12-07 18:21:28,455 views 11684 25520 Returning redirect response for form submission
+INFO 2025-12-07 18:21:28,460 basehttp 11684 25520 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 18:21:28,470 basehttp 11684 25520 "GET /dashboards/reception/ HTTP/1.1" 200 22500
+INFO 2025-12-07 18:21:28,480 views 11684 25520 Template login view accessed
+INFO 2025-12-07 18:21:28,480 views 11684 25520 Request method: GET
+INFO 2025-12-07 18:21:28,483 views 11684 25520 User authenticated: True
+INFO 2025-12-07 18:21:28,483 views 11684 25520 User already authenticated: sou@gmail.com with role reception
+INFO 2025-12-07 18:21:28,484 basehttp 11684 25520 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 18:21:28,493 basehttp 11684 25520 "GET /dashboards/reception/ HTTP/1.1" 200 22500
+INFO 2025-12-07 18:21:28,515 basehttp 11684 25520 "GET /static/css/custom.css HTTP/1.1" 200 9346
+INFO 2025-12-07 18:21:30,464 basehttp 11684 25568 "GET /api/dashboard/charts/room-status/ HTTP/1.1" 200 99
+INFO 2025-12-07 18:21:30,480 basehttp 11684 1296 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:21:30,497 basehttp 11684 25520 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:21:35,499 basehttp 11684 25520 "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-12-07 18:21:35,503 basehttp 11684 25520 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 18:21:35,505 views 11684 25520 Template login view accessed
+INFO 2025-12-07 18:21:35,505 views 11684 25520 Request method: GET
+INFO 2025-12-07 18:21:35,506 views 11684 25520 User authenticated: False
+INFO 2025-12-07 18:21:35,506 views 11684 25520 Rendering login template
+INFO 2025-12-07 18:21:35,507 basehttp 11684 25520 "GET /accounts/login/ HTTP/1.1" 200 18687
+INFO 2025-12-07 18:21:46,599 views 11684 25520 Template login view accessed
+INFO 2025-12-07 18:21:46,599 views 11684 25520 Request method: POST
+INFO 2025-12-07 18:21:46,599 views 11684 25520 User authenticated: False
+INFO 2025-12-07 18:21:46,599 views 11684 25520 Processing POST login request
+INFO 2025-12-07 18:21:46,600 views 11684 25520 Request content type: multipart/form-data
+INFO 2025-12-07 18:21:46,600 views 11684 25520 Request body: b'------WebKitFormBoundaryWGiNR68nGmKzk8vA\r\nContent-Disposition: form-data; name="email"\r\n\r\naziz@gmail.com\r\n------WebKitFormBoundaryWGiNR68nGmKzk8vA\r\nContent-Disposition: form-data; name="password"\r\n\r\nazerty123456\r\n------WebKitFormBoundaryWGiNR68nGmKzk8vA\r\nContent-Disposition: form-data; name="csrfmiddlewaretoken"\r\n\r\nkHLSzqVtgxfsr5KVy3T7Gm9TRHCxpktkjOX8xWzePkTipf7J5qcVUhpWrbgggvzc\r\n------WebKitFormBoundaryWGiNR68nGmKzk8vA--\r\n'
+INFO 2025-12-07 18:21:46,600 views 11684 25520 Request POST data: <QueryDict: {'email': ['aziz@gmail.com'], 'password': ['azerty123456'], 'csrfmiddlewaretoken': ['kHLSzqVtgxfsr5KVy3T7Gm9TRHCxpktkjOX8xWzePkTipf7J5qcVUhpWrbgggvzc']}>
+INFO 2025-12-07 18:21:46,600 views 11684 25520 Not JSON data, using form data
+INFO 2025-12-07 18:21:46,601 views 11684 25520 Form data - Email: aziz@gmail.com
+INFO 2025-12-07 18:21:46,601 views 11684 25520 Attempting authentication for email: aziz@gmail.com
+INFO 2025-12-07 18:21:47,057 views 11684 25520 Authentication result: Success
+INFO 2025-12-07 18:21:47,068 views 11684 25520 User aziz@gmail.com logged in successfully
+INFO 2025-12-07 18:21:47,068 views 11684 25520 Returning redirect response for form submission
+INFO 2025-12-07 18:21:47,074 basehttp 11684 25520 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 18:21:47,082 basehttp 11684 25520 "GET /dashboards/guest/ HTTP/1.1" 200 18948
+INFO 2025-12-07 18:21:47,093 views 11684 25520 Template login view accessed
+INFO 2025-12-07 18:21:47,095 views 11684 25520 Request method: GET
+INFO 2025-12-07 18:21:47,100 views 11684 25520 User authenticated: True
+INFO 2025-12-07 18:21:47,100 views 11684 25520 User already authenticated: aziz@gmail.com with role guest
+INFO 2025-12-07 18:21:47,101 basehttp 11684 25520 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 18:21:47,115 basehttp 11684 25520 "GET /dashboards/guest/ HTTP/1.1" 200 18776
+INFO 2025-12-07 18:21:47,167 basehttp 11684 25520 "GET /api/dashboard/stats/ HTTP/1.1" 200 126
+INFO 2025-12-07 18:27:40,002 basehttp 11684 15612 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 18:27:40,005 views 11684 15612 Template login view accessed
+INFO 2025-12-07 18:27:40,005 views 11684 15612 Request method: GET
+INFO 2025-12-07 18:27:40,005 views 11684 15612 User authenticated: False
+INFO 2025-12-07 18:27:40,005 views 11684 15612 Rendering login template
+INFO 2025-12-07 18:27:40,006 basehttp 11684 15612 "GET /accounts/login/ HTTP/1.1" 200 18687
+INFO 2025-12-07 18:27:40,054 basehttp 11684 15612 "GET /static/css/tailwind.css HTTP/1.1" 200 26823
+INFO 2025-12-07 18:27:45,998 views 11684 15612 Template login view accessed
+INFO 2025-12-07 18:27:45,998 views 11684 15612 Request method: POST
+INFO 2025-12-07 18:27:45,999 views 11684 15612 User authenticated: False
+INFO 2025-12-07 18:27:45,999 views 11684 15612 Processing POST login request
+INFO 2025-12-07 18:27:45,999 views 11684 15612 Request content type: multipart/form-data
+INFO 2025-12-07 18:27:45,999 views 11684 15612 Request body: b'------WebKitFormBoundaryPiY3yEOugSesoQPB\r\nContent-Disposition: form-data; name="email"\r\n\r\nsou@gmail.com\r\n------WebKitFormBoundaryPiY3yEOugSesoQPB\r\nContent-Disposition: form-data; name="password"\r\n\r\nazerty123456\r\n------WebKitFormBoundaryPiY3yEOugSesoQPB\r\nContent-Disposition: form-data; name="csrfmiddlewaretoken"\r\n\r\nKF1thggmF122GlEyxbpm5ENttt6NnebYP0J2tPHFaXVyR1bA85ZvFpA2900hAPNJ\r\n------WebKitFormBoundaryPiY3yEOugSesoQPB--\r\n'
+INFO 2025-12-07 18:27:46,000 views 11684 15612 Request POST data: <QueryDict: {'email': ['sou@gmail.com'], 'password': ['azerty123456'], 'csrfmiddlewaretoken': ['KF1thggmF122GlEyxbpm5ENttt6NnebYP0J2tPHFaXVyR1bA85ZvFpA2900hAPNJ']}>
+INFO 2025-12-07 18:27:46,000 views 11684 15612 Not JSON data, using form data
+INFO 2025-12-07 18:27:46,000 views 11684 15612 Form data - Email: sou@gmail.com
+INFO 2025-12-07 18:27:46,000 views 11684 15612 Attempting authentication for email: sou@gmail.com
+INFO 2025-12-07 18:27:46,486 views 11684 15612 Authentication result: Success
+INFO 2025-12-07 18:27:46,496 views 11684 15612 User sou@gmail.com logged in successfully
+INFO 2025-12-07 18:27:46,496 views 11684 15612 Returning redirect response for form submission
+INFO 2025-12-07 18:27:46,501 basehttp 11684 15612 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 18:27:46,509 basehttp 11684 15612 "GET /dashboards/reception/ HTTP/1.1" 200 22500
+INFO 2025-12-07 18:27:46,521 views 11684 15612 Template login view accessed
+INFO 2025-12-07 18:27:46,521 views 11684 15612 Request method: GET
+INFO 2025-12-07 18:27:46,524 views 11684 15612 User authenticated: True
+INFO 2025-12-07 18:27:46,524 views 11684 15612 User already authenticated: sou@gmail.com with role reception
+INFO 2025-12-07 18:27:46,525 basehttp 11684 15612 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 18:27:46,535 basehttp 11684 15612 "GET /dashboards/reception/ HTTP/1.1" 200 22500
+INFO 2025-12-07 18:27:46,558 basehttp 11684 15612 "GET /static/css/custom.css HTTP/1.1" 200 9346
+INFO 2025-12-07 18:27:47,039 basehttp 11684 17524 "GET /api/dashboard/charts/room-status/ HTTP/1.1" 200 99
+INFO 2025-12-07 18:27:47,039 basehttp 11684 9124 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:27:47,057 basehttp 11684 15612 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:28:03,521 basehttp 11684 15612 "GET /accounts/profile/ HTTP/1.1" 200 22930
+WARNING 2025-12-07 18:28:03,553 log 11684 15612 Not Found: /api/auth/profile/
+WARNING 2025-12-07 18:28:03,553 basehttp 11684 15612 "GET /api/auth/profile/ HTTP/1.1" 404 4266
+INFO 2025-12-07 18:29:04,375 basehttp 11684 9124 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:29:04,381 basehttp 11684 15612 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:29:17,170 basehttp 11684 9124 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:29:17,174 basehttp 11684 15612 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:29:47,168 basehttp 11684 9124 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:29:47,172 basehttp 11684 15612 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:30:17,168 basehttp 11684 9124 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:30:17,172 basehttp 11684 15612 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:30:47,167 basehttp 11684 9124 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:30:47,171 basehttp 11684 15612 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:31:17,171 basehttp 11684 9124 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:31:17,175 basehttp 11684 15612 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:31:47,171 basehttp 11684 9124 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:31:47,174 basehttp 11684 15612 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:32:45,178 basehttp 11684 15612 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:32:45,180 basehttp 11684 9124 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:33:45,177 basehttp 11684 9124 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:33:45,178 basehttp 11684 15612 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:34:45,177 basehttp 11684 9124 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:34:45,188 basehttp 11684 15612 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:35:45,180 basehttp 11684 9124 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:35:45,186 basehttp 11684 15612 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:36:45,176 basehttp 11684 9124 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:36:45,180 basehttp 11684 15612 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:37:45,175 basehttp 11684 9124 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:37:45,180 basehttp 11684 15612 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:38:45,178 basehttp 11684 9124 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:38:45,182 basehttp 11684 15612 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:39:45,173 basehttp 11684 9124 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:39:45,177 basehttp 11684 15612 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:40:45,183 basehttp 11684 9124 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:40:45,184 basehttp 11684 15612 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:40:53,720 basehttp 11684 9124 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:40:53,729 basehttp 11684 15612 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:41:33,067 autoreload 21268 22452 Watching for file changes with StatReloader
+INFO 2025-12-07 18:41:47,178 basehttp 21268 21244 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:41:47,183 basehttp 21268 132 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:46:19,737 basehttp 21268 18976 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 18:46:19,741 views 21268 18976 Template login view accessed
+INFO 2025-12-07 18:46:19,741 views 21268 18976 Request method: GET
+INFO 2025-12-07 18:46:19,742 views 21268 18976 User authenticated: False
+INFO 2025-12-07 18:46:19,742 views 21268 18976 Rendering login template
+INFO 2025-12-07 18:46:19,758 basehttp 21268 18976 "GET /accounts/login/ HTTP/1.1" 200 18687
+INFO 2025-12-07 18:46:19,843 basehttp 21268 18976 "GET /static/css/tailwind.css HTTP/1.1" 200 26823
+INFO 2025-12-07 18:46:24,649 views 21268 18976 Template login view accessed
+INFO 2025-12-07 18:46:24,649 views 21268 18976 Request method: POST
+INFO 2025-12-07 18:46:24,649 views 21268 18976 User authenticated: False
+INFO 2025-12-07 18:46:24,649 views 21268 18976 Processing POST login request
+INFO 2025-12-07 18:46:24,650 views 21268 18976 Request content type: multipart/form-data
+INFO 2025-12-07 18:46:24,650 views 21268 18976 Request body: b'------WebKitFormBoundary82iKikD3mUz8aksu\r\nContent-Disposition: form-data; name="email"\r\n\r\nsou@gmail.com\r\n------WebKitFormBoundary82iKikD3mUz8aksu\r\nContent-Disposition: form-data; name="password"\r\n\r\nazerty123456\r\n------WebKitFormBoundary82iKikD3mUz8aksu\r\nContent-Disposition: form-data; name="csrfmiddlewaretoken"\r\n\r\nD2MgBfXeDcbjKTx2YUsEg4L7GwgJomkhglqLRcTItvB5jvYxXEH3TX0kFse5ZtOq\r\n------WebKitFormBoundary82iKikD3mUz8aksu--\r\n'
+INFO 2025-12-07 18:46:24,651 views 21268 18976 Request POST data: <QueryDict: {'email': ['sou@gmail.com'], 'password': ['azerty123456'], 'csrfmiddlewaretoken': ['D2MgBfXeDcbjKTx2YUsEg4L7GwgJomkhglqLRcTItvB5jvYxXEH3TX0kFse5ZtOq']}>
+INFO 2025-12-07 18:46:24,651 views 21268 18976 Not JSON data, using form data
+INFO 2025-12-07 18:46:24,651 views 21268 18976 Form data - Email: sou@gmail.com
+INFO 2025-12-07 18:46:24,651 views 21268 18976 Attempting authentication for email: sou@gmail.com
+INFO 2025-12-07 18:46:25,167 views 21268 18976 Authentication result: Success
+INFO 2025-12-07 18:46:25,178 views 21268 18976 User sou@gmail.com logged in successfully
+INFO 2025-12-07 18:46:25,179 views 21268 18976 Returning redirect response for form submission
+INFO 2025-12-07 18:46:25,186 basehttp 21268 18976 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 18:46:25,199 basehttp 21268 18976 "GET /dashboards/reception/ HTTP/1.1" 200 23698
+INFO 2025-12-07 18:46:25,214 views 21268 18976 Template login view accessed
+INFO 2025-12-07 18:46:25,214 views 21268 18976 Request method: GET
+INFO 2025-12-07 18:46:25,218 views 21268 18976 User authenticated: True
+INFO 2025-12-07 18:46:25,218 views 21268 18976 User already authenticated: sou@gmail.com with role reception
+INFO 2025-12-07 18:46:25,220 basehttp 21268 18976 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 18:46:25,230 basehttp 21268 18976 "GET /dashboards/reception/ HTTP/1.1" 200 23698
+INFO 2025-12-07 18:46:25,259 basehttp 21268 18976 "GET /static/css/custom.css HTTP/1.1" 200 9346
+INFO 2025-12-07 18:46:25,766 basehttp 21268 20612 "GET /api/dashboard/charts/room-status/ HTTP/1.1" 200 99
+INFO 2025-12-07 18:46:25,774 basehttp 21268 22136 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:46:25,778 basehttp 21268 18976 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:46:47,208 basehttp 21268 18976 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 18:46:47,212 views 21268 18976 Template login view accessed
+INFO 2025-12-07 18:46:47,212 views 21268 18976 Request method: GET
+INFO 2025-12-07 18:46:47,215 views 21268 18976 User authenticated: True
+INFO 2025-12-07 18:46:47,215 views 21268 18976 User already authenticated: sou@gmail.com with role reception
+INFO 2025-12-07 18:46:47,216 basehttp 21268 18976 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 18:46:47,225 basehttp 21268 18976 "GET /dashboards/reception/ HTTP/1.1" 200 23698
+INFO 2025-12-07 18:46:47,284 basehttp 21268 20612 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:46:47,299 basehttp 21268 18976 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:46:47,308 basehttp 21268 22136 "GET /api/dashboard/charts/room-status/ HTTP/1.1" 200 99
+INFO 2025-12-07 18:47:18,185 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:47:18,189 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:47:48,188 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:47:48,191 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:48:18,181 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:48:18,186 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:48:48,179 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:48:48,182 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:49:18,167 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:49:18,171 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:49:48,182 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:49:48,187 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:50:18,188 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:50:18,192 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:51:19,176 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:51:19,181 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:52:20,182 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:52:20,185 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:53:21,190 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:53:21,194 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:54:22,171 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:54:22,174 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:55:23,192 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:55:23,198 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:56:24,189 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:56:24,201 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:57:25,186 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:57:25,196 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:58:26,192 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:58:26,200 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 18:59:27,191 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 18:59:27,200 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:00:28,183 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:00:28,191 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:01:29,197 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:01:29,212 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:02:30,197 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:02:30,216 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:03:31,178 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:03:31,204 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:04:32,188 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:04:32,204 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:05:33,186 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:05:33,195 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:06:34,191 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:06:34,215 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:07:35,179 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:07:35,187 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:08:36,183 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:08:36,188 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:09:37,177 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:09:37,183 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:10:38,194 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:10:38,223 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:11:39,197 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:11:39,207 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:12:40,188 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:12:40,194 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:13:41,192 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:13:41,199 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:14:42,180 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:14:42,180 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:14:46,395 basehttp 21268 18976 "GET /dashboards/reception/ HTTP/1.1" 200 24132
+INFO 2025-12-07 19:14:48,741 basehttp 21268 12136 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:14:48,749 basehttp 21268 18976 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:14:48,754 basehttp 21268 22136 "GET /api/dashboard/charts/room-status/ HTTP/1.1" 200 99
+INFO 2025-12-07 19:15:03,594 basehttp 21268 22136 "GET /accounts/profile/ HTTP/1.1" 200 25369
+WARNING 2025-12-07 19:15:03,745 log 21268 22136 Not Found: /api/auth/profile/
+WARNING 2025-12-07 19:15:03,746 basehttp 21268 22136 "GET /api/auth/profile/ HTTP/1.1" 404 4266
+INFO 2025-12-07 19:17:50,853 basehttp 21268 22136 "GET /accounts/profile/ HTTP/1.1" 200 26382
+INFO 2025-12-07 19:17:51,006 basehttp 21268 22136 "GET /api/accounts/profile/ HTTP/1.1" 200 130
+INFO 2025-12-07 19:18:04,732 basehttp 21268 22136 "GET /rooms/management/ HTTP/1.1" 200 22375
+INFO 2025-12-07 19:18:04,915 basehttp 21268 22136 "GET /api/rooms/reception/ HTTP/1.1" 200 1312
+INFO 2025-12-07 19:18:06,084 basehttp 21268 22136 "GET /bookings/management/ HTTP/1.1" 200 22683
+INFO 2025-12-07 19:18:06,244 basehttp 21268 22136 "GET /api/bookings/reception/ HTTP/1.1" 200 569
+INFO 2025-12-07 19:18:07,388 basehttp 21268 22136 "GET /dashboards/reception/ HTTP/1.1" 200 24132
+INFO 2025-12-07 19:18:07,564 basehttp 21268 18976 "GET /api/dashboard/charts/room-status/ HTTP/1.1" 200 99
+INFO 2025-12-07 19:18:07,566 basehttp 21268 12136 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:18:07,584 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:18:09,505 basehttp 21268 22136 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 19:18:09,508 views 21268 22136 Template login view accessed
+INFO 2025-12-07 19:18:09,508 views 21268 22136 Request method: GET
+INFO 2025-12-07 19:18:09,512 views 21268 22136 User authenticated: True
+INFO 2025-12-07 19:18:09,512 views 21268 22136 User already authenticated: sou@gmail.com with role reception
+INFO 2025-12-07 19:18:09,513 basehttp 21268 22136 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:18:09,522 basehttp 21268 22136 "GET /dashboards/reception/ HTTP/1.1" 200 24132
+INFO 2025-12-07 19:18:09,643 basehttp 21268 12136 "GET /api/dashboard/charts/room-status/ HTTP/1.1" 200 99
+INFO 2025-12-07 19:18:09,645 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:18:09,654 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:18:40,174 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:18:40,179 basehttp 21268 18976 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:19:10,169 basehttp 21268 22136 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:19:10,175 basehttp 21268 18976 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:19:40,169 basehttp 21268 22136 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:19:40,176 basehttp 21268 18976 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:20:10,172 basehttp 21268 22136 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:20:10,182 basehttp 21268 18976 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:20:40,181 basehttp 21268 22136 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:20:40,185 basehttp 21268 18976 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:21:10,172 basehttp 21268 22136 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:21:10,177 basehttp 21268 18976 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:21:40,167 basehttp 21268 22136 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:21:40,172 basehttp 21268 18976 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:22:18,310 basehttp 21268 22136 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:22:18,313 basehttp 21268 18976 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:22:19,908 basehttp 21268 18976 "GET /dashboards/reception/ HTTP/1.1" 200 23964
+INFO 2025-12-07 19:22:20,120 basehttp 21268 12136 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:22:20,129 basehttp 21268 22136 "GET /api/dashboard/charts/room-status/ HTTP/1.1" 200 99
+INFO 2025-12-07 19:22:20,132 basehttp 21268 18976 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:22:22,416 basehttp 21268 18976 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 19:22:22,422 views 21268 18976 Template login view accessed
+INFO 2025-12-07 19:22:22,422 views 21268 18976 Request method: GET
+INFO 2025-12-07 19:22:22,425 views 21268 18976 User authenticated: True
+INFO 2025-12-07 19:22:22,425 views 21268 18976 User already authenticated: sou@gmail.com with role reception
+INFO 2025-12-07 19:22:22,426 basehttp 21268 18976 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:22:22,434 basehttp 21268 18976 "GET /dashboards/reception/ HTTP/1.1" 200 23964
+INFO 2025-12-07 19:22:22,549 basehttp 21268 12136 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:22:22,553 basehttp 21268 22136 "GET /api/dashboard/charts/room-status/ HTTP/1.1" 200 99
+INFO 2025-12-07 19:22:22,580 basehttp 21268 18976 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:22:23,667 basehttp 21268 18976 "GET /bookings/management/ HTTP/1.1" 200 22515
+INFO 2025-12-07 19:22:23,867 basehttp 21268 18976 "GET /api/bookings/reception/ HTTP/1.1" 200 569
+INFO 2025-12-07 19:22:27,548 basehttp 21268 18976 "GET /rooms/management/ HTTP/1.1" 200 22207
+INFO 2025-12-07 19:22:27,724 basehttp 21268 18976 "GET /api/rooms/reception/ HTTP/1.1" 200 1312
+INFO 2025-12-07 19:22:29,342 basehttp 21268 18976 "GET /bookings/management/ HTTP/1.1" 200 22515
+INFO 2025-12-07 19:22:29,519 basehttp 21268 18976 "GET /api/bookings/reception/ HTTP/1.1" 200 569
+INFO 2025-12-07 19:22:32,594 basehttp 21268 18976 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 19:22:32,597 views 21268 18976 Template login view accessed
+INFO 2025-12-07 19:22:32,598 views 21268 18976 Request method: GET
+INFO 2025-12-07 19:22:32,601 views 21268 18976 User authenticated: True
+INFO 2025-12-07 19:22:32,601 views 21268 18976 User already authenticated: sou@gmail.com with role reception
+INFO 2025-12-07 19:22:32,602 basehttp 21268 18976 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:22:32,609 basehttp 21268 18976 "GET /dashboards/reception/ HTTP/1.1" 200 23964
+INFO 2025-12-07 19:22:32,793 basehttp 21268 12136 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:22:32,793 basehttp 21268 22136 "GET /api/dashboard/charts/room-status/ HTTP/1.1" 200 99
+INFO 2025-12-07 19:22:32,803 basehttp 21268 18976 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:22:35,687 basehttp 21268 18976 "GET /rooms/management/ HTTP/1.1" 200 22207
+INFO 2025-12-07 19:22:35,877 basehttp 21268 18976 "GET /api/rooms/reception/ HTTP/1.1" 200 1312
+INFO 2025-12-07 19:22:38,880 basehttp 21268 18976 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 19:22:38,883 views 21268 18976 Template login view accessed
+INFO 2025-12-07 19:22:38,883 views 21268 18976 Request method: GET
+INFO 2025-12-07 19:22:38,886 views 21268 18976 User authenticated: True
+INFO 2025-12-07 19:22:38,886 views 21268 18976 User already authenticated: sou@gmail.com with role reception
+INFO 2025-12-07 19:22:38,887 basehttp 21268 18976 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:22:38,894 basehttp 21268 18976 "GET /dashboards/reception/ HTTP/1.1" 200 23964
+INFO 2025-12-07 19:22:39,057 basehttp 21268 22136 "GET /api/dashboard/charts/room-status/ HTTP/1.1" 200 99
+INFO 2025-12-07 19:22:39,059 basehttp 21268 12136 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:22:39,075 basehttp 21268 18976 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:22:50,086 basehttp 21268 18976 "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:22:50,090 basehttp 21268 18976 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 19:22:50,094 views 21268 18976 Template login view accessed
+INFO 2025-12-07 19:22:50,094 views 21268 18976 Request method: GET
+INFO 2025-12-07 19:22:50,094 views 21268 18976 User authenticated: False
+INFO 2025-12-07 19:22:50,094 views 21268 18976 Rendering login template
+INFO 2025-12-07 19:22:50,096 basehttp 21268 18976 "GET /accounts/login/ HTTP/1.1" 200 18687
+INFO 2025-12-07 19:23:03,981 views 21268 18976 Template login view accessed
+INFO 2025-12-07 19:23:03,982 views 21268 18976 Request method: POST
+INFO 2025-12-07 19:23:03,982 views 21268 18976 User authenticated: False
+INFO 2025-12-07 19:23:03,982 views 21268 18976 Processing POST login request
+INFO 2025-12-07 19:23:03,982 views 21268 18976 Request content type: multipart/form-data
+INFO 2025-12-07 19:23:03,983 views 21268 18976 Request body: b'------WebKitFormBoundaryq2wliSd6uClcdhOE\r\nContent-Disposition: form-data; name="email"\r\n\r\naziz@gmail.com\r\n------WebKitFormBoundaryq2wliSd6uClcdhOE\r\nContent-Disposition: form-data; name="password"\r\n\r\nazerty123456\r\n------WebKitFormBoundaryq2wliSd6uClcdhOE\r\nContent-Disposition: form-data; name="csrfmiddlewaretoken"\r\n\r\nJiygjU1j4pPOtlc6THEysGtb7MNQo7GYIyCItiV0amjkG1a5tkPWP5qgRL84DpTw\r\n------WebKitFormBoundaryq2wliSd6uClcdhOE--\r\n'
+INFO 2025-12-07 19:23:03,983 views 21268 18976 Request POST data: <QueryDict: {'email': ['aziz@gmail.com'], 'password': ['azerty123456'], 'csrfmiddlewaretoken': ['JiygjU1j4pPOtlc6THEysGtb7MNQo7GYIyCItiV0amjkG1a5tkPWP5qgRL84DpTw']}>
+INFO 2025-12-07 19:23:03,983 views 21268 18976 Not JSON data, using form data
+INFO 2025-12-07 19:23:03,984 views 21268 18976 Form data - Email: aziz@gmail.com
+INFO 2025-12-07 19:23:03,984 views 21268 18976 Attempting authentication for email: aziz@gmail.com
+INFO 2025-12-07 19:23:04,498 views 21268 18976 Authentication result: Success
+INFO 2025-12-07 19:23:04,510 views 21268 18976 User aziz@gmail.com logged in successfully
+INFO 2025-12-07 19:23:04,510 views 21268 18976 Returning redirect response for form submission
+INFO 2025-12-07 19:23:04,517 basehttp 21268 18976 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:23:04,528 basehttp 21268 18976 "GET /dashboards/guest/ HTTP/1.1" 200 21530
+INFO 2025-12-07 19:23:04,541 views 21268 18976 Template login view accessed
+INFO 2025-12-07 19:23:04,541 views 21268 18976 Request method: GET
+INFO 2025-12-07 19:23:04,545 views 21268 18976 User authenticated: True
+INFO 2025-12-07 19:23:04,546 views 21268 18976 User already authenticated: aziz@gmail.com with role guest
+INFO 2025-12-07 19:23:04,547 basehttp 21268 18976 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:23:04,555 basehttp 21268 18976 "GET /dashboards/guest/ HTTP/1.1" 200 21358
+INFO 2025-12-07 19:23:04,696 basehttp 21268 18976 "GET /api/dashboard/stats/ HTTP/1.1" 200 126
+INFO 2025-12-07 19:23:17,543 basehttp 21268 18976 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 19:23:17,547 views 21268 18976 Template login view accessed
+INFO 2025-12-07 19:23:17,547 views 21268 18976 Request method: GET
+INFO 2025-12-07 19:23:17,550 views 21268 18976 User authenticated: True
+INFO 2025-12-07 19:23:17,550 views 21268 18976 User already authenticated: aziz@gmail.com with role guest
+INFO 2025-12-07 19:23:17,551 basehttp 21268 18976 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:23:17,558 basehttp 21268 18976 "GET /dashboards/guest/ HTTP/1.1" 200 21358
+INFO 2025-12-07 19:23:17,672 basehttp 21268 18976 "GET /api/dashboard/stats/ HTTP/1.1" 200 126
+INFO 2025-12-07 19:23:18,547 basehttp 21268 18976 "GET /bookings/guest/create/ HTTP/1.1" 200 25132
+INFO 2025-12-07 19:23:20,452 basehttp 21268 18976 "GET /api/bookings/guest/list/ HTTP/1.1" 200 11380
+INFO 2025-12-07 19:23:20,474 basehttp 21268 18976 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2025-12-07 19:23:20,482 basehttp 21268 18976 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+INFO 2025-12-07 19:23:20,482 basehttp 21268 12136 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2025-12-07 19:23:20,482 basehttp 21268 22136 "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2025-12-07 19:23:20,486 basehttp 21268 24068 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+INFO 2025-12-07 19:23:20,488 basehttp 21268 3168 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+INFO 2025-12-07 19:23:20,491 basehttp 21268 24068 "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+INFO 2025-12-07 19:23:20,491 basehttp 21268 22136 "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2025-12-07 19:23:20,491 basehttp 21268 12136 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2025-12-07 19:23:20,491 basehttp 21268 18976 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2025-12-07 19:23:20,492 basehttp 21268 7412 "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+INFO 2025-12-07 19:23:20,494 basehttp 21268 22136 "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+INFO 2025-12-07 19:23:32,789 basehttp 21268 22136 "GET /bookings/guest/create/ HTTP/1.1" 200 25132
+INFO 2025-12-07 19:23:34,139 basehttp 21268 22136 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 19:23:34,142 views 21268 22136 Template login view accessed
+INFO 2025-12-07 19:23:34,143 views 21268 22136 Request method: GET
+INFO 2025-12-07 19:23:34,145 views 21268 22136 User authenticated: True
+INFO 2025-12-07 19:23:34,146 views 21268 22136 User already authenticated: aziz@gmail.com with role guest
+INFO 2025-12-07 19:23:34,147 basehttp 21268 22136 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:23:34,155 basehttp 21268 22136 "GET /dashboards/guest/ HTTP/1.1" 200 21358
+INFO 2025-12-07 19:23:34,310 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 126
+INFO 2025-12-07 19:23:46,902 basehttp 21268 22136 "GET /bookings/guest/create/ HTTP/1.1" 200 25132
+INFO 2025-12-07 19:23:48,711 basehttp 21268 22136 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 19:23:48,714 views 21268 22136 Template login view accessed
+INFO 2025-12-07 19:23:48,715 views 21268 22136 Request method: GET
+INFO 2025-12-07 19:23:48,717 views 21268 22136 User authenticated: True
+INFO 2025-12-07 19:23:48,717 views 21268 22136 User already authenticated: aziz@gmail.com with role guest
+INFO 2025-12-07 19:23:48,718 basehttp 21268 22136 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:23:48,726 basehttp 21268 22136 "GET /dashboards/guest/ HTTP/1.1" 200 21358
+INFO 2025-12-07 19:23:48,919 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 126
+INFO 2025-12-07 19:23:49,865 basehttp 21268 22136 "GET /bookings/guest/create/ HTTP/1.1" 200 25132
+INFO 2025-12-07 19:23:52,248 basehttp 21268 22136 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 19:23:52,252 views 21268 22136 Template login view accessed
+INFO 2025-12-07 19:23:52,252 views 21268 22136 Request method: GET
+INFO 2025-12-07 19:23:52,255 views 21268 22136 User authenticated: True
+INFO 2025-12-07 19:23:52,256 views 21268 22136 User already authenticated: aziz@gmail.com with role guest
+INFO 2025-12-07 19:23:52,256 basehttp 21268 22136 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:23:52,263 basehttp 21268 22136 "GET /dashboards/guest/ HTTP/1.1" 200 21358
+INFO 2025-12-07 19:23:52,446 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 126
+INFO 2025-12-07 19:24:47,356 basehttp 21268 22136 "GET /dashboards/guest/ HTTP/1.1" 200 21317
+INFO 2025-12-07 19:24:47,508 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 126
+INFO 2025-12-07 19:24:49,839 basehttp 21268 22136 "GET /bookings/guest/create/ HTTP/1.1" 200 25091
+INFO 2025-12-07 19:26:09,055 basehttp 21268 22136 "GET /api/bookings/guest/list/ HTTP/1.1" 200 11380
+INFO 2025-12-07 19:31:05,156 basehttp 21268 22136 "GET /accounts/profile/ HTTP/1.1" 200 26097
+INFO 2025-12-07 19:31:05,303 basehttp 21268 22136 "GET /api/accounts/profile/ HTTP/1.1" 200 134
+INFO 2025-12-07 19:31:10,339 basehttp 21268 22136 "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:31:10,342 basehttp 21268 22136 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 19:31:10,345 views 21268 22136 Template login view accessed
+INFO 2025-12-07 19:31:10,345 views 21268 22136 Request method: GET
+INFO 2025-12-07 19:31:10,345 views 21268 22136 User authenticated: False
+INFO 2025-12-07 19:31:10,346 views 21268 22136 Rendering login template
+INFO 2025-12-07 19:31:10,347 basehttp 21268 22136 "GET /accounts/login/ HTTP/1.1" 200 18687
+INFO 2025-12-07 19:31:13,985 views 21268 22136 Template login view accessed
+INFO 2025-12-07 19:31:13,985 views 21268 22136 Request method: POST
+INFO 2025-12-07 19:31:13,986 views 21268 22136 User authenticated: False
+INFO 2025-12-07 19:31:13,986 views 21268 22136 Processing POST login request
+INFO 2025-12-07 19:31:13,986 views 21268 22136 Request content type: multipart/form-data
+INFO 2025-12-07 19:31:13,987 views 21268 22136 Request body: b'------WebKitFormBoundaryQaTByJCWqfdRnZIb\r\nContent-Disposition: form-data; name="email"\r\n\r\nsou@gmail.com\r\n------WebKitFormBoundaryQaTByJCWqfdRnZIb\r\nContent-Disposition: form-data; name="password"\r\n\r\nazerty123456\r\n------WebKitFormBoundaryQaTByJCWqfdRnZIb\r\nContent-Disposition: form-data; name="csrfmiddlewaretoken"\r\n\r\nLxxxkQeboxEYROo8tORUxfktNLzMN4KJefPwrZseoZ2VzEL6ohGOkcFrtuRWsCMy\r\n------WebKitFormBoundaryQaTByJCWqfdRnZIb--\r\n'
+INFO 2025-12-07 19:31:13,987 views 21268 22136 Request POST data: <QueryDict: {'email': ['sou@gmail.com'], 'password': ['azerty123456'], 'csrfmiddlewaretoken': ['LxxxkQeboxEYROo8tORUxfktNLzMN4KJefPwrZseoZ2VzEL6ohGOkcFrtuRWsCMy']}>
+INFO 2025-12-07 19:31:13,987 views 21268 22136 Not JSON data, using form data
+INFO 2025-12-07 19:31:13,987 views 21268 22136 Form data - Email: sou@gmail.com
+INFO 2025-12-07 19:31:13,988 views 21268 22136 Attempting authentication for email: sou@gmail.com
+INFO 2025-12-07 19:31:14,454 views 21268 22136 Authentication result: Success
+INFO 2025-12-07 19:31:14,463 views 21268 22136 User sou@gmail.com logged in successfully
+INFO 2025-12-07 19:31:14,464 views 21268 22136 Returning redirect response for form submission
+INFO 2025-12-07 19:31:14,469 basehttp 21268 22136 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:31:14,478 basehttp 21268 22136 "GET /dashboards/reception/ HTTP/1.1" 200 24153
+INFO 2025-12-07 19:31:14,489 views 21268 22136 Template login view accessed
+INFO 2025-12-07 19:31:14,489 views 21268 22136 Request method: GET
+INFO 2025-12-07 19:31:14,493 views 21268 22136 User authenticated: True
+INFO 2025-12-07 19:31:14,493 views 21268 22136 User already authenticated: sou@gmail.com with role reception
+INFO 2025-12-07 19:31:14,494 basehttp 21268 22136 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:31:14,502 basehttp 21268 22136 "GET /dashboards/reception/ HTTP/1.1" 200 23981
+INFO 2025-12-07 19:31:14,608 basehttp 21268 4884 "GET /api/dashboard/charts/room-status/ HTTP/1.1" 200 99
+INFO 2025-12-07 19:31:14,612 basehttp 21268 15444 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:31:14,617 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:31:17,143 basehttp 21268 22136 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 19:31:17,146 views 21268 22136 Template login view accessed
+INFO 2025-12-07 19:31:17,146 views 21268 22136 Request method: GET
+INFO 2025-12-07 19:31:17,149 views 21268 22136 User authenticated: True
+INFO 2025-12-07 19:31:17,149 views 21268 22136 User already authenticated: sou@gmail.com with role reception
+INFO 2025-12-07 19:31:17,150 basehttp 21268 22136 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:31:17,157 basehttp 21268 22136 "GET /dashboards/reception/ HTTP/1.1" 200 23981
+INFO 2025-12-07 19:31:17,255 basehttp 21268 15444 "GET /api/dashboard/charts/room-status/ HTTP/1.1" 200 99
+INFO 2025-12-07 19:31:17,255 basehttp 21268 4884 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:31:17,266 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:31:47,253 basehttp 21268 4884 "GET /api/dashboard/recent-activity/ HTTP/1.1" 200 298
+INFO 2025-12-07 19:31:47,266 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 281
+INFO 2025-12-07 19:31:47,753 basehttp 21268 22136 "GET /bookings/management/ HTTP/1.1" 200 22532
+INFO 2025-12-07 19:31:47,887 basehttp 21268 22136 "GET /api/bookings/reception/ HTTP/1.1" 200 569
+INFO 2025-12-07 19:31:51,466 basehttp 21268 22136 "GET /rooms/management/ HTTP/1.1" 200 22224
+INFO 2025-12-07 19:31:51,609 basehttp 21268 22136 "GET /api/rooms/reception/ HTTP/1.1" 200 1312
+INFO 2025-12-07 19:31:59,240 basehttp 21268 22136 "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:31:59,244 basehttp 21268 22136 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 19:31:59,246 views 21268 22136 Template login view accessed
+INFO 2025-12-07 19:31:59,247 views 21268 22136 Request method: GET
+INFO 2025-12-07 19:31:59,247 views 21268 22136 User authenticated: False
+INFO 2025-12-07 19:31:59,247 views 21268 22136 Rendering login template
+INFO 2025-12-07 19:31:59,248 basehttp 21268 22136 "GET /accounts/login/ HTTP/1.1" 200 18687
+INFO 2025-12-07 19:32:04,290 views 21268 22136 Template login view accessed
+INFO 2025-12-07 19:32:04,290 views 21268 22136 Request method: POST
+INFO 2025-12-07 19:32:04,291 views 21268 22136 User authenticated: False
+INFO 2025-12-07 19:32:04,291 views 21268 22136 Processing POST login request
+INFO 2025-12-07 19:32:04,291 views 21268 22136 Request content type: multipart/form-data
+INFO 2025-12-07 19:32:04,292 views 21268 22136 Request body: b'------WebKitFormBoundaryXkBPOxdWpXRqjZpm\r\nContent-Disposition: form-data; name="email"\r\n\r\nadmin@hotel.com\r\n------WebKitFormBoundaryXkBPOxdWpXRqjZpm\r\nContent-Disposition: form-data; name="password"\r\n\r\nadmin123\r\n------WebKitFormBoundaryXkBPOxdWpXRqjZpm\r\nContent-Disposition: form-data; name="csrfmiddlewaretoken"\r\n\r\nQkrQRhkwtp3qaMqzPJKyR2qSIDXYj5xTqw3iuKewhX7MAbZBXZSFL3plFq3Igw3h\r\n------WebKitFormBoundaryXkBPOxdWpXRqjZpm--\r\n'
+INFO 2025-12-07 19:32:04,292 views 21268 22136 Request POST data: <QueryDict: {'email': ['admin@hotel.com'], 'password': ['admin123'], 'csrfmiddlewaretoken': ['QkrQRhkwtp3qaMqzPJKyR2qSIDXYj5xTqw3iuKewhX7MAbZBXZSFL3plFq3Igw3h']}>
+INFO 2025-12-07 19:32:04,292 views 21268 22136 Not JSON data, using form data
+INFO 2025-12-07 19:32:04,292 views 21268 22136 Form data - Email: admin@hotel.com
+INFO 2025-12-07 19:32:04,292 views 21268 22136 Attempting authentication for email: admin@hotel.com
+INFO 2025-12-07 19:32:04,799 views 21268 22136 Authentication result: Success
+INFO 2025-12-07 19:32:04,812 views 21268 22136 User admin@hotel.com logged in successfully
+INFO 2025-12-07 19:32:04,812 views 21268 22136 Returning redirect response for form submission
+INFO 2025-12-07 19:32:04,817 basehttp 21268 22136 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:32:04,826 basehttp 21268 22136 "GET /dashboards/admin/ HTTP/1.1" 200 28226
+INFO 2025-12-07 19:32:04,836 views 21268 22136 Template login view accessed
+INFO 2025-12-07 19:32:04,836 views 21268 22136 Request method: GET
+INFO 2025-12-07 19:32:04,840 views 21268 22136 User authenticated: True
+INFO 2025-12-07 19:32:04,840 views 21268 22136 User already authenticated: admin@hotel.com with role admin
+INFO 2025-12-07 19:32:04,841 basehttp 21268 22136 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:32:04,848 basehttp 21268 22136 "GET /dashboards/admin/ HTTP/1.1" 200 28054
+WARNING 2025-12-07 19:32:04,956 log 21268 4884 Not Found: /api/auth/admin/users/
+WARNING 2025-12-07 19:32:04,957 basehttp 21268 4884 "GET /api/auth/admin/users/ HTTP/1.1" 404 4278
+INFO 2025-12-07 19:32:04,966 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 262
+INFO 2025-12-07 19:32:09,562 basehttp 21268 22136 "GET /dashboards/admin/ HTTP/1.1" 200 28054
+WARNING 2025-12-07 19:32:09,648 log 21268 4884 Not Found: /api/auth/admin/users/
+WARNING 2025-12-07 19:32:09,650 basehttp 21268 4884 "GET /api/auth/admin/users/ HTTP/1.1" 404 4278
+INFO 2025-12-07 19:32:09,656 basehttp 21268 22136 "GET /api/dashboard/stats/ HTTP/1.1" 200 262
+INFO 2025-12-07 19:32:11,195 basehttp 21268 22136 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:32:11,219 basehttp 21268 22136 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3694
+INFO 2025-12-07 19:32:11,239 basehttp 21268 22136 "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-12-07 19:32:11,243 basehttp 21268 22136 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-12-07 19:32:11,244 basehttp 21268 21764 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-12-07 19:32:11,244 basehttp 21268 4884 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-12-07 19:32:11,245 basehttp 21268 15444 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-12-07 19:32:11,246 basehttp 21268 3432 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-12-07 19:32:11,250 basehttp 21268 3432 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-12-07 19:32:15,562 basehttp 21268 3432 "GET /audit/ HTTP/1.1" 200 20978
+INFO 2025-12-07 19:32:20,304 basehttp 21268 3432 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 19:32:20,307 views 21268 3432 Template login view accessed
+INFO 2025-12-07 19:32:20,308 views 21268 3432 Request method: GET
+INFO 2025-12-07 19:32:20,311 views 21268 3432 User authenticated: True
+INFO 2025-12-07 19:32:20,312 views 21268 3432 User already authenticated: admin@hotel.com with role admin
+INFO 2025-12-07 19:32:20,312 basehttp 21268 3432 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:32:20,320 basehttp 21268 3432 "GET /dashboards/admin/ HTTP/1.1" 200 28054
+WARNING 2025-12-07 19:32:20,477 log 21268 15444 Not Found: /api/auth/admin/users/
+WARNING 2025-12-07 19:32:20,479 basehttp 21268 15444 "GET /api/auth/admin/users/ HTTP/1.1" 404 4278
+INFO 2025-12-07 19:32:20,486 basehttp 21268 3432 "GET /api/dashboard/stats/ HTTP/1.1" 200 262
+INFO 2025-12-07 19:34:08,197 basehttp 21268 3432 "GET /dashboards/admin/ HTTP/1.1" 200 28345
+WARNING 2025-12-07 19:34:08,402 log 21268 15444 Not Found: /api/auth/admin/users/
+WARNING 2025-12-07 19:34:08,403 basehttp 21268 15444 "GET /api/auth/admin/users/ HTTP/1.1" 404 4278
+INFO 2025-12-07 19:34:08,409 basehttp 21268 3432 "GET /api/dashboard/stats/ HTTP/1.1" 200 262
+INFO 2025-12-07 19:35:22,797 basehttp 21268 3432 "GET /dashboards/admin/ HTTP/1.1" 200 27477
+WARNING 2025-12-07 19:35:22,976 log 21268 15444 Not Found: /api/auth/admin/users/
+WARNING 2025-12-07 19:35:22,977 basehttp 21268 15444 "GET /api/auth/admin/users/ HTTP/1.1" 404 4278
+INFO 2025-12-07 19:35:22,983 basehttp 21268 3432 "GET /api/dashboard/stats/ HTTP/1.1" 200 262
+INFO 2025-12-07 19:35:31,652 basehttp 21268 3432 "GET /accounts/profile/ HTTP/1.1" 200 26022
+INFO 2025-12-07 19:35:31,806 basehttp 21268 3432 "GET /api/accounts/profile/ HTTP/1.1" 200 128
+INFO 2025-12-07 19:35:39,539 basehttp 21268 3432 "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:35:39,543 basehttp 21268 3432 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 19:35:39,545 views 21268 3432 Template login view accessed
+INFO 2025-12-07 19:35:39,545 views 21268 3432 Request method: GET
+INFO 2025-12-07 19:35:39,545 views 21268 3432 User authenticated: False
+INFO 2025-12-07 19:35:39,546 views 21268 3432 Rendering login template
+INFO 2025-12-07 19:35:39,547 basehttp 21268 3432 "GET /accounts/login/ HTTP/1.1" 200 18692
+INFO 2025-12-07 19:36:13,225 views 21268 3432 Template login view accessed
+INFO 2025-12-07 19:36:13,225 views 21268 3432 Request method: POST
+INFO 2025-12-07 19:36:13,225 views 21268 3432 User authenticated: False
+INFO 2025-12-07 19:36:13,226 views 21268 3432 Processing POST login request
+INFO 2025-12-07 19:36:13,226 views 21268 3432 Request content type: multipart/form-data
+INFO 2025-12-07 19:36:13,226 views 21268 3432 Request body: b'------WebKitFormBoundaryZQI9Y6MWMHTQtB4l\r\nContent-Disposition: form-data; name="email"\r\n\r\naziz@gmail.com\r\n------WebKitFormBoundaryZQI9Y6MWMHTQtB4l\r\nContent-Disposition: form-data; name="password"\r\n\r\nazerty123456\r\n------WebKitFormBoundaryZQI9Y6MWMHTQtB4l\r\nContent-Disposition: form-data; name="csrfmiddlewaretoken"\r\n\r\nnkUxa7efj8m67BY02d4SIKWWuAxEruYGwlIdDpKONZrdQVHOZq2bjn6wGvWaV34I\r\n------WebKitFormBoundaryZQI9Y6MWMHTQtB4l--\r\n'
+INFO 2025-12-07 19:36:13,227 views 21268 3432 Request POST data: <QueryDict: {'email': ['aziz@gmail.com'], 'password': ['azerty123456'], 'csrfmiddlewaretoken': ['nkUxa7efj8m67BY02d4SIKWWuAxEruYGwlIdDpKONZrdQVHOZq2bjn6wGvWaV34I']}>
+INFO 2025-12-07 19:36:13,227 views 21268 3432 Not JSON data, using form data
+INFO 2025-12-07 19:36:13,227 views 21268 3432 Form data - Email: aziz@gmail.com
+INFO 2025-12-07 19:36:13,227 views 21268 3432 Attempting authentication for email: aziz@gmail.com
+INFO 2025-12-07 19:36:13,704 views 21268 3432 Authentication result: Success
+INFO 2025-12-07 19:36:13,715 views 21268 3432 User aziz@gmail.com logged in successfully
+INFO 2025-12-07 19:36:13,715 views 21268 3432 Returning redirect response for form submission
+INFO 2025-12-07 19:36:13,719 basehttp 21268 3432 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:36:13,727 basehttp 21268 3432 "GET /dashboards/guest/ HTTP/1.1" 200 21489
+INFO 2025-12-07 19:36:13,737 views 21268 3432 Template login view accessed
+INFO 2025-12-07 19:36:13,737 views 21268 3432 Request method: GET
+INFO 2025-12-07 19:36:13,740 views 21268 3432 User authenticated: True
+INFO 2025-12-07 19:36:13,740 views 21268 3432 User already authenticated: aziz@gmail.com with role guest
+INFO 2025-12-07 19:36:13,741 basehttp 21268 3432 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:36:13,750 basehttp 21268 3432 "GET /dashboards/guest/ HTTP/1.1" 200 21317
+INFO 2025-12-07 19:36:13,873 basehttp 21268 3432 "GET /api/dashboard/stats/ HTTP/1.1" 200 126
+INFO 2025-12-07 19:36:19,562 basehttp 21268 3432 "GET /bookings/guest/create/ HTTP/1.1" 200 25091
+INFO 2025-12-07 19:36:22,671 basehttp 21268 3432 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 19:36:22,674 views 21268 3432 Template login view accessed
+INFO 2025-12-07 19:36:22,675 views 21268 3432 Request method: GET
+INFO 2025-12-07 19:36:22,679 views 21268 3432 User authenticated: True
+INFO 2025-12-07 19:36:22,679 views 21268 3432 User already authenticated: aziz@gmail.com with role guest
+INFO 2025-12-07 19:36:22,680 basehttp 21268 3432 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:36:22,688 basehttp 21268 3432 "GET /dashboards/guest/ HTTP/1.1" 200 21317
+INFO 2025-12-07 19:36:22,831 basehttp 21268 3432 "GET /api/dashboard/stats/ HTTP/1.1" 200 126
+INFO 2025-12-07 19:36:24,931 basehttp 21268 3432 "GET /api/bookings/guest/list/ HTTP/1.1" 200 11380
+INFO 2025-12-07 19:37:50,336 autoreload 21268 22452 C:\Users\Soulayman\django\bookings\urls.py changed, reloading.
+INFO 2025-12-07 19:37:50,809 autoreload 12784 17644 Watching for file changes with StatReloader
+INFO 2025-12-07 19:39:47,176 autoreload 12784 17644 C:\Users\Soulayman\django\bookings\views.py changed, reloading.
+INFO 2025-12-07 19:39:47,585 autoreload 7792 22668 Watching for file changes with StatReloader
+INFO 2025-12-07 19:48:40,493 basehttp 7792 9876 "GET /bookings/guest/create/ HTTP/1.1" 200 25067
+INFO 2025-12-07 19:48:42,345 basehttp 7792 9876 "GET /bookings/guest/list/ HTTP/1.1" 200 18933
+INFO 2025-12-07 19:48:42,485 basehttp 7792 9876 "GET /api/bookings/guest/list/ HTTP/1.1" 200 569
+INFO 2025-12-07 19:48:49,383 basehttp 7792 9876 "GET /bookings/guest/create/ HTTP/1.1" 200 25067
+INFO 2025-12-07 19:48:52,180 basehttp 7792 9876 "GET /bookings/guest/list/ HTTP/1.1" 200 18933
+INFO 2025-12-07 19:48:52,332 basehttp 7792 9876 "GET /api/bookings/guest/list/ HTTP/1.1" 200 569
+INFO 2025-12-07 19:48:53,441 basehttp 7792 9876 "GET /bookings/guest/create/ HTTP/1.1" 200 25067
+INFO 2025-12-07 19:48:58,246 basehttp 7792 9876 "GET /accounts/profile/ HTTP/1.1" 200 26073
+INFO 2025-12-07 19:48:58,390 basehttp 7792 9876 "GET /api/accounts/profile/ HTTP/1.1" 200 134
+INFO 2025-12-07 19:48:59,420 basehttp 7792 9876 "POST /logout/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:48:59,424 basehttp 7792 9876 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 19:48:59,427 views 7792 9876 Template login view accessed
+INFO 2025-12-07 19:48:59,427 views 7792 9876 Request method: GET
+INFO 2025-12-07 19:48:59,427 views 7792 9876 User authenticated: False
+INFO 2025-12-07 19:48:59,427 views 7792 9876 Rendering login template
+INFO 2025-12-07 19:48:59,429 basehttp 7792 9876 "GET /accounts/login/ HTTP/1.1" 200 18692
+INFO 2025-12-07 19:49:09,740 views 7792 9876 Template login view accessed
+INFO 2025-12-07 19:49:09,740 views 7792 9876 Request method: POST
+INFO 2025-12-07 19:49:09,740 views 7792 9876 User authenticated: False
+INFO 2025-12-07 19:49:09,740 views 7792 9876 Processing POST login request
+INFO 2025-12-07 19:49:09,741 views 7792 9876 Request content type: multipart/form-data
+INFO 2025-12-07 19:49:09,741 views 7792 9876 Request body: b'------WebKitFormBoundaryr0abBvuD9iqog5jI\r\nContent-Disposition: form-data; name="email"\r\n\r\naziz@gmail.com\r\n------WebKitFormBoundaryr0abBvuD9iqog5jI\r\nContent-Disposition: form-data; name="password"\r\n\r\nazerty123456\r\n------WebKitFormBoundaryr0abBvuD9iqog5jI\r\nContent-Disposition: form-data; name="csrfmiddlewaretoken"\r\n\r\nApsZNJdgB4IbIM1Y3DOTFMKNqp5Ro8NxbLl91fjUHGJaJmxxOzOMnZ3GB3oJHnuw\r\n------WebKitFormBoundaryr0abBvuD9iqog5jI--\r\n'
+INFO 2025-12-07 19:49:09,741 views 7792 9876 Request POST data: <QueryDict: {'email': ['aziz@gmail.com'], 'password': ['azerty123456'], 'csrfmiddlewaretoken': ['ApsZNJdgB4IbIM1Y3DOTFMKNqp5Ro8NxbLl91fjUHGJaJmxxOzOMnZ3GB3oJHnuw']}>
+INFO 2025-12-07 19:49:09,742 views 7792 9876 Not JSON data, using form data
+INFO 2025-12-07 19:49:09,742 views 7792 9876 Form data - Email: aziz@gmail.com
+INFO 2025-12-07 19:49:09,742 views 7792 9876 Attempting authentication for email: aziz@gmail.com
+INFO 2025-12-07 19:49:10,299 views 7792 9876 Authentication result: Success
+INFO 2025-12-07 19:49:10,307 views 7792 9876 User aziz@gmail.com logged in successfully
+INFO 2025-12-07 19:49:10,307 views 7792 9876 Returning redirect response for form submission
+INFO 2025-12-07 19:49:10,312 basehttp 7792 9876 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:49:10,322 basehttp 7792 9876 "GET /dashboards/guest/ HTTP/1.1" 200 21465
+INFO 2025-12-07 19:49:10,332 views 7792 9876 Template login view accessed
+INFO 2025-12-07 19:49:10,333 views 7792 9876 Request method: GET
+INFO 2025-12-07 19:49:10,337 views 7792 9876 User authenticated: True
+INFO 2025-12-07 19:49:10,337 views 7792 9876 User already authenticated: aziz@gmail.com with role guest
+INFO 2025-12-07 19:49:10,338 basehttp 7792 9876 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:49:10,345 basehttp 7792 9876 "GET /dashboards/guest/ HTTP/1.1" 200 21293
+INFO 2025-12-07 19:49:10,451 basehttp 7792 9876 "GET /api/dashboard/stats/ HTTP/1.1" 200 126
+INFO 2025-12-07 19:53:01,074 basehttp 7792 9876 "GET /bookings/guest/create/ HTTP/1.1" 200 25067
+INFO 2025-12-07 19:54:53,777 basehttp 7792 9876 "GET / HTTP/1.1" 302 0
+INFO 2025-12-07 19:54:53,780 views 7792 9876 Template login view accessed
+INFO 2025-12-07 19:54:53,781 views 7792 9876 Request method: GET
+INFO 2025-12-07 19:54:53,783 views 7792 9876 User authenticated: True
+INFO 2025-12-07 19:54:53,783 views 7792 9876 User already authenticated: aziz@gmail.com with role guest
+INFO 2025-12-07 19:54:53,784 basehttp 7792 9876 "GET /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-12-07 19:54:53,791 basehttp 7792 9876 "GET /dashboards/guest/ HTTP/1.1" 200 21293
+INFO 2025-12-07 19:54:53,977 basehttp 7792 9876 "GET /api/dashboard/stats/ HTTP/1.1" 200 126
+INFO 2025-12-07 19:56:12,703 autoreload 7792 22668 C:\Users\Soulayman\django\accounts\views.py changed, reloading.
+INFO 2025-12-07 19:56:13,151 autoreload 18636 23156 Watching for file changes with StatReloader
+INFO 2025-12-07 19:56:22,973 autoreload 18636 23156 C:\Users\Soulayman\django\accounts\views.py changed, reloading.
+INFO 2025-12-07 19:56:23,400 autoreload 13972 21160 Watching for file changes with StatReloader
