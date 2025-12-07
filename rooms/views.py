@@ -6,9 +6,25 @@ from django.shortcuts import redirect
 @login_required
 def room_management(request):
     """Room management view for reception staff"""
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect
+
+
+@login_required
+def room_management(request):
+    """Room management view for reception staff"""
     if not request.user.is_reception():
         return redirect('home')
     return render(request, 'rooms/room_management.html')
+
+
+@login_required
+def room_create(request):
+    """Room creation view for reception staff"""
+    if not request.user.is_reception():
+        return redirect('home')
+    return render(request, 'rooms/room_create.html')
 
 
 @login_required

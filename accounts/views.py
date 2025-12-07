@@ -111,10 +111,81 @@ def login_view(request):
     return render(request, 'registration/login.html')
 
 
+@csrf_exempt
 def register_view(request):
     """User registration view"""
     if request.user.is_authenticated:
         return redirect('home')
+    
+    if request.method == 'POST':
+        try:
+            # Parse JSON data
+            data = json.loads(request.body)
+            
+            # Extract fields
+            username = data.get('username')
+            email = data.get('email')
+            first_name = data.get('first_name')
+            last_name = data.get('last_name')
+            phone_number = data.get('phone_number', '')
+            password = data.get('password')
+            password_confirm = data.get('password_confirm')
+            
+            # Validate required fields
+            if not all([username, email, first_name, last_name, password, password_confirm]):
+                return JsonResponse({
+                    'detail': 'All required fields must be filled'
+                }, status=400)
+            
+            # Validate passwords match
+            if password != password_confirm:
+                return JsonResponse({
+                    'password': ['Passwords do not match']
+                }, status=400)
+            
+            # Check if user already exists
+            if User.objects.filter(email=email).exists():
+                return JsonResponse({
+                    'email': ['A user with this email already exists']
+                }, status=400)
+            
+            if User.objects.filter(username=username).exists():
+                return JsonResponse({
+                   'username': ['A user with this username already exists']
+                }, status=400)
+            
+            # Create user
+            user = User.objects.create_user(
+                username=username,
+                email=email,
+                password=password,
+                first_name=first_name,
+                last_name=last_name,
+                phone_number=phone_number,
+                role='guest'  # Default role for registration
+            )
+            
+            logger.info(f"New user registered: {user.email}")
+            
+            return JsonResponse({
+                'user': {
+                    'id': user.id,
+                    'username': user.username,
+                    'email': user.email,
+                    'role': user.role
+                },
+                'message': 'Registration successful'
+            }, status=201)
+            
+        except json.JSONDecodeError:
+            return JsonResponse({
+                'detail': 'Invalid JSON data'
+            }, status=400)
+        except Exception as e:
+            logger.error(f"Registration error: {str(e)}")
+            return JsonResponse({
+                'detail': f'Registration failed: {str(e)}'
+            }, status=500)
     
     return render(request, 'registration/register.html')
 

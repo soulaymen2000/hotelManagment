@@ -4,6 +4,9 @@ from django.contrib.auth import logout
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 def home(request):
     # If user is authenticated, redirect to their dashboard
@@ -17,10 +20,9 @@ def home(request):
     # Otherwise, show the home page with login option
     return render(request, 'index.html')
 
-def logout_view(request):
-    logout(request)
-    messages.success(request, 'You have been successfully logged out.')
-    return redirect('home')
+def test_layout(request):
+    """Render the test layout page"""
+    return render(request, 'test_layout.html')
 
 @login_required
 def dashboard_redirect(request):
@@ -36,3 +38,8 @@ def dashboard_redirect(request):
         return redirect('reception-dashboard')
     else:
         return redirect('guest-dashboard')
+
+def logout_view(request):
+    logout(request)
+    messages.success(request, 'You have been successfully logged out.')
+    return redirect('home')

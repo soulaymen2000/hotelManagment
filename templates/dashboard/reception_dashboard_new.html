@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+
+{% block title %}Reception Dashboard - Hotel Management System{% endblock %}
+
+{% block breadcrumbs %}
+<!-- Fixed breadcrumbs to avoid Django template syntax errors -->
+{% endblock %}
+
+{% block content %}
+<div class="flex flex-col">
+    <div class="md:flex md:items-center md:justify-between">
+        <div class="flex-1 min-w-0">
+            <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
+                Reception Dashboard
+            </h2>
+        </div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Total Rooms -->
+        <div class="bg-white overflow-hidden shadow-lg rounded-lg card">
+            <div class="px-4 py-5 sm:p-6">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 bg-blue-500 rounded-md p-3">
+                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                    </div>
+                    <div class="ml-5 w-0 flex-1">
+                        <dl>
+                            <dt class="text-sm font-medium text-gray-500 truncate">Total Rooms</dt>
+                            <dd class="flex items-baseline">
+                                <div class="text-2xl font-semibold text-gray-900" id="total-rooms">0</div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Available Rooms -->
+        <div class="bg-white overflow-hidden shadow-lg rounded-lg card">
+            <div class="px-4 py-5 sm:p-6">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 bg-green-500 rounded-md p-3">
+                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div class="ml-5 w-0 flex-1">
+                        <dl>
+                            <dt class="text-sm font-medium text-gray-500 truncate">Available</dt>
+                            <dd class="flex items-baseline">
+                                <div class="text-2xl font-semibold text-gray-900" id="available-rooms">0</div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Booked Rooms -->
+        <div class="bg-white overflow-hidden shadow-lg rounded-lg card">
+            <div class="px-4 py-5 sm:p-6">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 bg-yellow-500 rounded-md p-3">
+                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <div class="ml-5 w-0 flex-1">
+                        <dl>
+                            <dt class="text-sm font-medium text-gray-500 truncate">Booked</dt>
+                            <dd class="flex items-baseline">
+                                <div class="text-2xl font-semibold text-gray-900" id="booked-rooms">0</div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Revenue -->
+        <div class="bg-white overflow-hidden shadow-lg rounded-lg card">
+            <div class="px-4 py-5 sm:p-6">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 bg-purple-500 rounded-md p-3">
+                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div class="ml-5 w-0 flex-1">
+                        <dl>
+                            <dt class="text-sm font-medium text-gray-500 truncate">Total Revenue</dt>
+                            <dd class="flex items-baseline">
+                                <div class="text-2xl font-semibold text-gray-900" id="total-revenue">$0</div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Activity Section - MOVED UP -->
+    <div class="mt-8">
+        <h3 class="text-lg font-semibold text-gray-900 mb-6">Recent Activity</h3>
+        <div class="bg-white shadow-lg rounded-lg card">
+            <div class="divide-y divide-gray-200">
+                <div class="px-6 py-4 hover:bg-gray-50 transition">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <div class="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center">
+                                <span class="text-white font-medium">JD</span>
+                            </div>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <div class="text-sm font-medium text-gray-900">John Doe</div>
+                            <div class="text-sm text-gray-500">Checked in to Room 201</div>
+                        </div>
+                        <div class="text-sm text-gray-400">2 hours ago</div>
+                    </div>
+                </div>
+                <div class="px-6 py-4 hover:bg-gray-50 transition">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <div class="h-10 w-10 rounded-full bg-green-500 flex items-center justify-center">
+                                <span class="text-white font-medium">MJ</span>
+                            </div>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <div class="text-sm font-medium text-gray-900">Mary Johnson</div>
+                            <div class="text-sm text-gray-500">Booked Room 301 for 3 nights</div>
+                        </div>
+                        <div class="text-sm text-gray-400">5 hours ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts Section - BELOW Activity -->
+    <div class="mt-8">
+        <h3 class="text-lg font-semibold text-gray-900 mb-6">Performance Analytics</h3>
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <!-- Room Status Chart -->
+            <div class="bg-white shadow-lg rounded-lg p-6 card">
+                <h4 class="text-md font-medium text-gray-900 mb-4">Room Status Distribution</h4>
+                <canvas id="roomStatusChart" height="250"></canvas>
+            </div>
+
+            <!-- Booking Trend Chart -->
+            <div class="bg-white shadow-lg rounded-lg p-6 card">
+                <h4 class="text-md font-medium text-gray-900 mb-4">Booking Trends (Last 30 Days)</h4>
+                <canvas id="bookingTrendChart" height="250"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>

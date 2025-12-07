@@ -1,80 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Hotel Management System{% endblock %}</title>
-    <!-- Local Tailwind CSS -->
     {% load static %}
     <link href="{% static 'css/tailwind.css' %}" rel="stylesheet">
     <link href="{% static 'css/custom.css' %}" rel="stylesheet">
-    <!-- Alpine.js for interactivity -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    <!-- Chart.js for charts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Force vertical layout */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        body>header {
+            flex-shrink: 0;
+            width: 100%;
+        }
+
+        body>main {
+            flex: 1 0 auto;
+            width: 100%;
+        }
+
+        body>footer {
+            flex-shrink: 0;
+            width: 100%;
+        }
+    </style>
 </head>
-<body class="bg-gray-100">
-    <div class="min-h-screen flex flex-col">
-        <!-- Header (Navbar at the Top) -->
-        <header class="navbar bg-white shadow">
-            <div class="container mx-auto px-4 py-4">
-                <div class="flex justify-between items-center">
-                    <h1 class="navbar-brand text-xl font-bold text-white">Hotel Management System</h1>
-                    <nav>
-                        <ul class="flex space-x-4">
-                            {% if user.is_authenticated %}
-                                <li><a href="{% url 'home' %}" class="nav-link text-white hover:text-gray-200">Home</a></li>
-                                {% if user.role == 'admin' %}
-                                    <li><a href="{% url 'admin-dashboard' %}" class="nav-link text-white hover:text-gray-200">Dashboard</a></li>
-                                    <li><a href="/admin/" class="nav-link text-white hover:text-gray-200">Admin Panel</a></li>
-                                {% elif user.role == 'reception' %}
-                                    <li><a href="{% url 'reception-dashboard' %}" class="nav-link text-white hover:text-gray-200">Dashboard</a></li>
-                                    <li><a href="{% url 'booking-management' %}" class="nav-link text-white hover:text-gray-200">Bookings</a></li>
-                                    <li><a href="{% url 'room-management' %}" class="nav-link text-white hover:text-gray-200">Rooms</a></li>
-                                {% else %}
-                                    <li><a href="{% url 'guest-dashboard' %}" class="nav-link text-white hover:text-gray-200">Dashboard</a></li>
-                                    <li><a href="{% url 'guest-booking' %}" class="nav-link text-white hover:text-gray-200">Book Room</a></li>
-                                {% endif %}
-                                <li><a href="{% url 'profile' %}" class="nav-link text-white hover:text-gray-200">Profile</a></li>
-                                <li>
-                                    <form method="post" action="{% url 'logout' %}" class="inline">
-                                        {% csrf_token %}
-                                        <button type="submit" class="nav-link text-white hover:text-gray-200">Logout</button>
-                                    </form>
-                                </li>
-                            {% else %}
-                                <li><a href="{% url 'login' %}" class="nav-link text-white hover:text-gray-200">Login</a></li>
-                                <li><a href="{% url 'register' %}" class="nav-link text-white hover:text-gray-200">Register</a></li>
-                            {% endif %}
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
 
-        <!-- Main Content -->
-        <main class="flex-grow container mx-auto px-4 py-8">
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="mb-4 p-4 rounded alert {% if message.tags %}bg-{{ message.tags }}-100 text-{{ message.tags }}-700{% else %}bg-blue-100 text-blue-700{% endif %}">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endif %}
-            
-            {% block breadcrumbs %}
-            {% endblock %}
-            
-            {% block content %}
-            {% endblock %}
-        </main>
+<body class="bg-gray-50">
+    <!-- NAVBAR AT TOP -->
+    {% include 'components/navigation_sidebar.html' %}
 
-        <!-- Footer (At the Bottom) -->
-        <footer class="footer bg-white border-t">
-            <div class="container mx-auto px-4 py-6">
-                <p class="text-center text-gray-600">&copy; 2025 Hotel Management System. All rights reserved.</p>
-            </div>
-        </footer>
-    </div>
+    <!-- CONTENT IN MIDDLE -->
+    <main class="container mx-auto px-4 py-6">
+        {% if messages %}
+        {% for message in messages %}
+        <div
+            class="mb-4 p-4 rounded alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %} fade-in">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        {% block breadcrumbs %}{% endblock %}
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- FOOTER AT BOTTOM -->
+    <footer class="footer bg-gradient-primary border-t">
+        <div class="container mx-auto px-4 py-6">
+            <p class="text-center text-white">&copy; 2025 Hotel Management System. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
+
 </html>

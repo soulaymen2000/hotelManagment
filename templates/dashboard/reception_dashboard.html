@@ -3,7 +3,7 @@
 {% block title %}Reception Dashboard - Hotel Management System{% endblock %}
 
 {% block breadcrumbs %}
-    <!-- Fixed breadcrumbs to avoid Django template syntax errors -->
+<!-- Fixed breadcrumbs to avoid Django template syntax errors -->
 {% endblock %}
 
 {% block content %}
@@ -17,295 +17,362 @@
     </div>
 
     <!-- Stats Grid -->
-    <div class="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        <!-- Total Rooms -->
-        <div class="bg-white overflow-hidden shadow rounded-lg card">
-            <div class="px-4 py-5 sm:p-6">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 bg-blue-500 rounded-md p-3">
-                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                        </svg>
-                    </div>
-                    <div class="ml-5 w-0 flex-1">
-                        <dl>
-                            <dt class="text-sm font-medium text-gray-500 truncate">Total Rooms</dt>
-                            <dd class="flex items-baseline">
-                                <div class="text-2xl font-semibold text-gray-900" id="total-rooms">0</div>
-                            </dd>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="mt-6" style="display: flex !important; flex-wrap: wrap !important; gap: 1.25rem !important;">
+        <style>
+            .stats-container {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                gap: 1.25rem !important;
+            }
 
-        <!-- Available Rooms -->
-        <div class="bg-white overflow-hidden shadow rounded-lg card">
-            <div class="px-4 py-5 sm:p-6">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 bg-green-500 rounded-md p-3">
-                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <div class="ml-5 w-0 flex-1">
-                        <dl>
-                            <dt class="text-sm font-medium text-gray-500 truncate">Available</dt>
-                            <dd class="flex items-baseline">
-                                <div class="text-2xl font-semibold text-gray-900" id="available-rooms">0</div>
-                            </dd>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-        </div>
+            .stat-card-item {
+                flex: 1 1 calc(25% - 1rem) !important;
+                min-width: 200px !important;
+            }
 
-        <!-- Booked Rooms -->
-        <div class="bg-white overflow-hidden shadow rounded-lg card">
-            <div class="px-4 py-5 sm:p-6">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 bg-yellow-500 rounded-md p-3">
-                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                    </div>
-                    <div class="ml-5 w-0 flex-1">
-                        <dl>
-                            <dt class="text-sm font-medium text-gray-500 truncate">Booked</dt>
-                            <dd class="flex items-baseline">
-                                <div class="text-2xl font-semibold text-gray-900" id="booked-rooms">0</div>
-                            </dd>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Total Revenue -->
-        <div class="bg-white overflow-hidden shadow rounded-lg card">
-            <div class="px-4 py-5 sm:p-6">
-                <div class="flex items-center">
-                    <div class="flex-shrink-0 bg-purple-500 rounded-md p-3">
-                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <div class="ml-5 w-0 flex-1">
-                        <dl>
-                            <dt class="text-sm font-medium text-gray-500 truncate">Total Revenue</dt>
-                            <dd class="flex items-baseline">
-                                <div class="text-2xl font-semibold text-gray-900" id="total-revenue">$0</div>
-                            </dd>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Charts Section -->
-    <div class="mt-8">
-        <h3 class="text-lg font-medium text-gray-900 mb-4">Performance Analytics</h3>
-        <div class="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
-            <!-- Room Status Chart -->
-            <div class="bg-white shadow rounded-lg p-6 card">
-                <h4 class="text-md font-medium text-gray-900 mb-4">Room Status Distribution</h4>
-                <canvas id="roomStatusChart" height="300"></canvas>
-            </div>
-
-            <!-- Booking Trend Chart -->
-            <div class="bg-white shadow rounded-lg p-6 card">
-                <h4 class="text-md font-medium text-gray-900 mb-4">Booking Trends (Last 30 Days)</h4>
-                <canvas id="bookingTrendChart" height="300"></canvas>
-            </div>
-        </div>
-    </div>
-
-    <!-- Recent Activity Section -->
-    <div class="mt-8">
-        <h3 class="text-lg font-medium text-gray-900 mb-4">Recent Activity</h3>
-        <div class="bg-white shadow rounded-lg card">
-            <div class="border-t border-gray-200">
-                <ul class="divide-y divide-gray-200" id="activity-feed">
-                    <li class="px-6 py-4">
-                        <div class="flex items-center">
-                            <div class="flex-shrink-0">
-                                <div class="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center">
-                                    <span class="text-white font-medium">JD</span>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <div class="text-sm font-medium text-gray-900">John Doe</div>
-                                <div class="text-sm text-gray-500">Checked in to Room 201</div>
-                            </div>
-                            <div class="ml-auto text-sm text-gray-500">2 hours ago</div>
+            @media (max-width: 768px) {
+                .stat-card-item {
+                    flex: 1 1 calc(50% - 1rem) !important;
+                }
+            }
+        </style>
+        <div class="stats-container"
+            style="width: 100%; display: flex !important; flex-wrap: wrap !important; gap: 1.25rem !important;">
+            <!-- Total Rooms -->
+            <div class="stat-card-item bg-white overflow-hidden shadow-lg rounded-lg card">
+                <div class="px-4 py-5 sm:p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-blue-500 rounded-md p-3">
+                            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
                         </div>
-                    </li>
-                    <li class="px-6 py-4">
-                        <div class="flex items-center">
-                            <div class="flex-shrink-0">
-                                <div class="h-10 w-10 rounded-full bg-green-500 flex items-center justify-center">
-                                    <span class="text-white font-medium">MJ</span>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <div class="text-sm font-medium text-gray-900">Mary Johnson</div>
-                                <div class="text-sm text-gray-500">Booked Room 301 for 3 nights</div>
-                            </div>
-                            <div class="ml-auto text-sm text-gray-500">5 hours ago</div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Total Rooms</dt>
+                                <dd class="flex items-baseline">
+                                    <div class="text-2xl font-semibold text-gray-900" id="total-rooms">0</div>
+                                </dd>
+                            </dl>
                         </div>
-                    </li>
-                </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Available Rooms -->
+            <div class="stat-card-item bg-white overflow-hidden shadow-lg rounded-lg card">
+                <div class="px-4 py-5 sm:p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-green-500 rounded-md p-3">
+                            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Available</dt>
+                                <dd class="flex items-baseline">
+                                    <div class="text-2xl font-semibold text-gray-900" id="available-rooms">0</div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Booked Rooms -->
+            <div class="stat-card-item bg-white overflow-hidden shadow-lg rounded-lg card">
+                <div class="px-4 py-5 sm:p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-yellow-500 rounded-md p-3">
+                            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Booked</dt>
+                                <dd class="flex items-baseline">
+                                    <div class="text-2xl font-semibold text-gray-900" id="booked-rooms">0</div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total Revenue -->
+            <div class="stat-card-item bg-white overflow-hidden shadow-lg rounded-lg card">
+                <div class="px-4 py-5 sm:p-6">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 bg-purple-500 rounded-md p-3">
+                            <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <dl>
+                                <dt class="text-sm font-medium text-gray-500 truncate">Total Revenue</dt>
+                                <dd class="flex items-baseline">
+                                    <div class="text-2xl font-semibold text-gray-900" id="total-revenue">$0</div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="mt-8">
+            <h3 class="text-lg font-medium text-gray-900 mb-6">Performance Analytics</h3>
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <!-- Room Status Chart -->
+                <div class="bg-white shadow-lg rounded-lg p-6 card">
+                    <h4 class="text-md font-medium text-gray-900 mb-4">Room Status Distribution</h4>
+                    <canvas id="roomStatusChart" height="250"></canvas>
+                </div>
+
+                <!-- Booking Trend Chart -->
+                <div class="bg-white shadow-lg rounded-lg p-6 card">
+                    <h4 class="text-md font-medium text-gray-900 mb-4">Booking Trends (Last 30 Days)</h4>
+                    <canvas id="bookingTrendChart" height="250"></canvas>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Recent Activity Section -->
+        <div class="mt-8">
+            <h3 class="text-lg font-semibold text-gray-900 mb-6">Recent Activity</h3>
+            <div class="bg-white shadow-lg rounded-lg card">
+                <div id="recent-activity-container" class="divide-y divide-gray-200">
+                    <!-- Activity items will be loaded here dynamically -->
+                    <div class="px-6 py-8 text-center text-gray-500">
+                        <svg class="animate-spin h-8 w-8 mx-auto text-blue-500" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                            </circle>
+                            <path class="opacity-75" fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                            </path>
+                        </svg>
+                        <p class="mt-2">Loading recent activity...</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-// Fetch dashboard statistics with authentication
-async function fetchDashboardStats() {
-    try {
-        const response = await fetch('/api/dashboard/stats/', {
-            headers: {
-                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
-                'Content-Type': 'application/json'
-            },
-            credentials: 'same-origin'  // Include cookies/session
-        });
-        const data = await response.json();
-        
-        if (response.ok) {
-            // Update room statistics
-            document.getElementById('total-rooms').textContent = data.rooms.total;
-            document.getElementById('available-rooms').textContent = data.rooms.available;
-            document.getElementById('booked-rooms').textContent = data.rooms.booked;
-            
-            // Update revenue
-            document.getElementById('total-revenue').textContent = '$' + data.payments.total_revenue.toLocaleString();
-        } else {
-            console.error('Error fetching dashboard stats:', data);
-            // If unauthorized, redirect to login
-            if (response.status === 401) {
-                window.location.href = '/accounts/login/';
-            }
-        }
-    } catch (error) {
-        console.error('Error fetching dashboard stats:', error);
-    }
-}
-
-// Fetch room status chart data with authentication
-async function fetchRoomStatusChartData() {
-    try {
-        const response = await fetch('/api/dashboard/charts/room-status/', {
-            headers: {
-                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
-                'Content-Type': 'application/json'
-            },
-            credentials: 'same-origin'  // Include cookies/session
-        });
-        const data = await response.json();
-        
-        if (response.ok) {
-            // Create room status chart
-            const ctx = document.getElementById('roomStatusChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: data.map(item => item.status),
-                    datasets: [{
-                        data: data.map(item => item.count),
-                        backgroundColor: [
-                            '#3B82F6', // blue for available
-                            '#10B981', // green for reserved
-                            '#F59E0B', // yellow for booked
-                            '#EF4444'  // red for maintenance
-                        ]
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'bottom'
-                        }
-                    }
-                }
+    // Fetch dashboard statistics with authentication
+    async function fetchDashboardStats() {
+        try {
+            const response = await fetch('/api/dashboard/stats/', {
+                credentials: 'same-origin'  // Include session cookies
             });
-        } else {
-            console.error('Error fetching room status chart data:', data);
-            // If unauthorized, redirect to login
-            if (response.status === 401) {
-                window.location.href = '/accounts/login/';
-            }
-        }
-    } catch (error) {
-        console.error('Error fetching room status chart data:', error);
-    }
-}
 
-// Fetch booking trend chart data with authentication
-async function fetchBookingTrendChartData() {
-    try {
-        const response = await fetch('/api/dashboard/charts/booking-trend/', {
-            headers: {
-                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
-                'Content-Type': 'application/json'
-            },
-            credentials: 'same-origin'  // Include cookies/session
-        });
-        const data = await response.json();
-        
-        if (response.ok) {
-            // Create booking trend chart
-            const ctx = document.getElementById('bookingTrendChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: data.map(item => item.date),
-                    datasets: [{
-                        label: 'Bookings',
-                        data: data.map(item => item.count),
-                        borderColor: '#3B82F6',
-                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                        fill: true,
-                        tension: 0.3
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                precision: 0
+            if (response.ok) {
+                const data = await response.json();
+                // Update room statistics
+                document.getElementById('total-rooms').textContent = data.rooms.total;
+                document.getElementById('available-rooms').textContent = data.rooms.available;
+                document.getElementById('booked-rooms').textContent = data.rooms.booked;
+
+                // Update revenue
+                document.getElementById('total-revenue').textContent = '$' + data.payments.total_revenue.toLocaleString();
+            } else {
+                console.error('Error fetching dashboard stats. Status:', response.status);
+            }
+        } catch (error) {
+            console.error('Error fetching dashboard stats:', error);
+        }
+    }
+
+    // Fetch room status chart data with authentication
+    async function fetchRoomStatusChartData() {
+        try {
+            const response = await fetch('/api/dashboard/charts/room-status/', {
+                credentials: 'same-origin'  // Include session cookies
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                // Create room status chart
+                const ctx = document.getElementById('roomStatusChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: data.map(item => item.status),
+                        datasets: [{
+                            data: data.map(item => item.count),
+                            backgroundColor: [
+                                '#3B82F6', // blue for available
+                                '#10B981', // green for reserved
+                                '#F59E0B', // yellow for booked
+                                '#EF4444'  // red for maintenance
+                            ]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
                             }
                         }
+                    }
+                });
+            } else {
+                console.error('Error fetching room status chart. Status:', response.status);
+            }
+        } catch (error) {
+            console.error('Error fetching room status chart data:', error);
+        }
+    }
+
+    // Fetch booking trend chart data with authentication
+    async function fetchBookingTrendChartData() {
+        try {
+            const response = await fetch('/api/dashboard/charts/booking-trend/', {
+                credentials: 'same-origin'  // Include session cookies
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                // Create booking trend chart
+                const ctx = document.getElementById('bookingTrendChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: data.map(item => item.date),
+                        datasets: [{
+                            label: 'Bookings',
+                            data: data.map(item => item.count),
+                            borderColor: '#3B82F6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            fill: true,
+                            tension: 0.3
+                        }]
                     },
-                    plugins: {
-                        legend: {
-                            display: false
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    precision: 0
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
                         }
                     }
-                }
-            });
-        } else {
-            console.error('Error fetching booking trend chart data:', data);
-            // If unauthorized, redirect to login
-            if (response.status === 401) {
-                window.location.href = '/accounts/login/';
+                });
+            } else {
+                console.error('Error fetching booking trend chart. Status:', response.status);
             }
+        } catch (error) {
+            console.error('Error fetching booking trend chart data:', error);
         }
-    } catch (error) {
-        console.error('Error fetching booking trend chart data:', error);
     }
-}
 
-// Initialize dashboard
-document.addEventListener('DOMContentLoaded', function() {
-    fetchDashboardStats();
-    fetchRoomStatusChartData();
-    fetchBookingTrendChartData();
-});
+    // Fetch recent activity data
+    async function fetchRecentActivity() {
+        try {
+            const response = await fetch('/api/dashboard/recent-activity/', {
+                credentials: 'same-origin'
+            });
+
+            if (response.ok) {
+                const activities = await response.json();
+                const container = document.getElementById('recent-activity-container');
+
+                if (activities.length === 0) {
+                    container.innerHTML = `
+                        <div class="px-6 py-8 text-center text-gray-500">
+                            <p>No recent activity</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                // Build HTML for activities
+                let html = '';
+                activities.forEach(activity => {
+                    // Determine color based on status
+                    const colorMap = {
+                        'pending': 'bg-yellow-500',
+                        'confirmed': 'bg-blue-500',
+                        'checked_in': 'bg-green-500',
+                        'checked_out': 'bg-gray-500',
+                        'cancelled': 'bg-red-500'
+                    };
+                    const bgColor = colorMap[activity.status] || 'bg-blue-500';
+
+                    html += `
+                        <div class="px-6 py-4 hover:bg-gray-50 transition">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <div class="h-10 w-10 rounded-full ${bgColor} flex items-center justify-center">
+                                        <span class="text-white font-medium">${activity.guest_initials}</span>
+                                    </div>
+                                </div>
+                                <div class="ml-4 flex-1">
+                                    <div class="text-sm font-medium text-gray-900">${activity.guest_name}</div>
+                                    <div class="text-sm text-gray-500">${activity.description}</div>
+                                </div>
+                                <div class="text-sm text-gray-400">${activity.time_ago}</div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                container.innerHTML = html;
+            } else {
+                console.error('Error fetching recent activity. Status:', response.status);
+                document.getElementById('recent-activity-container').innerHTML = `
+                    <div class="px-6 py-8 text-center text-red-500">
+                        <p>Failed to load recent activity</p>
+                    </div>
+                `;
+            }
+        } catch (error) {
+            console.error('Error fetching recent activity:', error);
+            document.getElementById('recent-activity-container').innerHTML = `
+                <div class="px-6 py-8 text-center text-red-500">
+                    <p>Error loading recent activity</p>
+                </div>
+            `;
+        }
+    }
+
+    // Initialize dashboard
+    document.addEventListener('DOMContentLoaded', function () {
+        fetchDashboardStats();
+        fetchRoomStatusChartData();
+        fetchBookingTrendChartData();
+        fetchRecentActivity();
+
+        // Auto-refresh every 30 seconds
+        setInterval(() => {
+            fetchDashboardStats();
+            fetchRecentActivity();
+        }, 30000);
+    });
 </script>
 {% endblock %}

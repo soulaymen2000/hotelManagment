@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Room - Hotel Management System{% endblock %}
+
+{% block content %}
+{% csrf_token %}
+<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="md:flex md:items-center md:justify-between mb-6">
+        <div class="flex-1 min-w-0">
+            <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
+                Add New Room
+            </h2>
+        </div>
+        <div class="mt-4 flex md:mt-0 md:ml-4">
+            <a href="{% url 'rooms:room-management' %}"
+                class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                Back to Room Management
+            </a>
+        </div>
+    </div>
+
+    <div class="bg-white shadow sm:rounded-lg">
+        <div class="px-4 py-5 sm:p-6">
+            <form id="room-form">
+                <div class="grid grid-cols-1 gap-6">
+                    <!-- Room Number -->
+                    <div>
+                        <label for="number" class="block text-sm font-medium text-gray-700">
+                            Room Number <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="number" name="number" required
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+
+                    <!-- Room Name -->
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">
+                            Room Name <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="name" name="name" required
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+
+                    <!-- Floor -->
+                    <div>
+                        <label for="floor" class="block text-sm font-medium text-gray-700">
+                            Floor <span class="text-red-500">*</span>
+                        </label>
+                        <select id="floor" name="floor" required
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <option value="">Select Floor</option>
+                            <option value="1">Floor 1</option>
+                            <option value="2">Floor 2</option>
+                            <option value="3">Floor 3</option>
+                            <option value="4">Floor 4</option>
+                            <option value="5">Floor 5</option>
+                        </select>
+                    </div>
+
+                    <!-- Capacity -->
+                    <div>
+                        <label for="capacity" class="block text-sm font-medium text-gray-700">
+                            Capacity (Number of Guests) <span class="text-red-500">*</span>
+                        </label>
+                        <input type="number" id="capacity" name="capacity" min="1" max="10" required
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+
+                    <!-- Price per Night -->
+                    <div>
+                        <label for="price_per_night" class="block text-sm font-medium text-gray-700">
+                            Price per Night ($) <span class="text-red-500">*</span>
+                        </label>
+                        <input type="number" id="price_per_night" name="price_per_night" step="0.01" min="0" required
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+
+                    <!-- Status -->
+                    <div>
+                        <label for="status" class="block text-sm font-medium text-gray-700">
+                            Initial Status <span class="text-red-500">*</span>
+                        </label>
+                        <select id="status" name="status" required
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <option value="dispo" selected>Available</option>
+                            <option value="maintenance">Maintenance</option>
+                            <option value="reserved">Reserved</option>
+                            <option value="booked">Booked</option>
+                        </select>
+                    </div>
+
+                    <!-- Description (Optional) -->
+                    <div>
+                        <label for="description" class="block text-sm font-medium text-gray-700">
+                            Description (Optional)
+                        </label>
+                        <textarea id="description" name="description" rows="3"
+                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex justify-end space-x-3">
+                    <a href="{% url 'rooms:room-management' %}"
+                        class="inline-flex justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Cancel
+                    </a>
+                    <button type="submit"
+                        class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Add Room
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('room-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const formData = {
+            number: document.getElementById('number').value,
+            name: document.getElementById('name').value,
+            floor: parseInt(document.getElementById('floor').value),
+            capacity: parseInt(document.getElementById('capacity').value),
+            price_per_night: parseFloat(document.getElementById('price_per_night').value),
+            status: document.getElementById('status').value,
+            description: document.getElementById('description').value || ''
+        };
+
+        try {
+            const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+            const response = await fetch('/api/rooms/reception/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrfToken
+                },
+                credentials: 'same-origin',
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                alert('Room created successfully!');
+                window.location.href = '{% url "rooms:room-management" %}';
+            } else {
+                const error = await response.json();
+                alert('Error creating room: ' + JSON.stringify(error));
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error creating room. Please try again.');
+        }
+    });
+</script>
+{% endblock %}

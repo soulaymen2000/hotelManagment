@@ -49,7 +49,10 @@ class BookingCreateSerializer(serializers.ModelSerializer):
         
         nights = (check_out - check_in).days
         validated_data['total_price'] = room.price_per_night * nights
-        validated_data['status'] = 'pending'
+        
+        # Default status is pending (will be overridden by views if needed)
+        if 'status' not in validated_data:
+            validated_data['status'] = 'pending'
         
         return super().create(validated_data)
 

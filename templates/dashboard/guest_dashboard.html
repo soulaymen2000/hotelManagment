@@ -3,7 +3,7 @@
 {% block title %}Guest Dashboard - Hotel Management System{% endblock %}
 
 {% block breadcrumbs %}
-    <!-- Fixed breadcrumbs to avoid Django template syntax errors -->
+<!-- Fixed breadcrumbs to avoid Django template syntax errors -->
 {% endblock %}
 
 {% block content %}
@@ -15,7 +15,8 @@
             </h2>
         </div>
         <div class="mt-4 flex md:mt-0 md:ml-4">
-            <a href="{% url 'guest-booking' %}" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            <a href="{% url 'bookings:guest-booking' %}"
+                class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                 Book a Room
             </a>
         </div>
@@ -28,8 +29,10 @@
             <div class="px-4 py-5 sm:p-6">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 bg-blue-500 rounded-md p-3">
-                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
                     </div>
                     <div class="ml-5 w-0 flex-1">
@@ -49,8 +52,10 @@
             <div class="px-4 py-5 sm:p-6">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 bg-green-500 rounded-md p-3">
-                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
                     <div class="ml-5 w-0 flex-1">
@@ -70,7 +75,8 @@
             <div class="px-4 py-5 sm:p-6">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 bg-yellow-500 rounded-md p-3">
-                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                         </svg>
                     </div>
@@ -91,8 +97,10 @@
             <div class="px-4 py-5 sm:p-6">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 bg-purple-500 rounded-md p-3">
-                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
                     <div class="ml-5 w-0 flex-1">
@@ -117,12 +125,24 @@
                     <table class="min-w-full divide-y divide-gray-200">
                         <thead class="bg-gray-50">
                             <tr>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Booking ID</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Room</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Check-in</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Check-out</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Booking ID</th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Room</th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Check-in</th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Check-out</th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Status</th>
+                                <th scope="col"
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Actions</th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200" id="bookings-table-body">
@@ -153,7 +173,8 @@
                     </div>
                     <div class="border border-gray-200 rounded-lg p-4">
                         <h4 class="font-medium text-gray-900">Loyalty Program</h4>
-                        <p class="mt-2 text-sm text-gray-500">Earn points with every stay and redeem for free nights.</p>
+                        <p class="mt-2 text-sm text-gray-500">Earn points with every stay and redeem for free nights.
+                        </p>
                         <div class="mt-4">
                             <a href="#" class="text-blue-600 hover:text-blue-900 text-sm font-medium">Join now</a>
                         </div>
@@ -172,41 +193,41 @@
 </div>
 
 <script>
-// Fetch guest dashboard statistics with authentication
-async function fetchGuestDashboardStats() {
-    try {
-        const response = await fetch('/api/dashboard/stats/', {
-            headers: {
-                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
-                'Content-Type': 'application/json'
-            },
-            credentials: 'same-origin'  // Include cookies/session
-        });
-        const data = await response.json();
-        
-        if (response.ok) {
-            // Update booking statistics
-            document.getElementById('total-bookings').textContent = data.bookings.total;
-            document.getElementById('active-bookings').textContent = data.bookings.confirmed + data.bookings.checked_in;
-            document.getElementById('past-stays').textContent = data.bookings.checked_out;
-            
-            // Update spending
-            document.getElementById('total-spent').textContent = '$' + data.payments.total_spent.toLocaleString();
-        } else {
-            console.error('Error fetching guest dashboard stats:', data);
-            // If unauthorized, redirect to login
-            if (response.status === 401) {
-                window.location.href = '/accounts/login/';
-            }
-        }
-    } catch (error) {
-        console.error('Error fetching guest dashboard stats:', error);
-    }
-}
+    // Fetch guest dashboard statistics with authentication
+    async function fetchGuestDashboardStats() {
+        try {
+            const response = await fetch('/api/dashboard/stats/', {
+                headers: {
+                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'same-origin'  // Include cookies/session
+            });
+            const data = await response.json();
 
-// Initialize guest dashboard
-document.addEventListener('DOMContentLoaded', function() {
-    fetchGuestDashboardStats();
-});
+            if (response.ok) {
+                // Update booking statistics
+                document.getElementById('total-bookings').textContent = data.bookings.total;
+                document.getElementById('active-bookings').textContent = data.bookings.confirmed + data.bookings.checked_in;
+                document.getElementById('past-stays').textContent = data.bookings.checked_out;
+
+                // Update spending
+                document.getElementById('total-spent').textContent = '$' + data.payments.total_spent.toLocaleString();
+            } else {
+                console.error('Error fetching guest dashboard stats:', data);
+                // If unauthorized, redirect to login
+                if (response.status === 401) {
+                    window.location.href = '/accounts/login/';
+                }
+            }
+        } catch (error) {
+            console.error('Error fetching guest dashboard stats:', error);
+        }
+    }
+
+    // Initialize guest dashboard
+    document.addEventListener('DOMContentLoaded', function () {
+        fetchGuestDashboardStats();
+    });
 </script>
 {% endblock %}

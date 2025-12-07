@@ -65,22 +65,55 @@ class ReceptionBookingCreateView(generics.CreateAPIView):
     permission_classes = [IsAuthenticated]
     
     def create(self, request, *args, **kwargs):
-        if not request.user.is_reception():
+        if not request.user.is_reception() and not request.user.is_admin():
             return Response({
                 'error': 'Only reception staff can create bookings'
             }, status=status.HTTP_403_FORBIDDEN)
+        
+        # Get guest email from request data
+        guest_email = request.data.get('guest_email')
+        if not guest_email:
+            return Response({
+                'error': 'Guest email is required'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Try to find existing user or return error
+        try:
+            guest = User.objects.get(email=guest_email)
+        except User.DoesNotExist:
+            return Response({
+                'error': f'No user found with email {guest_email}. Please register the guest first.'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Store guest for perform_create
+        self.guest = guest
+        
         return super().create(request, *args, **kwargs)
         
     def perform_create(self, serializer):
-        booking = serializer.save()
+        # Save with confirmed status for reception bookings
+        booking = serializer.save(guest=self.guest, status='confirmed')
         
-        # Log the action
+        # Update room status to booked
+        room = booking.room
+        room.status = 'booked'
+        room.save()
+        
+        # Log the actions
         AuditLog.objects.create(
             user=self.request.user,
             action='create',
             model_type='Booking',
             object_id=booking.id,
             description=f'Reception created booking for room {booking.room.number}'
+        )
+        
+        AuditLog.objects.create(
+            user=self.request.user,
+            action='room_status_change',
+            model_type='Room',
+            object_id=room.id,
+            description=f'Changed room {room.number} status to booked'
         )
 
 

@@ -22,7 +22,7 @@ def dashboard_stats(request):
     elif user.is_reception():
         return reception_dashboard_stats()
     else:  # guest
-        return guest_dashboard_stats()
+        return guest_dashboard_stats(request)
 
 
 def admin_dashboard_stats():
@@ -162,10 +162,10 @@ def reception_dashboard_stats():
     return Response(data)
 
 
-def guest_dashboard_stats():
+def guest_dashboard_stats(request):
     """Guest dashboard statistics"""
     # For guests, we only show their own bookings
-    user = User.objects.get(id=request.user.id)
+    user = request.user
     user_bookings = Booking.objects.filter(guest=user)
     
     total_bookings = user_bookings.count()
@@ -175,7 +175,7 @@ def guest_dashboard_stats():
     checked_out_bookings = user_bookings.filter(status='checked_out').count()
     cancelled_bookings = user_bookings.filter(status='cancelled').count()
     
-    # Calculate total spent by guest
+    # Calculate total spent
     total_spent = Payment.objects.filter(
         booking__guest=user,
         status='completed'
@@ -277,3 +277,55 @@ def booking_trend_chart(request):
         return Response({
             'error': 'Access denied'
         }, status=status.HTTP_403_FORBIDDEN)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def recent_activity(request):
+    """Get recent booking activity for the dashboard"""
+    user = request.user
+    
+    # Only admin and reception can access this
+    if not (user.is_admin() or user.is_reception()):
+        return Response({
+            'error': 'Access denied'
+        }, status=status.HTTP_403_FORBIDDEN)
+    
+    # Get the last 10 bookings ordered by updated_at
+    recent_bookings = Booking.objects.select_related('guest', 'room').order_by('-updated_at')[:10]
+    
+    # Convert to activity feed format
+    activities = []
+    for booking in recent_bookings:
+        # Determine activity description based on status
+        status_messages = {
+            'pending': f'Created a booking for Room {booking.room.number}',
+            'confirmed': f'Confirmed booking for Room {booking.room.number}',
+            'checked_in': f'Checked in to Room {booking.room.number}',
+            'checked_out': f'Checked out from Room {booking.room.number}',
+            'cancelled': f'Cancelled booking for Room {booking.room.number}',
+        }
+        
+        # Calculate time ago
+        time_diff = timezone.now() - booking.updated_at
+        if time_diff.days > 0:
+            time_ago = f"{time_diff.days} day{'s' if time_diff.days > 1 else ''} ago"
+        elif time_diff.seconds >= 3600:
+            hours = time_diff.seconds // 3600
+            time_ago = f"{hours} hour{'s' if hours > 1 else ''} ago"
+        elif time_diff.seconds >= 60:
+            minutes = time_diff.seconds // 60
+            time_ago = f"{minutes} minute{'s' if minutes > 1 else ''} ago"
+        else:
+            time_ago = "Just now"
+        
+        activities.append({
+            'id': booking.id,
+            'guest_name': f"{booking.guest.first_name} {booking.guest.last_name}" if booking.guest.first_name else booking.guest.username,
+            'guest_initials': f"{booking.guest.first_name[0] if booking.guest.first_name else booking.guest.username[0]}{booking.guest.last_name[0] if booking.guest.last_name else (booking.guest.username[1] if len(booking.guest.username) > 1 else '')}".upper(),
+            'description': status_messages.get(booking.status, f'Updated booking for Room {booking.room.number}'),
+            'time_ago': time_ago,
+            'status': booking.status
+        })
+    
+    return Response(activities)

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Layout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex flex-col">
+        <!-- Header (Navbar at the Top) -->
+        <header class="bg-blue-600 text-white shadow">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-xl font-bold">Test Navbar</h1>
+                    <nav>
+                        <ul class="flex space-x-4">
+                            <li><a href="#" class="hover:text-gray-200">Home</a></li>
+                            <li><a href="#" class="hover:text-gray-200">About</a></li>
+                            <li><a href="#" class="hover:text-gray-200">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto px-4 py-8">
+            <h2 class="text-2xl font-bold mb-4">Main Content Area</h2>
+            <p>This is the main content area. The navbar should be at the top and the footer should be at the bottom.</p>
+            <div class="mt-6 bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-2">Card Title</h3>
+                <p>This is a sample card to demonstrate the layout.</p>
+            </div>
+        </main>
+
+        <!-- Footer (At the Bottom) -->
+        <footer class="bg-gray-800 text-white border-t">
+            <div class="container mx-auto px-4 py-6">
+                <p class="text-center">&copy; 2025 Test Layout. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
